@@ -1,173 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A personal portfolio webpage created for Walkover Project">
-  <title>Personal Portfolio</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<body>
+    <title>Suraj Roy - Flutter Developer</title>
+    <meta
+      name="description"
+      content="Suraj Roy's portfolio featuring Flutter development, cloud functions, and a Three.js powered interactive presentation."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://roysuraj.github.io/" />
 
-<nav id="navbar" class="nav">
-  <ul>
-    <li>
-      <a href="#about">
-        <span class="code">&lt;</span>
-        About
-        <span class="code">&#47;&gt;</span>
-      </a>
-    </li>
-    <li>
+    <meta property="og:title" content="Suraj Roy - Flutter Developer" />
+    <meta
+      property="og:description"
+      content="Suraj Roy's portfolio featuring Flutter development, cloud functions, and a Three.js powered interactive presentation."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://roysuraj.github.io/" />
+    <meta property="og:image" content="/meta/og-image.webp" />
 
-      <a href="#projects">
-        <span class="code">&lt;</span>
-        Projects
-        <span class="code">&#47;&gt;</span>
-      </a>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Suraj Roy - Flutter Developer" />
+    <meta
+      name="twitter:description"
+      content="Suraj Roy's portfolio featuring Flutter development, cloud functions, and a Three.js powered interactive presentation."
+    />
+    <meta name="twitter:image" content="/meta/twitter-image.webp" />
 
-    </li>
-    <li>
-      <a href="#contact">
-        <span class="code">&lt;</span>
-        Contact
-        <span class="code">&#47;&gt;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+    <link rel="preload" href="/fonts/urbanist-400.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/urbanist-700.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/urbanist-900.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/pro-font-windows-400.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/pro-font-windows-700.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 
-<section id="welcome-section">
-  <div>
-    <h1>Hello<span>,</span></h1>
-    <p id="subheading">I'm <span>Suraj Roy</span></p>
-  </div>
-  <div>
-    <img class="welcome-img" id="desktop-only" src="images/code3.jpg" alt="A code snippet in C language">
-    <img class="welcome-img" id="mobile-only" src="images/code3.jpg" alt="A code snippet in C language">
-  </div>
-</section>
+    <link rel="icon" type="image/png" href="/meta/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/meta/favicon.svg" />
+    <link rel="shortcut icon" href="/meta/favicon.ico" />
 
-<section id="about">
-  <h2>My Story:</h2>
-  <div id="about-container">
-    <div id="my-story">
-      <p>I'm a Software Engineer with notable experience of 2.5 yrs with flutter development & cloud functionality. I'm always open to new ideas and projects.</p>
-      <p>I worked as a Flutter Developer with Cloud Function expertise for a year at a software
-      development company – Cloudcraftz . My main responsibility was to develop and maintain
-      mobile applications using Flutter framework and integrate them with backend services using
-      Cloud Functions.
-      During my tenure, I was involved in the development of several applications that weredeployed on both Android and iOS
-      platforms. I also worked on integrating various third-party
-      services such as Firebase, Google Maps, and Stripe.
-      Apart from developing mobile applications, I also worked on creating serverless functions
-      using Google Cloud Functions. These functions were used to perform various tasks such as
-      sending push notifications, processing user data, and managing backend services.
-      I collaborated closely with the design and product teams to ensure that the applications were
-      intuitive and user-friendly. I also provided technical support to clients and resolved any
-      issues that arose during the development process.
-      Overall, my experience as a Flutter Developer with Cloud Function expertise was challenging
-      and rewarding. It allowed me to expand my technical skills and work on innovative projects.that made a real impact on users' lives.</p>
+    <meta name="theme-color" content="#dfd1bc" />
+  </head>
+  <body class="is-loading">
+    <svg style="display: none" viewBox="0 0 56 61" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <path
+          id="logo-path"
+          d="M3 14 24 2C28 0 28 0 32 2L53 14C56 16 56 17 56 19L56 43C56 46 55 47 51 49L32 59C28 61 28 61 24 59L5 49C1 47 0 46 0 43L0 19C0 17 0 16 3 14M28 4 5 17 28 28 51 17 28 4M53 20 30 31 30 56 53 44 53 20M40 42 33 35C33 35 32 34 33 33 34 32 35 33 36 34L36 34 43 41C44 42 44 42 43 43L35 51C35 51 34 52 33 51 32 50 33 49 33 49L40 42M16 42 23 35C23 35 24 34 23 33 22 32 21 33 20 34L13 41C12 42 12 42 13 43L21 51C21 51 22 52 23 51 24 50 23 49 23 49L16 42"
+        ></path>
+      </defs>
+    </svg>
+    <div id="app"></div>
+    <div class="preloader">
+      <svg class="preloader-svg" viewBox="0 0 56 61" xmlns="http://www.w3.org/2000/svg">
+        <mask id="preloader-mask">
+          <rect fill="black" height="61" width="61"></rect>
+          <rect fill="white" height="61" width="61" class="preloader-rect" style="transform: scaleY(0)"></rect>
+        </mask>
+
+        <use href="#logo-path" class="preloader-path" opacity="0.3"></use>
+        <use href="#logo-path" class="preloader-path" mask="url(#preloader-mask)"></use>
+      </svg>
     </div>
-    <div id="interests-list">
-      <h3>Interests</h3>
-      <ul>
-        <li>Java Programming & Oops</li>
-        <li>Flutter Development</li>
-        <li>App & Web Development</li>
-        <li>Machine Learning & GCP</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>My Experience & Projects:</h2>
-  <p>Here's a list of projects I built in the tenure of 2.5 yrs with android store links .</p>
-
-  <div class="projects-grid">
-    <div class="card">
-      <div class="project-img">
-        <img src="images/xlenttea.png" alt="tribute page">
-      </div>
-      <div class="desc">
-        <h3 class="project-tile">
-          <a href="https://x-lent-tea.en.uptodown.com/android">X-lent Tea</a>
-        </h3>
-        <p>X-lent Tea Ecommerce application for tea lover's includes tea sachets as products</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="project-img">
-        <img src="images/afterbell.png" alt="survey form">
-      </div>
-      <div class="desc">
-        <h3 class="project-tile">
-          <a href="https://upload.app/download/afterbell/com.quizuser.com/13b897373ccc84c640d122488942ca91a376cf8ab7e6d5d8270f481cb51e4763">Afterbell</a>
-        </h3>
-        <p>One of the most advanced tracking tools, which holistically and periodically tracks the child’s progress and learning
-        trajectory.
-        The system plays an active role in adapting their techniques to suit the learning curve of the child</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="project-img">
-        <img src="images/sonics.png" alt="product landing page">
-      </div>
-      <div class="desc">
-        <h3 class="project-tile">
-          <a href="https://upload.app/download/sonic-station/com.sonics.user/dc9ddd5a88922a67346fb5d2ad8aafa00a969a4bc684d11f5d241fa9ec67598d">Sonics Music Station</a>
-        </h3>
-        <p>Sonic's Music and Radio app for Playstore is a free music and radio streaming service that allows users to listen to
-        thousands of songs and FM/AM radio stations from all over the world</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="project-img">
-        <img src="images/doodle.png" alt="technical documentation page">
-      </div>
-      <div class="desc">
-        <h3 class="project-tile">
-          <a href="https://play.google.com/store/apps/details?id=com.optiquesutra.school">Optique App</a>
-        </h3>
-        <p>Comics are serious stuff.
-        And TheDoodle takes them seriously.
-        We're bringing together the world's coolest artists and the world's most accomplished subject experts to tell the
-        crucial stories of our time, from science to climate, art to global affairs, food to medicine</p>
-      </div>
-    </div>
-
-  
-
-  </div>
-
-</section>
-
-<section id="contact">
-  <h2>@ Suraj Roy </h2>
-  <p>Find me on</p>
-  <div class="contact-links">
-    <a href="https://twitter.com/roy_suraj_m?s=09" target="_blank" class="contact-details">
-      <img src="images/twitter.svg" alt="twitter logo" class="contact-icon">Twitter
-    </a>
-    <a href="http://www.linkedin.com/in/suraj-roy-0245a8184" target="_blank" class="contact-details">
-      <img src="images/linkedin.svg" alt="linkedin logo" class="contact-icon">LinkedIn
-    </a>
-    <a href="https://github.com/roysuraj" target="_blank" class="contact-details">
-      <img src="images/github.svg" alt="github logo" class="contact-icon">GitHub
-    </a>
-  
-   
-  </div>
-</section>
-
-
-
-</body>
-
+    <script type="module" src="./src/main.ts"></script>
+  </body>
 </html>
