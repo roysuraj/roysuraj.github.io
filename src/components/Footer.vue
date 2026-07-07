@@ -76,13 +76,13 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
           </p>
           <Clickable renderAs="div">
             <Link
-              href="https://david-hckh.com"
+              href="mailto:spyrogypsertech@gmail.com"
               class="footer-link children-unclickable"
               external
               data-cursor="circle-white"
               data-hoversound="hover"
-              >David Heckhoff</Link
-            >
+              >spyrogypsertech@gmail.com</Link
+              >
           </Clickable>
         </div>
         <div class="footer-credits-music">
@@ -96,11 +96,11 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
               external
               data-cursor="circle-white"
               data-hoversound="hover"
-              >HM Surf</Link
-            >
+              >Suraj Roy</Link
+              >
           </Clickable>
         </div>
-        <p>(c) {{ new Date().getFullYear() }} Suraj Roy</p>
+        <p>© {{ new Date().getFullYear() }} Suraj Roy</p>
       </div>
     </div>
   </footer>

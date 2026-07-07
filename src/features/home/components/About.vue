@@ -61,6 +61,7 @@ watchEffect((onInvalidate) => {
     <div ref="contentProgressCountRef" class="about-progress-count">
       <ProgressCount />
     </div>
+    <img class="about-portrait" src="/images/code3.jpg" alt="Suraj Roy portrait" />
   </div>
 </template>
 
@@ -78,6 +79,34 @@ watchEffect((onInvalidate) => {
     height: calc(var(--lvh) * 100);
 
     --count-height: calc(max(calc((var(--lvh) - var(--svh)) * 100), 36px) + var(--space-outer));
+  }
+
+  &-portrait {
+    position: absolute;
+    right: var(--space-outer);
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(30vw, 320px);
+    height: min(56vh, 620px);
+    object-fit: cover;
+    border-radius: 24px;
+    border: 1px solid rgba(126, 230, 215, 0.25);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.35);
+
+    @include mixins.mq("md") {
+      width: min(26vw, 280px);
+      height: min(50vh, 540px);
+    }
+
+    @media (max-width: 767px) {
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+      width: 100%;
+      height: 280px;
+      margin-top: var(--space-xl);
+    }
   }
 
   &-details,

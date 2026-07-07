@@ -8,11 +8,10 @@ import AppearingText from "../../../components/AppearingText.vue";
 
 <template>
   <div class="hero">
-    <img class="hero-portrait" src="/images/code3.jpg" alt="Suraj Roy portrait" />
     <div class="hero-content grid">
       <div class="hero-content-inner" id="hero-content-inner">
         <div class="hero-content-copys">
-          <h1 class="hero-title">Suraj<br />Roy</h1>
+          <h1 class="hero-title">Hi,<br />I'm Suraj Roy</h1>
           <Banner class="hero-banner" :copy="t('job-title')" v-if="!preloaderVisible" animated />
         </div>
       </div>
@@ -28,17 +27,6 @@ import AppearingText from "../../../components/AppearingText.vue";
   display: flex;
   position: relative;
   overflow: hidden;
-
-  &-portrait {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: saturate(0.95) contrast(1.02) brightness(0.78);
-    transform: scale(1.02);
-  }
 
   &-content {
     position: relative;
@@ -132,5 +120,6 @@ import AppearingText from "../../../components/AppearingText.vue";
       transform: rotate(-5deg) translate(0, 80%);
     }
   }
+
 }
 </style>

@@ -1,74 +1,16 @@
-import videoSharkie from "../../../assets/videos/sharkie.mp4";
-
-import sharkie0 from "../../../assets/images/projects/sharkie/sharkie-0.webp";
-import sharkie1 from "../../../assets/images/projects/sharkie/sharkie-1.webp";
-import sharkie2 from "../../../assets/images/projects/sharkie/sharkie-2.webp";
-import sharkie3 from "../../../assets/images/projects/sharkie/sharkie-3.webp";
-import sharkie4 from "../../../assets/images/projects/sharkie/sharkie-4.webp";
-
 import type { ProjectContent } from "../../types";
 
 export default {
-  title: "Sharkie",
-  theme: "light",
-  tags: ["javascript", "html", "css"],
-  live: "https://sharkie.david-hckh.com/",
-  source: "https://github.com/davidhckh/sharkie-game",
-  description:
-    "Sharkie is a 2D underwater adventure game built with vanilla JavaScript and HTML5 Canvas.<br/><br/>The project is structured around object-oriented programming principles, featuring custom classes for entities, enemies, and game systems, alongside smooth animations, combat mechanics, and layered parallax backgrounds.",
+  title: "Sonics Music Station",
+  theme: "dark",
+  tags: ["html", "css", "javascript"],
+  live: "https://upload.app/download/sonic-station/com.sonics.user/dc9ddd5a88922a67346fb5d2ad8aafa00a969a4bc684d11f5d241fa9ec67598d",
+  description: "A music and radio streaming app with song discovery, station browsing, and audio playback.",
   components: [
-    {
-      type: "media",
-      props: {
-        type: "video",
-        src: videoSharkie,
-        caption: "Gameplay",
-      },
-    },
-    {
-      type: "media",
-      props: {
-        type: "image",
-        src: sharkie0,
-        alt: "Entities And Map Design",
-        caption: "Entities And Map Design",
-      },
-    },
-    {
-      type: "media",
-      props: {
-        type: "image",
-        src: sharkie1,
-        alt: "Boss Fight",
-        caption: "Boss Fight",
-      },
-    },
-    {
-      type: "media",
-      props: {
-        type: "image",
-        src: sharkie2,
-        alt: "Mission",
-        caption: "Mission",
-      },
-    },
-    {
-      type: "media",
-      props: {
-        type: "image",
-        src: sharkie3,
-        alt: "Victory Screen",
-        caption: "Victory Screen",
-      },
-    },
-    {
-      type: "media",
-      props: {
-        type: "image",
-        src: sharkie4,
-        alt: "Death Screen",
-        caption: "Death Screen",
-      },
-    },
+    { type: "media", props: { type: "image", src: "/images/sonics.png", alt: "Sonics", caption: "Home" } },
+    { type: "media", props: { type: "image", src: "/images/sonics.png", alt: "Sonics", caption: "Browse" } },
+    { type: "media", props: { type: "image", src: "/images/sonics.png", alt: "Sonics", caption: "Player" } },
+    { type: "media", props: { type: "image", src: "/images/sonics.png", alt: "Sonics", caption: "Stations" } },
+    { type: "media", props: { type: "image", src: "/images/sonics.png", alt: "Sonics", caption: "Library" } },
   ],
 } as const satisfies ProjectContent;
