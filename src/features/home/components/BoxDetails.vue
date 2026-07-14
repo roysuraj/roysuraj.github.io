@@ -8,7 +8,7 @@ import { Vector3 } from "three";
 import PinIcon from "../../../components/icons/Pin.vue";
 import ProjectedElement from "../../../components/ProjectedElement.vue";
 
-const point = new Vector3(-0.76, 3.6, 6.75);
+const point = new Vector3(-0.76, 4.2, 6.75);
 
 const wrapperRef = ref<HTMLDivElement | null>(null);
 const timelines = ref<{ timeline: gsap.core.Timeline; delay: number }[]>([]);
@@ -139,13 +139,13 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     position: absolute;
     padding-bottom: 3px;
     padding-right: var(--line-length);
-    width: 240px;
-    max-width: calc(var(--svw) * 30);
+    width: 200px;
+    max-width: calc(var(--svw) * 25);
     transform: translate(-100%, -50%);
   }
 
   @include mixins.landscape-large {
-    width: 240px;
+    width: 220px;
   }
 
   &::after,

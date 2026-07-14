@@ -18,6 +18,7 @@ import numbersBitmap from "./assets/textures/numbers-bitmap.webp";
 import roomTexture from "./assets/textures/room.webp";
 import roomShadowTexture from "./assets/textures/room-shadow.webp";
 import hologramPlaneTexture from "./assets/textures/hologram-plane.webp";
+import portraitTexture from "./assets/textures/code3.jpg";
 
 type Source = {
   name: string;
@@ -48,4 +49,5 @@ export const sources = [
   { name: "numbers-bitmap", type: "texture", path: numbersBitmap },
   { name: "room-texture", type: "texture", path: roomTexture },
   { name: "room-shadow-texture", type: "texture", path: roomShadowTexture },
+  { name: "portrait-texture", type: "texture", path: portraitTexture },
 ] as const satisfies Source[];

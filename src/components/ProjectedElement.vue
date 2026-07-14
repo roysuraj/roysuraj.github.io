@@ -22,13 +22,31 @@ const updatePosition = () => {
   const isLandscape = sizes.isLandscape;
   const { point } = props;
 
-  const screenPos = isLandscape ? camera.project(point) : { x: 0, y: 0 };
+  if (isLandscape) {
+    const screenPos = camera.project(point);
 
-  const transform = isLandscape ? `translate(${screenPos.x}px, ${screenPos.y}px)` : `translate(0px, 0px)`;
+    // Clamp projected position to keep elements within the viewport
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const minX = vw * 0.15;
+    const maxX = vw * 0.85;
+    const minY = vh * 0.12;
+    const maxY = vh * 0.85;
+    const clampedX = Math.max(minX, Math.min(maxX, screenPos.x));
+    const clampedY = Math.max(minY, Math.min(maxY, screenPos.y));
 
-  if (transform !== lastTransform) {
-    wrapperRef.value.style.transform = transform;
-    lastTransform = transform;
+    const transform = `translate(${clampedX}px, ${clampedY}px)`;
+
+    if (transform !== lastTransform) {
+      wrapperRef.value.style.transform = transform;
+      lastTransform = transform;
+    }
+  } else {
+    const transform = `translate(0px, 0px)`;
+    if (transform !== lastTransform) {
+      wrapperRef.value.style.transform = transform;
+      lastTransform = transform;
+    }
   }
 };
 

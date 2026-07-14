@@ -107,19 +107,19 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
 };
 
 const SERVICES_EN = [
-  { name: "Flutter Development" },
-  { name: "Cloud Functions" },
-  { name: "Firebase & Maps" },
-  { name: "App & Web Development" },
-  { name: "Machine Learning & GCP" },
+  { name: "Flutter & React Native" },
+  { name: "Firebase & GCP Backend" },
+  { name: "Agile/Scrum Management" },
+  { name: "TypeScript Cloud Functions" },
+  { name: "BigQuery & Google Analytics" },
 ] as const satisfies { name: string }[];
 
 const SERVICES_DE = [
-  { name: "Flutter Development" },
-  { name: "Cloud Functions" },
-  { name: "Firebase & Maps" },
-  { name: "App & Web Development" },
-  { name: "Machine Learning & GCP" },
+  { name: "Flutter & React Native" },
+  { name: "Firebase & GCP Backend" },
+  { name: "Agile/Scrum Management" },
+  { name: "TypeScript Cloud Functions" },
+  { name: "BigQuery & Google Analytics" },
 ] as const satisfies { name: string }[];
 
 const services = computed(() => {
@@ -166,9 +166,9 @@ const services = computed(() => {
   left: var(--space-outer);
 
   @include mixins.landscape {
-    width: 480px;
-    max-width: calc(var(--svw) * 37);
-    padding-left: var(--line-length);
+    width: 300px;
+    max-width: calc(var(--svw) * 28);
+    padding-right: var(--line-length);
     position: relative;
     left: 0;
     bottom: 0;
@@ -177,8 +177,8 @@ const services = computed(() => {
   }
 
   @include mixins.landscape-large {
-    width: 380px;
-    max-width: calc(var(--svw) * 36);
+    width: 320px;
+    max-width: calc(var(--svw) * 28);
   }
 
   &::after,
@@ -195,7 +195,7 @@ const services = computed(() => {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 0;
+    right: 0;
     width: 11px;
     height: 11px;
     background-color: var(--color-cyan-400);
@@ -207,7 +207,7 @@ const services = computed(() => {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 0;
+    right: 0;
     height: 0;
     border-top: var(--stroke-sm) solid var(--color-cyan-400);
 
@@ -222,11 +222,12 @@ const services = computed(() => {
     background: linear-gradient(to bottom, var(--color-hologram-top) 0%, var(--color-hologram-bottom) 100%);
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: var(--space-xs);
     padding: var(--space-sm) var(--space-md);
 
     @include mixins.landscape {
       padding: var(--space-xs) var(--space-sm);
+      gap: var(--space-xxs);
     }
 
     @include mixins.mq("md") {
@@ -237,12 +238,12 @@ const services = computed(() => {
   &-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: var(--space-xxs);
 
     &-item {
       display: flex;
       flex-direction: column;
-      padding-left: 18px;
+      padding-left: 16px;
       position: relative;
 
       &::before {
@@ -257,21 +258,24 @@ const services = computed(() => {
       }
 
       &-name {
-        font-size: var(--font-size-md);
+        font-size: var(--font-size-sm);
+        overflow-wrap: break-word;
+        word-break: break-word;
+        white-space: nowrap;
 
         @include mixins.landscape {
-          font-size: var(--font-size-sm);
+          font-size: var(--font-size-xs);
         }
 
         @include mixins.landscape-large {
-          font-size: var(--font-size-lg);
+          font-size: var(--font-size-sm);
         }
       }
     }
   }
 
   &-title {
-    font-size: var(--font-size-title-xs);
+    font-size: var(--font-size-title-xxs);
     font-weight: 700;
 
     @include mixins.landscape {

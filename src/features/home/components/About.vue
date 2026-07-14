@@ -14,6 +14,8 @@ const tlDescriptionRef = ref<gsap.core.Timeline | null>(null);
 const tlServicesRef = ref<gsap.core.Timeline | null>(null);
 const tlDetailsRef = ref<gsap.core.Timeline | null>(null);
 
+const portraitRef = ref<HTMLImageElement | null>(null);
+
 const props = defineProps<{
   spacerRef: HTMLElement | null;
 }>();
@@ -27,7 +29,8 @@ watchEffect((onInvalidate) => {
     contentServicesRef.value &&
     contentDetailsRef.value &&
     tlDetailsRef.value &&
-    contentProgressCountRef.value
+    contentProgressCountRef.value &&
+    portraitRef.value
   ) {
     transitions.about.setup({
       about: props.spacerRef,
@@ -38,6 +41,7 @@ watchEffect((onInvalidate) => {
       contentDetails: contentDetailsRef.value,
       tlDetails: tlDetailsRef.value,
       contentProgressCount: contentProgressCountRef.value,
+      portrait: portraitRef.value,
     });
   }
 
@@ -61,7 +65,7 @@ watchEffect((onInvalidate) => {
     <div ref="contentProgressCountRef" class="about-progress-count">
       <ProgressCount />
     </div>
-    <img class="about-portrait" src="/images/code3.jpg" alt="Suraj Roy portrait" />
+    <img ref="portraitRef" class="about-portrait" src="/images/code3.jpg" alt="Suraj Roy portrait" />
   </div>
 </template>
 
@@ -77,35 +81,33 @@ watchEffect((onInvalidate) => {
     left: 50%;
     transform: translateX(-50%);
     height: calc(var(--lvh) * 100);
+    overflow: hidden;
 
     --count-height: calc(max(calc((var(--lvh) - var(--svh)) * 100), 36px) + var(--space-outer));
   }
 
   &-portrait {
+    opacity: 0; /* Hidden by default, faded in by GSAP */
     position: absolute;
     right: var(--space-outer);
     top: 50%;
     transform: translateY(-50%);
-    width: min(30vw, 320px);
-    height: min(56vh, 620px);
+    width: 100px;
+    height: 130px;
     object-fit: cover;
-    border-radius: 24px;
+    border-radius: 16px;
     border: 1px solid rgba(126, 230, 215, 0.25);
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.35);
-
-    @include mixins.mq("md") {
-      width: min(26vw, 280px);
-      height: min(50vh, 540px);
-    }
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.35);
+    z-index: 1;
 
     @media (max-width: 767px) {
       position: relative;
       right: auto;
       top: auto;
       transform: none;
-      width: 100%;
-      height: 280px;
-      margin-top: var(--space-xl);
+      width: 80px;
+      height: 100px;
+      margin-top: var(--space-md);
     }
   }
 
@@ -121,11 +123,19 @@ watchEffect((onInvalidate) => {
     position: absolute;
     top: 0;
     left: 0;
+    padding-right: calc(100px + var(--space-outer) * 2);
 
     @include mixins.landscape {
       width: 100%;
       height: 0;
       top: 50%;
+      overflow: visible;
+    }
+
+    @media (max-width: 767px) {
+      padding-right: 0;
+      position: relative;
+      height: auto;
     }
   }
 

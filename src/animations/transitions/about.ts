@@ -22,6 +22,7 @@ const setup = ({
   tlDetails,
   contentDetails,
   contentProgressCount,
+  portrait,
 }: {
   about: HTMLElement;
   tlDescription: gsap.core.Timeline;
@@ -31,6 +32,7 @@ const setup = ({
   tlDetails: gsap.core.Timeline;
   contentDetails: HTMLDivElement;
   contentProgressCount: HTMLDivElement;
+  portrait: HTMLImageElement;
 }) => {
   setupInAnimation(about);
   setupProgressAnimation(about);
@@ -43,6 +45,7 @@ const setup = ({
     tlDetails,
     contentDetails,
     contentProgressCount,
+    portrait,
   });
   setupOutAnimation(about);
   setupScenesAnimation(about);
@@ -187,6 +190,7 @@ const setupSectionsAnimation = ({
   tlDetails,
   contentDetails,
   contentProgressCount,
+  portrait,
 }: {
   about: HTMLElement;
   contentDescription: HTMLDivElement;
@@ -196,6 +200,7 @@ const setupSectionsAnimation = ({
   tlDescription: gsap.core.Timeline;
   tlServices: gsap.core.Timeline;
   tlDetails: gsap.core.Timeline;
+  portrait: HTMLImageElement;
 }) => {
   sectionsMm = createMatchMedia((_context, { isLandscape }) => {
     const tl = gsap.timeline({
@@ -219,7 +224,8 @@ const setupSectionsAnimation = ({
 
       // Details animation (first, only on landscape)
       tl.fromTo(contentDetails, { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "power1.out" }, DETAILS_DELAY);
-      //tl.fromTo(contentDetails, { y: "12.5vh" }, { y: "0vh", duration: 0.35, ease: "none" }, DETAILS_DELAY);
+      // Portrait animation alongside details
+      tl.fromTo(portrait, { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "power1.out" }, DETAILS_DELAY);
       tl.add(() => {
         tlDetails?.play();
       }, DETAILS_DELAY);
@@ -231,14 +237,12 @@ const setupSectionsAnimation = ({
         { opacity: 1, duration: 0.15, ease: "power1.out" },
         DESCRIPTION_DELAY,
       );
-      //tl.fromTo(contentDescription, { y: "12.5vh" }, { y: "0vh", duration: 0.35, ease: "none" }, DESCRIPTION_DELAY);
       tl.add(() => {
         tlDescription?.play();
       }, DESCRIPTION_DELAY);
 
       // Services animation
       tl.fromTo(contentServices, { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "power1.out" }, SERVICES_DELAY);
-      //tl.fromTo(contentServices, { y: "12.5vh" }, { y: 0, duration: 0.35, ease: "none" }, SERVICES_DELAY);
       tl.add(() => {
         tlServices?.play();
       }, SERVICES_DELAY);
@@ -248,6 +252,9 @@ const setupSectionsAnimation = ({
       const SERVICES_DELAY = 0.6;
 
       // Details animation disabled - BoxDetails is hidden on portrait
+      // But animate the portrait alongside description
+      tl.fromTo(portrait, { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "power1.out" }, DESCRIPTION_DELAY);
+
 
       // Description animation
       tl.fromTo(

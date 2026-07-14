@@ -8,7 +8,7 @@ import { t } from "../../../i18n/utils/translate";
 import AppearingText from "../../../components/AppearingText.vue";
 import PinIcon from "../../../components/icons/Pin.vue";
 
-const point = new Vector3(-0.9, 2, 6.75);
+const point = new Vector3(-0.9, 1.2, 6.75);
 
 const wrapperRef = ref<HTMLDivElement | null>(null);
 const timelines = ref<{ timeline: gsap.core.Timeline; delay: number }[]>([]);
@@ -133,7 +133,7 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     position: relative;
     left: 0;
     bottom: 0;
-    width: 480px;
+    width: 340px;
     max-width: calc(var(--svw) * 38);
     transform: translate(-100%, -50%);
     padding-top: 3px;
@@ -141,8 +141,8 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
   }
 
   @include mixins.landscape-large {
-    width: 410px;
-    max-width: calc(var(--svw) * 32);
+    width: 360px;
+    max-width: calc(var(--svw) * 36);
   }
 
   &-line {
@@ -235,16 +235,22 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
 
   &-copy {
     will-change: opacity;
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
     padding: var(--space-sm) var(--space-md);
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.4;
 
     @include mixins.landscape {
-      padding: 0;
-      font-size: var(--font-size-sm);
+      padding: var(--space-xs);
+      font-size: var(--font-size-xs);
     }
 
     @include mixins.landscape-large {
-      font-size: var(--font-size-lg);
+      padding: var(--space-sm);
+      font-size: var(--font-size-sm);
     }
   }
 }

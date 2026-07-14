@@ -11,7 +11,7 @@ import AppearingText from "../../../components/AppearingText.vue";
     <div class="hero-content grid">
       <div class="hero-content-inner" id="hero-content-inner">
         <div class="hero-content-copys">
-          <h1 class="hero-title">Hi,<br />I'm Suraj Roy</h1>
+          <h1 class="hero-title">Hi,<br />I'm Suraj Kumar Roy</h1>
           <Banner class="hero-banner" :copy="t('job-title')" v-if="!preloaderVisible" animated />
         </div>
       </div>
@@ -63,7 +63,7 @@ import AppearingText from "../../../components/AppearingText.vue";
       @include mixins.landscape {
         left: 0;
         transform: translateX(0);
-        grid-column: 2 / 13;
+        grid-column: 1 / 8;
         width: fit-content;
       }
     }
@@ -86,19 +86,19 @@ import AppearingText from "../../../components/AppearingText.vue";
   &-title {
     font-weight: 900;
     letter-spacing: 0.02em;
-    font-size: var(--font-size-title-lg);
+    font-size: clamp(2rem, 3vw, 3.2rem);
 
     @include mixins.landscape {
-      font-size: var(--font-size-title-lg);
+      font-size: clamp(1.8rem, 2.6vw, 2.8rem);
     }
 
     @include mixins.landscape-large {
       @include mixins.mq("sm") {
-        font-size: var(--font-size-title-xl);
+        font-size: clamp(2.2rem, 3.2vw, 3.6rem);
       }
 
       @include mixins.mq("xl") {
-        font-size: var(--font-size-title-xxl);
+        font-size: clamp(2.6rem, 4vw, 4.4rem);
       }
     }
   }
@@ -108,16 +108,16 @@ import AppearingText from "../../../components/AppearingText.vue";
     bottom: 0;
     right: -16px;
     z-index: 10;
-    transform: rotate(-5deg) translate(0, 65%);
+    transform: rotate(-5deg) translate(0, 105%);
 
     @include mixins.mq("sm") {
       right: -24px;
-      transform: rotate(-5deg) translate(0, 70%);
+      transform: rotate(-5deg) translate(0, 110%);
     }
 
     @include mixins.mq("lg") {
       right: -32px;
-      transform: rotate(-5deg) translate(0, 80%);
+      transform: rotate(-5deg) translate(0, 120%);
     }
   }
 

@@ -1,6 +1,6 @@
 import { resources } from "../../../utils/resources";
 import { scene } from "../../core/scene";
-import { Euler, Group, Mesh } from "three";
+import { Euler, Group, Mesh, PlaneGeometry, MeshBasicMaterial, DoubleSide, Vector3, Quaternion } from "three";
 import { getRoomMaterial } from "../../common/materials";
 import { sceneWeights } from "../../../animations/scenes";
 import gsap from "gsap";
@@ -82,6 +82,23 @@ const initObjects = () => {
     }
   });
 
+  // Add portrait picture to the brown picture frame on the right wall
+  const texture = resources.items["portrait-texture"];
+  if (texture) {
+    // The frame on the right wall has an inner area of roughly 1.15 x 0.95
+    const planeGeo = new PlaneGeometry(1.15, 0.95);
+    const planeMat = new MeshBasicMaterial({ map: texture, transparent: true, side: DoubleSide });
+    const planeMesh = new Mesh(planeGeo, planeMat);
+
+    // Frame center is at X=-2.64, Y=3.27, Z=-2.89
+    // The frame's front face is at X=-2.59. We place the plane slightly in front at X=-2.58
+    planeMesh.position.set(-2.58, 3.27, -2.89);
+    // Rotate to face the room (+X direction)
+    planeMesh.rotation.set(0, Math.PI / 2, 0);
+
+    group.add(planeMesh);
+  }
+
   scene.instance.add(group);
 };
 
@@ -99,8 +116,8 @@ const tick = () => {
 const destroy = () => {
   gsap.ticker.remove(tick);
   shadow.destroy();
-  //group.clear();
-  //objects = null;
+  group.clear();
+  objects = null;
   desktops.destroy();
   mouse.destroy();
   penguin.destroy();
