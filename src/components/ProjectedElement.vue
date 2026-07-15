@@ -5,6 +5,7 @@ import { camera } from "../three/core/camera";
 import { sizes } from "../utils/sizes";
 import gsap from "gsap";
 import { sceneWeightsInOut } from "../animations/scenes";
+import { room } from "../three/objects/room";
 
 const props = defineProps<{
   point: Vector3;
@@ -23,19 +24,31 @@ const updatePosition = () => {
   const { point } = props;
 
   if (isLandscape) {
-    const screenPos = camera.project(point);
+    const worldPoint = point.clone();
+    room.group.localToWorld(worldPoint);
+    const screenPos = camera.project(worldPoint);
 
-    // Clamp projected position to keep elements within the viewport
     const vw = window.innerWidth;
     const vh = window.innerHeight;
+
+    // Convert centered screenPos (-vw/2 to vw/2) to absolute screen coordinates (0 to vw)
+    const absoluteX = vw * 0.5 + screenPos.x;
+    const absoluteY = vh * 0.5 + screenPos.y;
+
+    // Clamp absolute coordinates
     const minX = vw * 0.15;
     const maxX = vw * 0.85;
     const minY = vh * 0.12;
     const maxY = vh * 0.85;
-    const clampedX = Math.max(minX, Math.min(maxX, screenPos.x));
-    const clampedY = Math.max(minY, Math.min(maxY, screenPos.y));
 
-    const transform = `translate(${clampedX}px, ${clampedY}px)`;
+    const clampedX = Math.max(minX, Math.min(maxX, absoluteX));
+    const clampedY = Math.max(minY, Math.min(maxY, absoluteY));
+
+    // Convert back to centered coordinates for css translate
+    const translateX = clampedX - vw * 0.5;
+    const translateY = clampedY - vh * 0.5;
+
+    const transform = `translate(${translateX}px, ${translateY}px)`;
 
     if (transform !== lastTransform) {
       wrapperRef.value.style.transform = transform;

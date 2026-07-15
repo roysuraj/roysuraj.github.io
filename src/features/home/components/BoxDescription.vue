@@ -8,7 +8,7 @@ import { t } from "../../../i18n/utils/translate";
 import AppearingText from "../../../components/AppearingText.vue";
 import PinIcon from "../../../components/icons/Pin.vue";
 
-const point = new Vector3(-0.9, 1.2, 6.75);
+const point = new Vector3(5.5, -7.5, 6.75);
 
 const wrapperRef = ref<HTMLDivElement | null>(null);
 const timelines = ref<{ timeline: gsap.core.Timeline; delay: number }[]>([]);
@@ -187,42 +187,12 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     }
   }
 
-  &::after,
-  &::before {
-    display: none;
-
-    @include mixins.landscape {
-      display: block;
-    }
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    width: 11px;
-    height: 11px;
-    background-color: var(--color-cyan-400);
-    border-radius: 50%;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    width: var(--line-length);
-    height: 0;
-    border-top: var(--stroke-sm) solid var(--color-cyan-400);
-  }
-
   &-content {
+    position: relative;
     border: var(--stroke-sm) solid var(--color-cyan-400);
     border-radius: var(--radius-md);
-    background: linear-gradient(to bottom, var(--color-hologram-top) 0%, var(--color-hologram-bottom) 100%);
+    background: linear-gradient(to bottom, rgba(0, 53, 133, 0.85) 0%, rgba(0, 20, 60, 0.85) 100%);
+    backdrop-filter: blur(8px);
 
     @include mixins.landscape {
       padding: var(--space-xs) var(--space-sm);
@@ -230,6 +200,44 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
       @include mixins.mq("md") {
         padding: var(--space-sm) var(--space-md);
       }
+    }
+
+    &::after,
+    &::before {
+      display: none;
+
+      @include mixins.landscape {
+        display: block;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -36px;
+      width: 36px;
+      height: 36px;
+      background-image: url("/images/code3.jpg");
+      background-size: cover;
+      background-position: top center;
+      border-radius: 50%;
+      border: 2px solid var(--color-cyan-400);
+      box-shadow: 0 0 10px rgba(126, 230, 215, 0.5);
+      z-index: 10;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      width: var(--line-length);
+      height: 0;
+      border-top: var(--stroke-sm) solid var(--color-cyan-400);
+      z-index: 10;
     }
   }
 
@@ -253,5 +261,21 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
       font-size: var(--font-size-sm);
     }
   }
+}
+</style>
+
+<style scoped lang="scss">
+.box-avatar {
+  position: absolute;
+  right: -36px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--color-cyan-400);
+  object-fit: cover;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(126,230,215,0.4);
 }
 </style>

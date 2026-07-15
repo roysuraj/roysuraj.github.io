@@ -12,7 +12,7 @@ export const sprites = {
         gasp: [0, 485.32879818594105, false],
         snore: [1200, 2761.972789115646, false],
       },
-      preload: false,
+      preload: true,
     }),
   },
   room: {
@@ -26,7 +26,7 @@ export const sprites = {
         "mouse-wheel-2": [6800, 266.5532879818596, false],
         notification: [8000, 961.972789115647, false],
       },
-      preload: false,
+      preload: true,
     }),
   },
 } as const satisfies SpritesData;

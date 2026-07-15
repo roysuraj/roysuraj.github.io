@@ -10,7 +10,7 @@ export default {
       type: "media",
       props: {
         type: "image",
-        src: "/images/optique.png",
+        src: "/images/optique.svg",
         alt: "OptiqueSutra School",
         caption: "OptiqueSutra School",
       },

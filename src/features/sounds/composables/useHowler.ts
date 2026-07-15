@@ -9,6 +9,7 @@ import { stopSnoreRepetition } from "../core/contact";
 import { tick as roomTick } from "../core/room";
 import { sounds } from "../definitions/sounds";
 import { getSoundsHowl } from "../utils/sounds";
+import { sprites } from "../definitions/sprites";
 
 import type { SoundKey } from "../types";
 
@@ -79,6 +80,10 @@ export const useHowler = () => {
       if (howl) {
         howl.load();
       }
+    }
+    // Also eagerly load sprite files (room.mp3, contact.ogg)
+    for (const sprite of Object.values(sprites)) {
+      sprite.howl.load();
     }
   };
 

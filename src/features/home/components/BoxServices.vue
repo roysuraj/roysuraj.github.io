@@ -8,7 +8,7 @@ import { BREAKPOINTS } from "../../../utils/sizes";
 import { Vector3 } from "three";
 import ProjectedElement from "../../../components/ProjectedElement.vue";
 
-const point = new Vector3(0.75, 2.75, 6.75);
+const point = new Vector3(-6.5, -6.0, 6.75);
 
 const wrapperRef = ref<HTMLDivElement | null>(null);
 const timelines = ref<{ timeline: gsap.core.Timeline; delay: number }[]>([]);
@@ -168,7 +168,7 @@ const services = computed(() => {
   @include mixins.landscape {
     width: 300px;
     max-width: calc(var(--svw) * 28);
-    padding-right: var(--line-length);
+    padding-left: var(--line-length);
     position: relative;
     left: 0;
     bottom: 0;
@@ -190,36 +190,12 @@ const services = computed(() => {
     }
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    width: 11px;
-    height: 11px;
-    background-color: var(--color-cyan-400);
-    border-radius: 50%;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    height: 0;
-    border-top: var(--stroke-sm) solid var(--color-cyan-400);
-
-    @include mixins.landscape {
-      width: var(--line-length);
-    }
-  }
-
   &-content {
+    position: relative;
     border: var(--stroke-sm) solid var(--color-cyan-400);
     border-radius: var(--radius-md);
-    background: linear-gradient(to bottom, var(--color-hologram-top) 0%, var(--color-hologram-bottom) 100%);
+    background: linear-gradient(to bottom, rgba(0, 53, 133, 0.85) 0%, rgba(0, 20, 60, 0.85) 100%);
+    backdrop-filter: blur(8px);
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
@@ -228,6 +204,47 @@ const services = computed(() => {
     @include mixins.landscape {
       padding: var(--space-xs) var(--space-sm);
       gap: var(--space-xxs);
+    }
+
+    &::after,
+    &::before {
+      display: none;
+
+      @include mixins.landscape {
+        display: block;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -36px;
+      width: 36px;
+      height: 36px;
+      background-image: url("/images/code3.jpg");
+      background-size: cover;
+      background-position: top center;
+      border-radius: 50%;
+      border: 2px solid var(--color-cyan-400);
+      box-shadow: 0 0 10px rgba(126, 230, 215, 0.5);
+      z-index: 10;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      height: 0;
+      border-top: var(--stroke-sm) solid var(--color-cyan-400);
+      z-index: 10;
+
+      @include mixins.landscape {
+        width: var(--line-length);
+      }
     }
 
     @include mixins.mq("md") {
@@ -286,5 +303,21 @@ const services = computed(() => {
       font-size: var(--font-size-title-xs);
     }
   }
+}
+</style>
+
+<style scoped lang="scss">
+.box-avatar {
+  position: absolute;
+  left: -36px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--color-cyan-400);
+  object-fit: cover;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(126,230,215,0.4);
 }
 </style>

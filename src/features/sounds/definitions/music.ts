@@ -6,8 +6,8 @@ import trackAbout from "../../../assets/music/ambient-pads.ogg";
 import type { MusicTrack } from "../types";
 
 export const musicTracks = {
-  luci: new Howl({ src: [trackLuci], loop: true, volume: 0, preload: false }),
-  about: new Howl({ src: [trackAbout], loop: true, volume: 0, preload: false }),
+  luci: new Howl({ src: [trackLuci], loop: true, volume: 0, preload: true }),
+  about: new Howl({ src: [trackAbout], loop: true, volume: 0, preload: true }),
 } as const;
 
 export const BASE_VOLUMES = {

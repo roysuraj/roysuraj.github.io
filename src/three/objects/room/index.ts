@@ -1,6 +1,6 @@
 import { resources } from "../../../utils/resources";
 import { scene } from "../../core/scene";
-import { Euler, Group, Mesh, PlaneGeometry, MeshBasicMaterial, DoubleSide, Vector3, Quaternion } from "three";
+import { Euler, Group, Mesh, PlaneGeometry, MeshBasicMaterial, DoubleSide } from "three";
 import { getRoomMaterial } from "../../common/materials";
 import { sceneWeights } from "../../../animations/scenes";
 import gsap from "gsap";
