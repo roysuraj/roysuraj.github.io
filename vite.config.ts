@@ -4,7 +4,13 @@ import glsl from "vite-plugin-glsl";
 
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag === 'lottie-player'
+        }
+      }
+    }),
     glsl({
       include: ["**/*.glsl", "**/*.vert", "**/*.frag"],
       defaultExtension: "glsl",

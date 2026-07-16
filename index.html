@@ -4,28 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Suraj Roy - Flutter Developer</title>
+    <title>Suraj Roy - Software Engineer</title>
     <meta
       name="description"
-      content="Suraj Roy's portfolio featuring Flutter development, cloud functions, and a Three.js powered interactive presentation."
+      content="Suraj Roy's portfolio featuring Software Engineering, cloud functions, and a Three.js powered interactive presentation."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://roysuraj.github.io/" />
 
-    <meta property="og:title" content="Suraj Roy - Flutter Developer" />
+    <meta property="og:title" content="Suraj Roy - Software Engineer" />
     <meta
       property="og:description"
-      content="Suraj Roy's portfolio featuring Flutter development, cloud functions, and a Three.js powered interactive presentation."
+      content="Suraj Roy's portfolio featuring Software Engineering, cloud functions, and a Three.js powered interactive presentation."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://roysuraj.github.io/" />
-    <meta property="og:image" content="/meta/og-image.webp" />
+    <meta property="og:image" content="https://roysuraj.github.io/meta/og-image.webp" />
+    <meta property="og:video" content="https://roysuraj.github.io/meta/preview.mp4" />
+    <meta property="og:video:type" content="video/mp4" />
+    <meta property="og:video:width" content="1280" />
+    <meta property="og:video:height" content="720" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Suraj Roy - Flutter Developer" />
+    <meta name="twitter:card" content="player" />
+    <meta name="twitter:title" content="Suraj Roy - Software Engineer" />
     <meta
       name="twitter:description"
-      content="Suraj Roy's portfolio featuring Flutter development, cloud functions, and a Three.js powered interactive presentation."
+      content="Suraj Roy's portfolio featuring Software Engineering, cloud functions, and a Three.js powered interactive presentation."
     />
     <meta name="twitter:image" content="/meta/twitter-image.webp" />
 
@@ -35,10 +39,11 @@
     <link rel="preload" href="/fonts/pro-font-windows-400.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href="/fonts/pro-font-windows-700.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
-    <link rel="apple-touch-icon" href="/favicon.jpg" />
+    <link rel="icon" type="image/jpeg" href="/images/code3.jpg?v=2" />
+    <link rel="apple-touch-icon" href="/images/code3.jpg?v=2" />
 
     <meta name="theme-color" content="#dfd1bc" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body class="is-loading">
     <svg style="display: none" viewBox="0 0 56 61" xmlns="http://www.w3.org/2000/svg">
@@ -51,15 +56,7 @@
     </svg>
     <div id="app"></div>
     <div class="preloader">
-      <svg class="preloader-svg" viewBox="0 0 56 61" xmlns="http://www.w3.org/2000/svg">
-        <mask id="preloader-mask">
-          <rect fill="black" height="61" width="61"></rect>
-          <rect fill="white" height="61" width="61" class="preloader-rect" style="transform: scaleY(0)"></rect>
-        </mask>
-
-        <use href="#logo-path" class="preloader-path" opacity="0.3"></use>
-        <use href="#logo-path" class="preloader-path" mask="url(#preloader-mask)"></use>
-      </svg>
+      <lottie-player src="/loadha.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
     </div>
     <script type="module" src="./src/main.ts"></script>
   </body>
