@@ -20,10 +20,7 @@ onUnmounted(() => {
 <template>
   <div class="contact grid" ref="contactElement">
 
-    <!-- Floating gradient decorative boxes (background layer) -->
-    <div class="contact-deco contact-deco-1" aria-hidden="true"></div>
-    <div class="contact-deco contact-deco-2" aria-hidden="true"></div>
-    <div class="contact-deco contact-deco-3" aria-hidden="true"></div>
+    <!-- Removed floating gradient decorative boxes based on user request -->
 
     <div class="contact-content">
 
@@ -44,7 +41,9 @@ onUnmounted(() => {
 
         <div class="contact-details">
           <div class="contact-details-row">
-            <span class="contact-details-icon">✉</span>
+            <span class="contact-details-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </span>
             <div>
               <p class="contact-details-label">Email</p>
               <a class="contact-details-value" href="mailto:spyrogypsertech@gmail.com">
@@ -53,7 +52,9 @@ onUnmounted(() => {
             </div>
           </div>
           <div class="contact-details-row">
-            <span class="contact-details-icon">📞</span>
+            <span class="contact-details-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </span>
             <div>
               <p class="contact-details-label">Phone</p>
               <a class="contact-details-value" href="tel:+918910836042">+91 89108 36042</a>
@@ -131,12 +132,7 @@ onUnmounted(() => {
     flex-direction: column;
     gap: var(--space-lg);
     color: var(--color-text-400);
-    background: linear-gradient(
-      145deg,
-      rgba(2, 12, 38, 0.95) 0%,
-      rgba(0, 30, 80, 0.92) 55%,
-      rgba(4, 48, 105, 0.90) 100%
-    );
+    background: rgba(2, 12, 38, 0.7);
     border: 1px solid rgba(126,230,215,0.22);
     border-radius: 28px;
     backdrop-filter: blur(28px);
@@ -222,7 +218,7 @@ onUnmounted(() => {
     gap: 2.4rem;
     padding: 2.2rem 2.6rem;
     border-radius: 20px;
-    background: linear-gradient(160deg, rgba(6,14,36,0.98) 0%, rgba(4,22,60,0.96) 100%);
+    background: rgba(6, 14, 36, 0.85);
     border: 1.5px solid rgba(126,230,215,0.45);
     box-shadow:
       0 0 40px rgba(126,230,215,0.12),
@@ -284,11 +280,10 @@ onUnmounted(() => {
     }
 
     &-icon {
-      font-size: 2rem;
-      line-height: 1;
       flex: 0 0 auto;
       margin-top: 0.3rem;
       filter: drop-shadow(0 0 6px rgba(126,230,215,0.5));
+      color: rgba(126,230,215,0.9);
     }
 
     &-label {
