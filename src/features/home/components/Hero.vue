@@ -87,6 +87,15 @@ import AppearingText from "../../../components/AppearingText.vue";
     font-weight: 900;
     letter-spacing: 0.02em;
     font-size: clamp(2rem, 3vw, 3.2rem);
+    /* Bengali poster-art feel: warm dark text */
+    color: #1a1208;
+    /* Adding a strong protective glow to ensure perfect clarity against the busy graffiti */
+    text-shadow: 
+      0 0 8px var(--color-background-400),
+      0 0 16px var(--color-background-400),
+      0 0 32px var(--color-background-400),
+      0 0 48px var(--color-background-400);
+    line-height: 1.15;
 
     @include mixins.landscape {
       font-size: clamp(1.8rem, 2.6vw, 2.8rem);

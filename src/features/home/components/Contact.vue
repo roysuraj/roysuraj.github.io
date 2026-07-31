@@ -27,6 +27,8 @@ onUnmounted(() => {
       <!-- Title with Kolkata skyline image clipped behind it -->
       <div class="contact-hero">
         <div class="contact-kolkata-img" aria-hidden="true"></div>
+        <!-- Bengali script greeting -->
+        <p class="contact-bengali-greeting" aria-label="Let's get in touch in Bengali">আমার সাথে যোগাযোগ করুন</p>
         <h2 class="contact-title" v-html="t('lets-work-together')"></h2>
         <p class="contact-subtitle">Kolkata, India 🇮🇳 · Available for global projects</p>
       </div>
@@ -64,6 +66,16 @@ onUnmounted(() => {
       </div>
 
       <Social variant="background" />
+
+      <!-- Bengali cultural identity strip -->
+      <div class="contact-bengali-strip" aria-label="Bengali cultural identity">
+        <span class="contact-bengali-tag">🎭 Durga Puja devotee</span>
+        <span class="contact-bengali-tag">🎵 Rabindra Sangeet listener</span>
+        <span class="contact-bengali-tag">🍮 Mishti Doi lover</span>
+        <span class="contact-bengali-tag">🌺 Kolkata-native</span>
+        <span class="contact-bengali-tag">📚 Tagore admirer</span>
+        <span class="contact-bengali-tag">🚃 Tram ride nostalgia</span>
+      </div>
     </div>
   </div>
 </template>
@@ -320,7 +332,54 @@ onUnmounted(() => {
   }
 }
 
-// ── Keyframes ────────────────────────────────────────────────────────────
+// ── Bengali cultural greeting (above title) ──────────────────────────────────
+.contact-bengali-greeting {
+  position: relative;
+  z-index: 1;
+  font-family: "Noto Sans Bengali", "Mukti", "Vrinda", serif;
+  font-size: clamp(0.85rem, 1.5vw, 1.15rem);
+  color: #e8321f; /* alta red — Bengali festive foot decoration */
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  opacity: 0.88;
+  text-shadow: 0 0 12px rgba(232, 50, 31, 0.4);
+}
+
+// ── Bengali cultural identity tag strip ──────────────────────────────────────
+.contact-bengali-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.8rem;
+  padding: 1.2rem 1.4rem;
+  background: rgba(200, 35, 26, 0.08); /* subtle sindoor tint */
+  border: 1px solid rgba(200, 35, 26, 0.3);
+  border-radius: 14px;
+  margin-top: 0.5rem;
+}
+
+.contact-bengali-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(200, 35, 26, 0.12);
+  border: 1px solid rgba(200, 35, 26, 0.35);
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 210, 200, 0.92);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    background: rgba(200, 35, 26, 0.25);
+    border-color: rgba(200, 35, 26, 0.6);
+  }
+}
+
+// ── Keyframes ────────────────────────────────────────────────────────────────
 
 @keyframes shimmer {
   0%   { background-position: 0% 50%; }

@@ -29,6 +29,7 @@ const props = defineProps<{
   z-index: 2;
   border-radius: 100px;
   padding: var(--space-xxs) 0;
+  position: relative; /* needed so ::after is contained within the button */
 
   &::after {
     content: "";

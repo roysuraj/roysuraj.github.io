@@ -72,14 +72,19 @@ const getMaterial = (name: string): Material | null => {
 const assignMatcap = (child: Mesh): boolean => {
   let tex: Texture | null = null;
 
+  // Bengali attire matcap assignments:
+  // 'white' mesh = shirt/kurta body → bright white Bengali panjabi kurta fabric
+  // 'black' mesh = hair, shoes, dark accessories → keep dark (don't make hair saffron!)
+  // 'gray'  mesh = secondary clothing / chair → warm mustard tone for dhuti warmth
+  // 'skin'  mesh = face, hands, neck → keep original natural skin tone
   if (child.name === "black") {
-    tex = resources.items["matcap-black"];
+    tex = resources.items["matcap-black"]; // keep original: hair + shoes must stay dark
   } else if (child.name === "gray") {
-    tex = resources.items["matcap-gray"];
+    tex = resources.items["matcap-bengali-mustard"] ?? resources.items["matcap-gray"];
   } else if (child.name === "skin") {
-    tex = resources.items["matcap-skin"];
+    tex = resources.items["matcap-skin"]; // original natural skin tone
   } else if (child.name === "white") {
-    tex = resources.items["matcap-white"];
+    tex = resources.items["matcap-bengali-cream"] ?? resources.items["matcap-white"];
   }
 
   if (tex) {
@@ -90,6 +95,7 @@ const assignMatcap = (child: Mesh): boolean => {
 
   return false;
 };
+
 
 const setupMesh = () => {
   if (mesh) return;

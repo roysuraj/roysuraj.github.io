@@ -19,6 +19,16 @@ import roomTexture from "./assets/textures/room.webp";
 import roomShadowTexture from "./assets/textures/room-shadow.webp";
 import hologramPlaneTexture from "./assets/textures/hologram-plane.webp";
 import portraitTexture from "./assets/textures/code3.jpg";
+import bengaliWallDecorTexture from "./assets/textures/bengali-wall-decor.jpg";
+import bengaliWallStripTexture from "./assets/textures/bengali-wall-strip.jpg";
+import matcapBengaliCream from "./assets/textures/matcap-bengali-cream.jpg";
+import matcapBengaliSaffron from "./assets/textures/matcap-bengali-saffron.jpg";
+import matcapBengaliMustard from "./assets/textures/matcap-bengali-mustard.jpg";
+import matcapWhiteKurta from "./assets/textures/matcap-white-kurta.jpg";
+import bengaliWallLeftTagore from "./assets/textures/bengali-wall-left-tagore.jpg";
+import bengaliWallLeftKantha from "./assets/textures/bengali-wall-left-kantha.jpg";
+import bengaliDurgaBadge from "./assets/textures/bengali-durga-badge.jpg";
+import bengaliWallGraffiti from "./assets/textures/bengali-wall-graffiti.jpg";
 
 type Source = {
   name: string;
@@ -50,4 +60,14 @@ export const sources = [
   { name: "room-texture", type: "texture", path: roomTexture },
   { name: "room-shadow-texture", type: "texture", path: roomShadowTexture },
   { name: "portrait-texture", type: "texture", path: portraitTexture },
+  { name: "bengali-wall-decor", type: "texture", path: bengaliWallDecorTexture },
+  { name: "bengali-wall-strip", type: "texture", path: bengaliWallStripTexture },
+  { name: "matcap-bengali-cream", type: "texture", path: matcapBengaliCream },
+  { name: "matcap-bengali-saffron", type: "texture", path: matcapBengaliSaffron },
+  { name: "matcap-bengali-mustard", type: "texture", path: matcapBengaliMustard },
+  { name: "matcap-white-kurta", type: "texture", path: matcapWhiteKurta },
+  { name: "bengali-wall-left-tagore", type: "texture", path: bengaliWallLeftTagore },
+  { name: "bengali-wall-left-kantha", type: "texture", path: bengaliWallLeftKantha },
+  { name: "bengali-durga-badge", type: "texture", path: bengaliDurgaBadge },
+  { name: "bengali-wall-graffiti", type: "texture", path: bengaliWallGraffiti },
 ] as const satisfies Source[];

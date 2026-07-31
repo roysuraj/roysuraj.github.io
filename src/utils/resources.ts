@@ -41,14 +41,34 @@ class Resources extends EventEmitter<{
 
     for (const source of sources) {
       if (source.type === "gltfModel") {
-        this.loaders.gltfLoader.load(source.path, (file) => {
-          this.sourceLoaded(source, file);
-        });
+        this.loaders.gltfLoader.load(
+          source.path,
+          (file) => {
+            this.sourceLoaded(source, file);
+          },
+          undefined,
+          (err) => {
+            // A failed model must still increment the counter so the scene can
+            // initialize even if one asset is missing.
+            console.error(`[Resources] Failed to load model: ${source.name}`, err);
+            this.sourceLoaded(source, {} as any);
+          },
+        );
       } else if (source.type === "texture") {
-        this.loaders.textureLoader.load(source.path, (file: Texture) => {
-          file.colorSpace = SRGBColorSpace;
-          this.sourceLoaded(source, file);
-        });
+        this.loaders.textureLoader.load(
+          source.path,
+          (file: Texture) => {
+            file.colorSpace = SRGBColorSpace;
+            this.sourceLoaded(source, file);
+          },
+          undefined,
+          (err) => {
+            // A failed texture must still increment the counter so the scene can
+            // initialize even if one asset is missing.
+            console.error(`[Resources] Failed to load texture: ${source.name}`, err);
+            this.sourceLoaded(source, null as any);
+          },
+        );
       }
     }
   }
