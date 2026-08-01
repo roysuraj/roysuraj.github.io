@@ -25,12 +25,6 @@ export const useHowler = () => {
   const handleUnlocked = () => {
     howlerUnlocked.value = true;
 
-    // Disable sounds completely on touch devices
-    if (isTouch.value) {
-      soundsEnabled.value = false;
-      return;
-    }
-
     const storeItem = localStorage.getItem("portfolio-soundsEnabled");
     if (storeItem) {
       soundsEnabled.value = storeItem === "true";
@@ -42,10 +36,9 @@ export const useHowler = () => {
 
   const tick = () => {
     if (!howlerUnlocked.value) {
-      if (Howler.ctx.state !== "running") return;
+      if (Howler.ctx && Howler.ctx.state !== "running") return;
       handleUnlocked();
-    } else if (!isTouch.value) {
-      // Only process sounds on non-touch devices
+    } else {
       contactTick();
       roomTick();
 
@@ -53,7 +46,7 @@ export const useHowler = () => {
       if (currentVolume > 0.99 && enabledVolume.value === 1) {
         return;
       }
-      const speed = enabledVolume.value === 1 ? 0.01 : 0.05;
+      const speed = enabledVolume.value === 1 ? 0.05 : 0.1;
       Howler.volume(lerp(currentVolume, enabledVolume.value, speed));
     }
   };
@@ -63,13 +56,13 @@ export const useHowler = () => {
   };
 
   const handleKeyPress = (event: KeyboardEvent) => {
-    if (event.code === "KeyM" && !isTouch.value) {
+    if (event.code === "KeyM") {
       soundsEnabled.value = !soundsEnabled.value;
     }
   };
 
   watch(soundsEnabled, (newVal) => {
-    if (!isFeatureEnabled("sounds") || isTouch.value) return;
+    if (!isFeatureEnabled("sounds")) return;
     enabledVolume.value = newVal ? 1 : 0;
     localStorage.setItem("portfolio-soundsEnabled", newVal.toString());
   });

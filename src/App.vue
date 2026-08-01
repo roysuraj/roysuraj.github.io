@@ -16,6 +16,7 @@ import ProjectBackground from "./features/projects/components/ProjectBackground.
 import { useClickSound } from "./features/sounds/composables/useClickSounds";
 //import { useHoverSound } from "./features/sounds/composables/useHoverSounds";
 import TrainJourney from "./components/TrainJourney.vue";
+import BengaliMusicPlayer from "./components/BengaliMusicPlayer.vue";
 import { preloaderVisible, trainJourneyComplete } from "./composables/usePreloader";
 
 const { isTransitioning } = useProjectTransition();
@@ -42,6 +43,9 @@ const onTrainComplete = () => {
   <Teleport to=".preloader">
     <TrainJourney v-if="preloaderVisible" @complete="onTrainComplete" />
   </Teleport>
+
+  <!-- Bengali Music Player Widget (Mobile & Desktop) -->
+  <BengaliMusicPlayer />
 
   <!-- main page -->
   <div :class="{ 'home-wrapper-projectIsReady': projectVisible }">
