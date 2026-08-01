@@ -1186,19 +1186,104 @@ onUnmounted(() => {
   transform-origin: left center;
 }
 
-/* ── Responsive ── */
-@media (max-width: 640px) {
-  .tj__skip { top: 10px; left: 10px; padding: 4px 10px; font-size: 10px; }
-  .tj__profile { top: 10px; right: 10px; }
-  .tj__profile-photo { width: 38px; height: 38px; }
-  .tj__header { top: 1.5%; gap: 3px; }
-  .tj__name { font-size: 15px; flex-direction: column; gap: 3px; }
-  .tj__contact { padding: 3px 6px; flex-direction: column; gap: 1px; }
-  .tj__contact-item { font-size: 9px; }
-  .tj__contact-dot { display: none; }
+/* ── Mobile & Tablet Responsiveness ── */
+@media (max-width: 768px) {
+  .tj__header {
+    top: 1%;
+    width: 95%;
+    gap: 3px;
+  }
+  .tj__name {
+    font-size: 16px;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .tj__badge {
+    font-size: 9px;
+    padding: 2px 8px;
+  }
+  .tj__contact {
+    padding: 3px 8px;
+    gap: 2px 8px;
+  }
+  .tj__contact-item {
+    font-size: 9.5px;
+    svg { width: 11px; height: 11px; }
+  }
+  .tj__skip {
+    top: 10px;
+    left: 10px;
+    padding: 4px 10px;
+    font-size: 10.5px;
+  }
+  .tj__profile {
+    top: 10px;
+    right: 10px;
+  }
+  .tj__profile-photo {
+    width: 40px;
+    height: 40px;
+  }
 
-  .tj__train { scale: 0.7; transform-origin: center center; }
+  .tj__station-card {
+    padding: 4px 8px;
+    gap: 5px;
+    border-radius: 8px;
+  }
+  .tj__station-emoji { font-size: 14px; }
+  .tj__station-label { font-size: 10px; }
+  .tj__station-year  { font-size: 8.5px; }
+
+  .tj__bubble {
+    top: -45px;
+    left: 0;
+    padding: 5px 10px;
+    max-width: 85vw;
+  }
+  .tj__bubble-icon { font-size: 12px; }
+  .tj__bubble-text { font-size: 10.5px; white-space: normal; }
+
+  .tj__train {
+    transform: scale(0.68);
+    transform-origin: bottom center;
+  }
+
   .tj__celestial { width: 35px; height: 35px; top: 4%; right: 5%; }
   .tj__sun { width: 30px; height: 30px; }
+}
+
+@media (max-width: 480px) {
+  .tj__header {
+    top: 0.5%;
+  }
+  .tj__name {
+    font-size: 14px;
+  }
+  .tj__contact {
+    flex-direction: column;
+    gap: 1px;
+    padding: 3px 6px;
+  }
+  .tj__contact-dot { display: none; }
+  .tj__contact-item { font-size: 9px; }
+
+  .tj__skip {
+    top: 6px;
+    left: 6px;
+    font-size: 9.5px;
+    padding: 3px 8px;
+  }
+  .tj__profile {
+    top: 6px;
+    right: 6px;
+  }
+  .tj__profile-photo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .tj__train {
+    transform: scale(0.58);
+  }
 }
 </style>
