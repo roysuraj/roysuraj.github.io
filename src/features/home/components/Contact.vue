@@ -59,7 +59,10 @@ onUnmounted(() => {
             </span>
             <div>
               <p class="contact-details-label">Phone</p>
-              <a class="contact-details-value" href="tel:+918910836042">+91 89108 36042</a>
+              <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                <a class="contact-details-value" href="tel:+918910836042">+91 89108 36042</a>
+                <a class="contact-details-value" href="tel:+919123727623">+91 91237 27623</a>
+              </div>
             </div>
           </div>
         </div>

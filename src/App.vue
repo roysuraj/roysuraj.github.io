@@ -15,6 +15,8 @@ import { projectVisible } from "./composables/useRouteObserver";
 import ProjectBackground from "./features/projects/components/ProjectBackground.vue";
 import { useClickSound } from "./features/sounds/composables/useClickSounds";
 //import { useHoverSound } from "./features/sounds/composables/useHoverSounds";
+import TrainJourney from "./components/TrainJourney.vue";
+import { preloaderVisible, trainJourneyComplete } from "./composables/usePreloader";
 
 const { isTransitioning } = useProjectTransition();
 
@@ -27,10 +29,19 @@ useRouteObserver();
 useClickSound();
 //useHoverSound();
 const { isTouch } = useAgent();
+
+const onTrainComplete = () => {
+  trainJourneyComplete.value = true;
+};
 </script>
 
 <template>
   <Header />
+
+  <!-- Train Journey Preloader -->
+  <Teleport to=".preloader">
+    <TrainJourney v-if="preloaderVisible" @complete="onTrainComplete" />
+  </Teleport>
 
   <!-- main page -->
   <div :class="{ 'home-wrapper-projectIsReady': projectVisible }">
@@ -53,6 +64,7 @@ const { isTouch } = useAgent();
 
   <Cursor v-if="!isTouch" />
 </template>
+
 
 <style lang="scss">
 .home-wrapper-projectIsReady {
