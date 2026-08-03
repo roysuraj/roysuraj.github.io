@@ -127,7 +127,7 @@ onMounted(() => {
   stationPositions.value = stations.map(st => {
     const pt = pathEl.getPointAtLength(st.ratio * totalLen);
     return {
-      left: Math.max(8, Math.min(92, (pt.x / 1000) * 100)),
+      left: Math.max(12, Math.min(80, (pt.x / 1000) * 100)),
       top: (pt.y / 650) * 100,
     };
   });
@@ -148,7 +148,7 @@ onMounted(() => {
     const angleRad = Math.atan2(nextPt.y - pt.y, nextPt.x - pt.x);
     const angleDeg = angleRad * (180 / Math.PI);
 
-    const trainLeft = Math.max(5, Math.min(95, (pt.x / 1000) * 100));
+    const trainLeft = Math.max(12, Math.min(80, (pt.x / 1000) * 100));
 
     gsap.set(trainRef.value, {
       left: trainLeft + '%',
@@ -1197,67 +1197,68 @@ onUnmounted(() => {
 @media (max-width: 768px) {
   .tj__header {
     top: 1%;
-    width: 95%;
-    gap: 3px;
+    width: 90%;
+    gap: 2px;
   }
   .tj__name {
-    font-size: 16px;
+    font-size: 13px;
     flex-direction: column;
     gap: 2px;
   }
   .tj__badge {
-    font-size: 9px;
-    padding: 2px 8px;
+    font-size: 8.5px;
+    padding: 2px 6px;
   }
   .tj__contact {
-    padding: 3px 8px;
-    gap: 2px 8px;
-  }
-  .tj__contact-item {
-    font-size: 9.5px;
-    svg { width: 11px; height: 11px; }
+    display: none;
   }
   .tj__skip {
-    top: 10px;
-    left: 10px;
-    padding: 4px 10px;
-    font-size: 10.5px;
+    top: 8px;
+    left: 8px;
+    padding: 3px 8px;
+    font-size: 10px;
   }
   .tj__profile {
-    top: 10px;
-    right: 10px;
+    top: 8px;
+    right: 8px;
   }
   .tj__profile-photo {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .tj__station {
+    max-width: 90px;
   }
 
   .tj__station-card {
-    padding: 4px 8px;
-    gap: 5px;
+    padding: 3px 6px;
+    gap: 4px;
     border-radius: 8px;
+    max-width: 85px;
+    overflow: hidden;
   }
-  .tj__station-emoji { font-size: 14px; }
-  .tj__station-label { font-size: 10px; }
-  .tj__station-year  { font-size: 8.5px; }
+  .tj__station-emoji { font-size: 12px; }
+  .tj__station-label { font-size: 9px; }
+  .tj__station-year  { font-size: 7.5px; }
 
   .tj__bubble {
-    top: -45px;
+    top: -42px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 5px 10px;
-    max-width: 85vw;
+    padding: 4px 8px;
+    max-width: 75vw;
   }
-  .tj__bubble-icon { font-size: 12px; }
-  .tj__bubble-text { font-size: 10.5px; white-space: normal; }
+  .tj__bubble-icon { font-size: 11px; }
+  .tj__bubble-text { font-size: 9.5px; white-space: normal; }
 
   .tj__train {
-    transform: scale(0.68);
+    transform: scale(0.62);
     transform-origin: bottom center;
   }
 
-  .tj__celestial { width: 35px; height: 35px; top: 4%; right: 5%; }
-  .tj__sun { width: 30px; height: 30px; }
+  .tj__celestial { width: 30px; height: 30px; top: 4%; right: 5%; }
+  .tj__sun { width: 25px; height: 25px; }
 }
 
 @media (max-width: 480px) {
@@ -1265,33 +1266,34 @@ onUnmounted(() => {
     top: 0.5%;
   }
   .tj__name {
-    font-size: 14px;
+    font-size: 11px;
   }
   .tj__contact {
-    flex-direction: column;
-    gap: 1px;
-    padding: 3px 6px;
+    display: none;
   }
-  .tj__contact-dot { display: none; }
-  .tj__contact-item { font-size: 9px; }
-
   .tj__skip {
-    top: 6px;
-    left: 6px;
-    font-size: 9.5px;
-    padding: 3px 8px;
+    top: 4px;
+    left: 4px;
+    font-size: 9px;
+    padding: 2px 6px;
   }
   .tj__profile {
-    top: 6px;
-    right: 6px;
+    top: 4px;
+    right: 4px;
   }
   .tj__profile-photo {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
   }
 
+  .tj__station-card {
+    max-width: 75px;
+    padding: 2px 4px;
+  }
+  .tj__station-label { font-size: 8px; }
+
   .tj__train {
-    transform: scale(0.58);
+    transform: scale(0.52);
   }
 }
 </style>
