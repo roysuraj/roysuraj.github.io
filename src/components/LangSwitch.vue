@@ -29,6 +29,7 @@ const allLanguages = [
   { key: "es" as Locale, name: "Español", short: "ES", flag: "🇪🇸" },
   { key: "fr" as Locale, name: "Français", short: "FR", flag: "🇫🇷" },
   { key: "de" as Locale, name: "Deutsch", short: "DE", flag: "🇩🇪" },
+  { key: "nl" as Locale, name: "Nederlands", short: "NL", flag: "🇳🇱" },
 ];
 
 const toggleDropdown = () => {
