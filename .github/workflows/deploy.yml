@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+      - 2026version
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -31,7 +33,7 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build Project
         run: npm run build
