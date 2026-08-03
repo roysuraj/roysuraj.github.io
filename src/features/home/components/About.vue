@@ -126,10 +126,13 @@ watchEffect((onInvalidate) => {
       position: absolute !important;
       top: auto !important;
       left: 0 !important;
-      bottom: 5% !important;
+      bottom: 6% !important;
       transform: none !important;
       height: auto !important;
       width: 100% !important;
+      padding-left: var(--space-sm) !important;
+      padding-right: var(--space-sm) !important;
+      box-sizing: border-box !important;
     }
   }
 

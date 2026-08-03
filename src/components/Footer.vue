@@ -37,18 +37,6 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
   <footer class="footer">
     <NotchSection class="footer-notch" />
     <div class="footer-content">
-      <div
-        class="footer-back-to-top"
-        tabindex="0"
-        @click="handleBackToTop"
-        @keydown.enter="handleBackToTop"
-        data-cursor="circle-white"
-        data-sound="click"
-      >
-        <ButtonRound renderAs="div" variant="border" class="children-unclickable" data-hoversound="hover">
-          <ArrowRightLong class="footer-back-to-top-icon" />
-        </ButtonRound>
-      </div>
       <div class="footer-top">
         <Social v-if="withSocial" />
         <div class="footer-top-links">
@@ -72,6 +60,18 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
           </div>
           <LangSwitch direction="up" />
         </div>
+      </div>
+      <div
+        class="footer-back-to-top"
+        tabindex="0"
+        @click="handleBackToTop"
+        @keydown.enter="handleBackToTop"
+        data-cursor="circle-white"
+        data-sound="click"
+      >
+        <ButtonRound renderAs="div" variant="border" class="children-unclickable" data-hoversound="hover">
+          <ArrowRightLong class="footer-back-to-top-icon" />
+        </ButtonRound>
       </div>
       <div class="footer-credits">
         <div v-if="showAttribution" class="footer-credits-built">
@@ -172,6 +172,8 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
         display: flex;
         flex-direction: row;
         gap: var(--space-md);
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       @include mixins.mq("md") {
