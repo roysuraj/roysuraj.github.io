@@ -177,13 +177,13 @@ const getInTouchClassNames = computed(() => {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    max-width: calc(100% - 60px);
+    z-index: 100;
 
     @media (max-width: 767px) {
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
     }
   }
 
@@ -197,14 +197,16 @@ const getInTouchClassNames = computed(() => {
   }
 
   &-get-in-touch {
-    width: fit-content;
-    white-space: nowrap;
+    display: inline-flex !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    visibility: visible !important;
 
     @media (max-width: 767px) {
-      height: 34px !important;
+      height: 32px !important;
       padding: 0 10px !important;
       font-size: 11px !important;
-      line-height: 34px !important;
+      line-height: 32px !important;
     }
 
     &-isProjectPage {
@@ -245,6 +247,10 @@ const getInTouchClassNames = computed(() => {
     &-text {
       font-weight: 900;
       font-size: 18px;
+
+      @media (max-width: 540px) {
+        display: none !important;
+      }
 
       @include mixins.mq("md") {
         font-size: 20px;
