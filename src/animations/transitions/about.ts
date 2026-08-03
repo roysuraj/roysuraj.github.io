@@ -247,16 +247,13 @@ const setupSectionsAnimation = ({
         tlServices?.play();
       }, SERVICES_DELAY);
     } else {
-      // Mobile: only description and services (details hidden on portrait)
+      // Mobile / Portrait: animate description, details, and services in sequence
       const DESCRIPTION_DELAY = 0;
-      const SERVICES_DELAY = 0.6;
-
-      // Details animation disabled - BoxDetails is hidden on portrait
-      gsap.set(contentDetails, { opacity: 0, display: "none" });
+      const DETAILS_DELAY = 0.35;
+      const SERVICES_DELAY = 0.7;
 
       // Animate the portrait alongside description
       tl.fromTo(portrait, { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "power1.out" }, DESCRIPTION_DELAY);
-
 
       // Description animation
       tl.fromTo(
@@ -265,10 +262,22 @@ const setupSectionsAnimation = ({
         { opacity: 1, y: "0vh", duration: 0.15, ease: "power1.out" },
         DESCRIPTION_DELAY,
       );
-      tl.to(contentDescription, { opacity: 0, y: "-10vh", duration: 0.15, ease: "power1.out" }, SERVICES_DELAY - 0.075);
+      tl.to(contentDescription, { opacity: 0, y: "-10vh", duration: 0.15, ease: "power1.out" }, DETAILS_DELAY - 0.05);
       tl.add(() => {
         tlDescription?.play();
       }, DESCRIPTION_DELAY);
+
+      // Details (Experience/Skills/Bio) animation on mobile
+      tl.fromTo(
+        contentDetails,
+        { opacity: 0, y: "10vh" },
+        { opacity: 1, y: "0vh", duration: 0.15, ease: "power1.out" },
+        DETAILS_DELAY,
+      );
+      tl.to(contentDetails, { opacity: 0, y: "-10vh", duration: 0.15, ease: "power1.out" }, SERVICES_DELAY - 0.05);
+      tl.add(() => {
+        tlDetails?.play();
+      }, DETAILS_DELAY);
 
       // Services animation
       tl.fromTo(
@@ -281,7 +290,7 @@ const setupSectionsAnimation = ({
         tlServices?.play();
       }, SERVICES_DELAY);
 
-      // ProgressCount animation - fade in on portrait, never fade out
+      // ProgressCount animation - fade in on portrait
       tl.fromTo(
         contentProgressCount,
         { opacity: 0, y: "10vh" },

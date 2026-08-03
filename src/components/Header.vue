@@ -177,12 +177,13 @@ const getInTouchClassNames = computed(() => {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
+    max-width: calc(100% - 60px);
 
     @media (max-width: 767px) {
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
     }
   }
 
@@ -199,9 +200,11 @@ const getInTouchClassNames = computed(() => {
     width: fit-content;
     white-space: nowrap;
 
-    @media (max-width: 480px) {
-      padding: 6px 12px !important;
-      font-size: 12px !important;
+    @media (max-width: 767px) {
+      height: 34px !important;
+      padding: 0 10px !important;
+      font-size: 11px !important;
+      line-height: 34px !important;
     }
 
     &-isProjectPage {
