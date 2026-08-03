@@ -179,9 +179,10 @@ const getInTouchClassNames = computed(() => {
     gap: var(--space-sm);
 
     @media (max-width: 767px) {
-      flex-direction: column-reverse;
-      align-items: flex-end;
-      gap: 8px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 6px;
     }
   }
 
@@ -196,7 +197,13 @@ const getInTouchClassNames = computed(() => {
 
   &-get-in-touch {
     width: fit-content;
-    
+    white-space: nowrap;
+
+    @media (max-width: 480px) {
+      padding: 6px 12px !important;
+      font-size: 12px !important;
+    }
+
     &-isProjectPage {
       opacity: 1 !important;
     }
