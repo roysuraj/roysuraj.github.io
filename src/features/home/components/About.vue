@@ -107,6 +107,8 @@ watchEffect((onInvalidate) => {
     justify-content: center;
     align-items: center;
     will-change: transform, opacity;
+    opacity: 0;
+    pointer-events: none;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -138,12 +140,14 @@ watchEffect((onInvalidate) => {
 
   &-details {
     @media (max-width: 767px) {
-      display: none !important;
+      display: flex !important;
     }
   }
 
   &-progress-count {
     will-change: transform, opacity;
+    opacity: 0;
+    pointer-events: none;
     position: absolute;
     bottom: 0;
     left: var(--space-outer);

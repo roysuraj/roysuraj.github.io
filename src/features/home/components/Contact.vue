@@ -88,8 +88,6 @@ onUnmounted(() => {
         </div>
       </div>
 
-      <Social variant="background" />
-
       <!-- Bengali cultural identity strip -->
       <div class="contact-bengali-strip" aria-label="Bengali cultural identity">
         <span class="contact-bengali-tag">🎭 Durga Puja devotee</span>
@@ -99,6 +97,8 @@ onUnmounted(() => {
         <span class="contact-bengali-tag">📚 Tagore admirer</span>
         <span class="contact-bengali-tag">🚃 Tram ride nostalgia</span>
       </div>
+
+      <Social variant="background" />
     </div>
   </div>
 </template>
