@@ -95,11 +95,11 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
 </script>
 
 <template>
-  <ProjectedElement :point="point">
+  <ProjectedElement :point="point" side="left" zone="bottom-left">
     <div ref="wrapperRef" class="box-description">
       <div class="box-description-content">
         <div class="box-description-details">
-          <p class="box-description-details-name">Suraj Roy</p>
+          <p class="box-description-details-name">Suraj Kumar Roy</p>
           <div class="box-description-details-location">
             <PinIcon class="box-description-details-location-icon" />
             <p class="box-description-details-location-copy">{{ t("location") }}</p>
@@ -124,25 +124,27 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
   --line-length: min(48px, calc(var(--svw) * 5));
 
   gap: var(--space-xxs);
-  position: absolute;
-  bottom: var(--count-height);
-  width: calc(100% - var(--space-outer) * 2);
-  left: var(--space-outer);
+  position: relative;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 
   @include mixins.landscape {
-    position: relative;
+    position: absolute;
     left: 0;
-    bottom: 0;
-    width: 340px;
-    max-width: calc(var(--svw) * 38);
+    top: 0;
+    bottom: auto;
+    width: auto;
+    min-width: 320px;
+    max-width: min(400px, calc(var(--svw) * 40));
     transform: translate(-100%, -50%);
     padding-top: 3px;
     padding-right: var(--line-length);
   }
 
   @include mixins.landscape-large {
-    width: 360px;
-    max-width: calc(var(--svw) * 36);
+    min-width: 340px;
+    max-width: 440px;
   }
 
   &-line {
@@ -215,10 +217,10 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
       content: "";
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
-      right: -36px;
-      width: 36px;
-      height: 36px;
+      right: 0;
+      transform: translate(100%, -50%);
+      width: 32px;
+      height: 32px;
       background-image: url("/images/code3.jpg");
       background-size: cover;
       background-position: top center;

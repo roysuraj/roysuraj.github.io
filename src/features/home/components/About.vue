@@ -84,31 +84,20 @@ watchEffect((onInvalidate) => {
     overflow: hidden;
 
     --count-height: calc(max(calc((var(--lvh) - var(--svh)) * 100), 36px) + var(--space-outer));
+
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: var(--space-xs);
+      padding: var(--space-sm);
+      height: calc(var(--lvh) * 100);
+      overflow-y: auto;
+    }
   }
 
   &-portrait {
-    opacity: 0; /* Hidden by default, faded in by GSAP */
-    position: absolute;
-    right: var(--space-outer);
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 16px;
-    border: 1px solid rgba(126, 230, 215, 0.25);
-    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.35);
-    z-index: 1;
-
-    @media (max-width: 767px) {
-      position: relative;
-      right: auto;
-      top: auto;
-      transform: none;
-      width: 80px;
-      height: 100px;
-      margin-top: var(--space-md);
-    }
+    display: none !important;
   }
 
   &-details,
@@ -133,9 +122,14 @@ watchEffect((onInvalidate) => {
     }
 
     @media (max-width: 767px) {
-      padding-right: 0;
-      position: relative;
-      height: auto;
+      padding-right: 0 !important;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      bottom: auto !important;
+      transform: none !important;
+      height: auto !important;
+      width: 100% !important;
     }
   }
 

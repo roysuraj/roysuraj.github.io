@@ -127,7 +127,7 @@ onMounted(() => {
   stationPositions.value = stations.map(st => {
     const pt = pathEl.getPointAtLength(st.ratio * totalLen);
     return {
-      left: (pt.x / 1000) * 100,
+      left: Math.max(8, Math.min(92, (pt.x / 1000) * 100)),
       top: (pt.y / 650) * 100,
     };
   });
@@ -148,8 +148,10 @@ onMounted(() => {
     const angleRad = Math.atan2(nextPt.y - pt.y, nextPt.x - pt.x);
     const angleDeg = angleRad * (180 / Math.PI);
 
+    const trainLeft = Math.max(5, Math.min(95, (pt.x / 1000) * 100));
+
     gsap.set(trainRef.value, {
-      left: (pt.x / 1000) * 100 + '%',
+      left: trainLeft + '%',
       top: (pt.y / 650) * 100 + '%',
       rotation: angleDeg,
     });
@@ -341,14 +343,14 @@ onUnmounted(() => {
 
       <!-- Track Outer Glow -->
       <path
-        d="M -80,310 C 20,310 60,310 100,310 C 300,310 400,310 520,310 C 720,310 840,310 900,320 C 980,330 990,410 940,440 C 880,470 780,460 680,460 C 480,460 280,460 180,460 C 80,460 40,520 80,550 C 140,580 340,570 500,570 C 680,570 800,570 880,570 C 960,570 1000,570 1080,570"
+        d="M 30,310 C 100,310 300,310 520,310 C 720,310 840,310 900,320 C 960,330 965,410 920,440 C 860,470 760,460 660,460 C 460,460 260,460 160,460 C 70,460 35,520 70,550 C 130,580 330,570 500,570 C 680,570 800,570 860,570 C 920,570 950,570 970,570"
         fill="none"
         stroke="rgba(126, 230, 215, 0.22)"
         stroke-width="14"
       />
       <!-- Wooden Railway Ties / Sleepers -->
       <path
-        d="M -80,310 C 20,310 60,310 100,310 C 300,310 400,310 520,310 C 720,310 840,310 900,320 C 980,330 990,410 940,440 C 880,470 780,460 680,460 C 480,460 280,460 180,460 C 80,460 40,520 80,550 C 140,580 340,570 500,570 C 680,570 800,570 880,570 C 960,570 1000,570 1080,570"
+        d="M 30,310 C 100,310 300,310 520,310 C 720,310 840,310 900,320 C 960,330 965,410 920,440 C 860,470 760,460 660,460 C 460,460 260,460 160,460 C 70,460 35,520 70,550 C 130,580 330,570 500,570 C 680,570 800,570 860,570 C 920,570 950,570 970,570"
         fill="none"
         stroke="rgba(90, 65, 45, 0.85)"
         stroke-width="10"
@@ -357,7 +359,7 @@ onUnmounted(() => {
       <!-- Main Steel Rails -->
       <path
         ref="svgPathRef"
-        d="M -80,310 C 20,310 60,310 100,310 C 300,310 400,310 520,310 C 720,310 840,310 900,320 C 980,330 990,410 940,440 C 880,470 780,460 680,460 C 480,460 280,460 180,460 C 80,460 40,520 80,550 C 140,580 340,570 500,570 C 680,570 800,570 880,570 C 960,570 1000,570 1080,570"
+        d="M 30,310 C 100,310 300,310 520,310 C 720,310 840,310 900,320 C 960,330 965,410 920,440 C 860,470 760,460 660,460 C 460,460 260,460 160,460 C 70,460 35,520 70,550 C 130,580 330,570 500,570 C 680,570 800,570 860,570 C 920,570 950,570 970,570"
         fill="none"
         stroke="#e8820c"
         stroke-width="3.5"
@@ -768,7 +770,8 @@ onUnmounted(() => {
 .tj__bubble {
   position: absolute;
   top: -55px;
-  left: 5px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -779,14 +782,18 @@ onUnmounted(() => {
   box-shadow: 0 0 20px rgba(126, 230, 215, 0.5), 0 10px 30px rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
   z-index: 25;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: calc(100vw - 32px);
+  width: max-content;
+  text-align: center;
   animation: tj-bubble-float 2.5s ease-in-out infinite alternate;
 
   &::after {
     content: '';
     position: absolute;
     bottom: -6px;
-    left: 35px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
@@ -1236,7 +1243,8 @@ onUnmounted(() => {
 
   .tj__bubble {
     top: -45px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 5px 10px;
     max-width: 85vw;
   }

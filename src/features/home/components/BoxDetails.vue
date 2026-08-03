@@ -99,12 +99,12 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
 </script>
 
 <template>
-  <ProjectedElement :point="point">
+  <ProjectedElement :point="point" side="left" zone="top-left">
     <div ref="wrapperRef" class="box-details">
       <div class="box-details-content">
         <div class="box-details-title">
           <AppearingText
-            text="Suraj"
+            text="Suraj Kumar Roy"
             :steps="1"
             :duration="0.35"
             @timeline:created="(tl: gsap.core.Timeline) => handleTimelineCreated(tl, 0)"
@@ -132,20 +132,27 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
 .box-details {
   --line-length: min(48px, calc(var(--svw) * 5));
 
-  display: none;
+  display: block;
+  position: relative;
+  width: 100%;
 
   @include mixins.landscape {
     display: block;
     position: absolute;
+    top: 0;
+    left: 0;
+    bottom: auto;
     padding-bottom: 3px;
     padding-right: var(--line-length);
-    width: 200px;
-    max-width: calc(var(--svw) * 25);
+    width: auto;
+    min-width: 260px;
+    max-width: min(340px, calc(var(--svw) * 35));
     transform: translate(-100%, -50%);
   }
 
   @include mixins.landscape-large {
-    width: 220px;
+    min-width: 280px;
+    max-width: 360px;
   }
 
   &-content {
@@ -183,10 +190,10 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
       content: "";
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
-      right: -36px;
-      width: 36px;
-      height: 36px;
+      right: 0;
+      transform: translate(100%, -50%);
+      width: 32px;
+      height: 32px;
       background-image: url("/images/code3.jpg");
       background-size: cover;
       background-position: top center;
@@ -211,11 +218,13 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
 
   &-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--space-xs);
     flex-direction: row;
-    white-space: nowrap;
-    height: var(--icon-size-sm);
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    height: auto;
   }
 
   &-icon {

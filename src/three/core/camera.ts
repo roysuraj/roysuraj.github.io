@@ -93,7 +93,17 @@ const tick = () => {
 };
 
 const resize = () => {
-  instance.aspect = threeSizes.width / threeSizes.height;
+  const aspect = threeSizes.width / threeSizes.height;
+  instance.aspect = aspect;
+  if (aspect < 1.6) {
+    const baseFovRad = (38 * Math.PI) / 180;
+    const hFovRad = 2 * Math.atan(Math.tan(baseFovRad / 2) * 1.6);
+    const vFovRad = 2 * Math.atan(Math.tan(hFovRad / 2) / aspect);
+    const calculatedFov = (vFovRad * 180) / Math.PI;
+    instance.fov = Math.min(72, Math.max(38, calculatedFov));
+  } else {
+    instance.fov = 38;
+  }
   instance.updateProjectionMatrix();
 };
 

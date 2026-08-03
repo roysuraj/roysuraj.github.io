@@ -202,7 +202,7 @@ const initObjects = () => {
 };
 
 const tick = () => {
-  group.visible = sceneWeights.hero > 0.001;
+  group.visible = (sceneWeights.hero > 0.001 || sceneWeights.about > 0.001 || sceneWeights.contact > 0.001);
 
   if (objects?.chair) {
     objects.chair.rotation.copy(chairScrollRotation);

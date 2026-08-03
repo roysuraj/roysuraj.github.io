@@ -128,7 +128,7 @@ const services = computed(() => {
 </script>
 
 <template>
-  <ProjectedElement :point="point">
+  <ProjectedElement :point="point" side="right" zone="right">
     <div ref="wrapperRef" class="box-services">
       <div class="box-services-content">
         <div class="box-services-title">
@@ -160,25 +160,27 @@ const services = computed(() => {
 .box-services {
   --line-length: min(48px, calc(var(--svw) * 5));
 
-  position: absolute;
-  bottom: var(--count-height);
-  width: calc(100% - var(--space-outer) * 2);
-  left: var(--space-outer);
+  position: relative;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 
   @include mixins.landscape {
-    width: 300px;
-    max-width: calc(var(--svw) * 28);
+    width: auto;
+    min-width: 290px;
+    max-width: min(380px, calc(var(--svw) * 35));
     padding-left: var(--line-length);
-    position: relative;
+    position: absolute;
     left: 0;
-    bottom: 0;
+    top: 0;
+    bottom: auto;
     padding-top: 3px;
     transform: translate(0, -50%);
   }
 
   @include mixins.landscape-large {
-    width: 320px;
-    max-width: calc(var(--svw) * 28);
+    min-width: 320px;
+    max-width: 400px;
   }
 
   &::after,
@@ -219,10 +221,10 @@ const services = computed(() => {
       content: "";
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
-      left: -36px;
-      width: 36px;
-      height: 36px;
+      left: 0;
+      transform: translate(-100%, -50%);
+      width: 32px;
+      height: 32px;
       background-image: url("/images/code3.jpg");
       background-size: cover;
       background-position: top center;
