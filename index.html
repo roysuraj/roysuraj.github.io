@@ -49,13 +49,25 @@
 
     <script>
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js').catch(function() {});
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for (let registration of registrations) {
+            registration.unregister();
+          }
         });
+        if (window.caches) {
+          caches.keys().then(function(names) {
+            for (let name of names) caches.delete(name);
+          });
+        }
       }
+      window.addEventListener('click', function() {
+        if (window.Howler && window.Howler.ctx && window.Howler.ctx.state === 'suspended') {
+          window.Howler.ctx.resume();
+        }
+      }, { once: true, passive: true });
     </script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script type="module" crossorigin src="/chunks/index-BhbivneN.js"></script>
+    <script type="module" crossorigin src="/chunks/index-C-B2-Ep2.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/yU8uKssp.css">
   </head>
   <body class="is-loading">
@@ -68,6 +80,6 @@
       </defs>
     </svg>
     <div id="app"></div>
-    <div class="preloader"></div>
+    <div class="preloader"></div>
   </body>
 </html>
