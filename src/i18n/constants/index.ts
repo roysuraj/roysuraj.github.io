@@ -35,6 +35,12 @@ export const LOCALES = {
     short: "DE",
     flag: "🇩🇪",
   },
+  nl: {
+    iso: "nl-NL",
+    name: "Nederlands",
+    short: "NL",
+    flag: "🇳🇱",
+  },
 } as const satisfies Record<
   string,
   {

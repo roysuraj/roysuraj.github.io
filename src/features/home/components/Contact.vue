@@ -102,28 +102,24 @@ onUnmounted(() => {
         <span class="contact-bengali-tag">🌺 Kolkata-native</span>
         <span class="contact-bengali-tag">📚 Tagore admirer</span>
         <span class="contact-bengali-tag">🚃 Tram ride nostalgia</span>
-      </div>
 
-      <div class="contact-footer-links">
-        <div class="contact-footer-links-legal">
-          <button
-            type="button"
-            class="contact-link-btn"
-            @click="activeModal = 'privacy'"
-            data-sound="click"
-          >
-            🛡️ {{ t("privacy") }}
-          </button>
-          <button
-            type="button"
-            class="contact-link-btn"
-            @click="activeModal = 'legal'"
-            data-sound="click"
-          >
-            ⚖️ {{ t("legal") }}
-          </button>
-        </div>
-        <LangSwitch direction="up" />
+        <button
+          type="button"
+          class="contact-bengali-tag contact-bengali-tag--btn"
+          @click="activeModal = 'privacy'"
+          data-sound="click"
+        >
+          🛡️ {{ t("privacy") }}
+        </button>
+        <button
+          type="button"
+          class="contact-bengali-tag contact-bengali-tag--btn"
+          @click="activeModal = 'legal'"
+          data-sound="click"
+        >
+          ⚖️ {{ t("legal") }}
+        </button>
+        <LangSwitch direction="up" class="contact-bengali-lang" />
       </div>
     </div>
 
@@ -328,6 +324,8 @@ onUnmounted(() => {
       inset 0 1px 0 rgba(126,230,215,0.08);
     animation: card-pulse 4.5s ease-in-out infinite alternate;
     position: relative;
+    z-index: 2;
+    overflow: hidden;
 
     @media (max-width: 640px) {
       flex-direction: column;
@@ -478,65 +476,29 @@ onUnmounted(() => {
   color: rgba(255, 210, 200, 0.92);
   letter-spacing: 0.03em;
   white-space: nowrap;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: all 0.2s ease;
 
   &:hover {
     background: rgba(200, 35, 26, 0.25);
     border-color: rgba(200, 35, 26, 0.6);
   }
-}
 
-// ── Footer Links in Contact Area ─────────────────────────────────────────────
-.contact-footer-links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
-  margin-top: 1rem;
-  width: 100%;
+  &--btn {
+    cursor: pointer;
+    font-family: 'Urbanist', sans-serif;
+    background: linear-gradient(135deg, rgba(8, 24, 48, 0.92) 0%, rgba(2, 12, 30, 0.92) 100%);
+    border: 1.5px solid rgba(126, 230, 215, 0.6);
+    color: #ffffff;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 10px rgba(126, 230, 215, 0.15);
 
-  &-legal {
-    display: flex;
-    flex-direction: row;
-    gap: var(--space-md);
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  @include mixins.mq("md") {
-    gap: var(--space-lg);
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-
-.contact-link-btn {
-  font-family: 'Urbanist', sans-serif;
-  font-weight: 800;
-  color: #ffffff !important;
-  background: linear-gradient(135deg, #061838 0%, #020c20 100%) !important;
-  border: 1.5px solid rgba(126, 230, 215, 0.7) !important;
-  border-radius: 20px;
-  padding: 8px 18px;
-  font-size: 13.5px;
-  cursor: pointer;
-  text-decoration: none;
-  pointer-events: auto !important;
-  position: relative;
-  z-index: 100 !important;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 12px rgba(126, 230, 215, 0.2);
-
-  &:hover {
-    background: linear-gradient(135deg, #0a2656 0%, #041634 100%) !important;
-    border-color: #7ee6d7 !important;
-    color: #7ee6d7 !important;
-    box-shadow: 0 0 20px rgba(126, 230, 215, 0.5);
-    transform: translateY(-2px);
+    &:hover {
+      background: linear-gradient(135deg, rgba(14, 38, 76, 0.95) 0%, rgba(6, 20, 48, 0.95) 100%);
+      border-color: #7ee6d7;
+      color: #7ee6d7;
+      box-shadow: 0 0 16px rgba(126, 230, 215, 0.4);
+      transform: translateY(-1px);
+    }
   }
 }
 

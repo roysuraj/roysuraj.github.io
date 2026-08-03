@@ -1,7 +1,6 @@
 # Suraj Roy Portfolio
-
-This is the full Vue + Three.js portfolio app from the shared zip, updated with Suraj Roy's content and profile image.
-
+ The Career Journey of Suraj kumar Roy
+roysuraj.github.io 
 ## Run locally
 
 1. Install Node.js 18+.

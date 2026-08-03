@@ -159,21 +159,26 @@ const getInTouchClassNames = computed(() => {
     z-index: 100;
   }
 
+  &-lang-switch {
+    @media (max-width: 767px) {
+      display: none !important;
+    }
+  }
+
   &-right {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
     z-index: 100;
     pointer-events: auto;
-    flex-wrap: wrap;
 
     @media (max-width: 767px) {
       gap: 6px;
+      flex-wrap: nowrap;
+      max-width: 60%;
       justify-content: flex-end;
     }
   }
-
-
 
   &-sounds-toggle {
     display: flex;
@@ -193,10 +198,11 @@ const getInTouchClassNames = computed(() => {
     pointer-events: auto !important;
 
     @media (max-width: 767px) {
-      height: 32px !important;
+      height: 30px !important;
       padding: 0 10px !important;
-      font-size: 11px !important;
-      line-height: 32px !important;
+      font-size: 10.5px !important;
+      line-height: 30px !important;
+      max-width: 130px !important;
     }
 
     &-isProjectPage {
