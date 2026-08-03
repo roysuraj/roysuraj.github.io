@@ -112,6 +112,7 @@ onUnmounted(() => {
   height: auto;
   padding: var(--space-outer);
   padding-top: var(--space-lg);
+  padding-bottom: calc(var(--space-xxl) * 2); /* Prevent footer notch overlap */
   position: relative;
   z-index: 2;
 
