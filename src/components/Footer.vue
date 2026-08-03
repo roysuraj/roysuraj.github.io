@@ -164,7 +164,7 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
 
     &-links {
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
       align-items: center;
       gap: var(--space-md);
 
