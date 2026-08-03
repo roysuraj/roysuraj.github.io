@@ -165,9 +165,11 @@ const getInTouchClassNames = computed(() => {
     gap: var(--space-sm);
     z-index: 100;
     pointer-events: auto;
+    flex-wrap: wrap;
 
     @media (max-width: 767px) {
       gap: 6px;
+      justify-content: flex-end;
     }
   }
 
