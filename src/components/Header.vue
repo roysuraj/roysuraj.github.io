@@ -201,6 +201,8 @@ const getInTouchClassNames = computed(() => {
     flex-shrink: 0 !important;
     white-space: nowrap !important;
     visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
 
     @media (max-width: 767px) {
       height: 32px !important;
