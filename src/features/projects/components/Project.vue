@@ -16,7 +16,10 @@ const error = ref<Error | null>(null);
 
 const fetchProject = async (project: string | undefined) => {
   try {
-    const module = await projectModules[locale.value as Locale][project as string].default;
+    const langKey = (locale.value as Locale) in projectModules ? (locale.value as Locale) : "en";
+    const langDict = (projectModules as Record<string, any>)[langKey] || projectModules.en;
+    const projLoader = langDict[project as string] || projectModules.en[project as string];
+    const module = await projLoader.default;
     content.value = module;
     loading.value = false;
   } catch (err) {

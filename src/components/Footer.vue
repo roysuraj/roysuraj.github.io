@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import Social from "./Social.vue";
-import Link from "./Link.vue";
 import Clickable from "./Clickable.vue";
 import LangSwitch from "./LangSwitch.vue";
 import NotchSection from "./NotchSection.vue";
+import LegalModal from "./LegalModal.vue";
 import { t } from "../i18n/utils/translate";
-import { locale } from "../i18n/store";
 import ButtonRound from "./ButtonRound.vue";
 import { lenis } from "../composables/useScroll";
 import ArrowRightLong from "./icons/ArrowRightLong.vue";
@@ -13,6 +13,16 @@ import ArrowRightLong from "./icons/ArrowRightLong.vue";
 interface Props {
   withSocial?: boolean;
 }
+
+const activeModal = ref<"privacy" | "legal" | null>(null);
+
+const openModal = (type: "privacy" | "legal") => {
+  activeModal.value = type;
+};
+
+const closeModal = () => {
+  activeModal.value = null;
+};
 
 const handleBackToTop = () => {
   if (!lenis.value) return;
@@ -43,30 +53,24 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
         <Social v-if="withSocial" />
         <div class="footer-top-links">
           <div class="footer-top-links-legal">
-            <Clickable renderAs="div">
-              <Link
-                :href="locale === 'de' ? '/de/privacy' : '/privacy'"
-                class="footer-link"
-                :external="true"
-                data-cursor="circle-white"
-                data-sound="click"
-                data-hoversound="hover"
-                >{{ t("privacy") }}</Link
-              >
-            </Clickable>
-            <Clickable renderAs="div">
-              <Link
-                :href="locale === 'de' ? '/de/legal' : '/legal'"
-                class="footer-link children-unclickable"
-                :external="true"
-                data-cursor="circle-white"
-                data-sound="click"
-                data-hoversound="hover"
-                >{{ t("legal") }}</Link
-              >
-            </Clickable>
+            <button
+              type="button"
+              class="footer-link-btn"
+              @click="openModal('privacy')"
+              data-sound="click"
+            >
+              🛡️ {{ t("privacy") }}
+            </button>
+            <button
+              type="button"
+              class="footer-link-btn"
+              @click="openModal('legal')"
+              data-sound="click"
+            >
+              ⚖️ {{ t("legal") }}
+            </button>
           </div>
-          <LangSwitch />
+          <LangSwitch direction="up" />
         </div>
       </div>
       <div class="footer-credits">
@@ -75,14 +79,14 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
             {{ t("original-concept-by") }}
           </p>
           <Clickable renderAs="div">
-            <Link
+            <a
               href="mailto:spyrogypsertech@gmail.com"
               class="footer-link children-unclickable"
-              external
               data-cursor="circle-white"
               data-hoversound="hover"
-              >spyrogypsertech@gmail.com</Link
-              >
+            >
+              Suraj Kumar Roy (SpyroGypserTech)
+            </a>
           </Clickable>
         </div>
         <div class="footer-credits-music">
@@ -90,19 +94,24 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
             {{ t("music-produced-by") }}
           </p>
           <Clickable renderAs="div">
-            <Link
-              href="https://soundcloud.com/hmsurf"
+            <a
+              href="https://youtube.com/@christyleillusion?si=3M-sVWZ3uzNDT655"
+              target="_blank"
+              rel="noopener noreferrer"
               class="footer-link children-unclickable"
-              external
               data-cursor="circle-white"
               data-hoversound="hover"
-              >Suraj Roy</Link
-              >
+            >
+              Suraj Kumar Roy (Pianist)
+            </a>
           </Clickable>
         </div>
-        <p>© {{ new Date().getFullYear() }} Suraj Roy</p>
+        <p>© {{ new Date().getFullYear() }} Suraj Kumar Roy. All Rights Reserved.</p>
       </div>
     </div>
+
+    <!-- Scrollable Modal for Privacy & Legal Notice -->
+    <LegalModal :type="activeModal" @close="closeModal" />
   </footer>
 </template>
 
@@ -175,7 +184,49 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
   }
 
   &-link {
+    font-family: inherit;
     font-weight: 700;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-text-cyan-400, #7ee6d7);
+    }
+  }
+
+  &-link-btn {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 800;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #061838 0%, #020c20 100%) !important;
+    border: 1.5px solid rgba(126, 230, 215, 0.7) !important;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 13.5px;
+    cursor: pointer;
+    text-decoration: none;
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 100 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 12px rgba(126, 230, 215, 0.2);
+
+    &:hover {
+      background: linear-gradient(135deg, #0a2656 0%, #041634 100%) !important;
+      border-color: #7ee6d7 !important;
+      color: #7ee6d7 !important;
+      box-shadow: 0 0 20px rgba(126, 230, 215, 0.5);
+      transform: translateY(-2px);
+    }
   }
 
   &-credits {

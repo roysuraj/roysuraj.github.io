@@ -7,9 +7,17 @@ import gsap from "gsap";
 import { sceneWeightsInOut } from "../animations/scenes";
 import { room } from "../three/objects/room";
 
-const props = defineProps<{
-  point: Vector3;
-}>();
+const props = withDefaults(
+  defineProps<{
+    point: Vector3;
+    side?: "left" | "right";
+    zone?: "top-left" | "bottom-left" | "right";
+  }>(),
+  {
+    side: "left",
+    zone: "bottom-left",
+  }
+);
 
 const wrapperRef = ref<HTMLDivElement | null>(null);
 
@@ -21,7 +29,7 @@ const updatePosition = () => {
   if (sceneWeightsInOut.about.out === 1) return;
 
   const isLandscape = sizes.isLandscape;
-  const { point } = props;
+  const { point, side, zone } = props;
 
   if (isLandscape) {
     const worldPoint = point.clone();
@@ -35,11 +43,48 @@ const updatePosition = () => {
     const absoluteX = vw * 0.5 + screenPos.x;
     const absoluteY = vh * 0.5 + screenPos.y;
 
-    // Clamp absolute coordinates
-    const minX = vw * 0.15;
-    const maxX = vw * 0.85;
-    const minY = vh * 0.12;
-    const maxY = vh * 0.85;
+    // Measure actual card width if available, or default to 340px
+    const cardChild = wrapperRef.value.firstElementChild as HTMLElement | null;
+    const cardWidth = cardChild ? cardChild.clientWidth : 340;
+    const margin = 24; // minimum safety gap from screen edge in px
+
+    let minX: number;
+    let maxX: number;
+    let minY: number;
+    let maxY: number;
+
+    if (side === "left") {
+      // Left cards sit to the left of anchor (translate -100%)
+      // Left edge of card = (absoluteX - cardWidth) => absoluteX >= cardWidth + margin
+      // Right edge of card = absoluteX => must not cross center hologram boy (vw * 0.38)
+      minX = cardWidth + margin;
+      maxX = Math.max(minX + 10, vw * 0.38);
+    } else {
+      // Right cards sit to the right of anchor (translate 0%)
+      // Left edge of card = absoluteX => absoluteX >= vw * 0.62 (right of hologram boy)
+      // Right edge of card = (absoluteX + cardWidth) => absoluteX <= vw - cardWidth - margin
+      minX = vw * 0.62;
+      maxX = Math.max(minX + 10, vw - cardWidth - margin);
+    }
+
+    // Zone-based vertical clamping to guarantee no card overlaps and no header collisions
+    if (zone === "top-left") {
+      minY = 220; // Top-left card center at 220px (top edge at ~140px, safely below top nav bar)
+      maxY = Math.max(minY + 10, vh * 0.36);
+    } else if (zone === "bottom-left") {
+      minY = Math.max(380, vh * 0.54); // Bottom-left card center at ~540px (top edge at ~440px, well below top card)
+      maxY = Math.max(minY + 10, vh * 0.82);
+    } else {
+      // Right zone (Skills card)
+      minY = 240; // Skills card center at 240px-340px (top edge at ~140px, safely below top nav bar)
+      maxY = Math.max(minY + 10, vh * 0.72);
+    }
+
+    if (minX > maxX) {
+      const mid = (minX + maxX) / 2;
+      minX = mid - 10;
+      maxX = mid + 10;
+    }
 
     const clampedX = Math.max(minX, Math.min(maxX, absoluteX));
     const clampedY = Math.max(minY, Math.min(maxY, absoluteY));

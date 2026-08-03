@@ -94,7 +94,7 @@ class Sizes extends EventEmitter<{
 
     this.emit("resize", { width: this.width, height: this.height, pixelRatio: this.pixelRatio });
 
-    this.isLandscape = window.matchMedia("(orientation: landscape)").matches;
+    this.isLandscape = this.width >= 768 && this.aspectRatio >= 1.2;
   }
 
   destroy() {

@@ -3,10 +3,19 @@ import { ref, onMounted, onUnmounted } from "vue";
 import { transitions } from "../../../animations";
 import { t } from "../../../i18n/utils/translate";
 import Social from "../../../components/Social.vue";
+import videoParticles from "../../../assets/videos/particles.mp4";
 
 const contactElement = ref<HTMLElement | null>(null);
+const videoRef = ref<HTMLVideoElement | null>(null);
+const bgVideoRef = ref<HTMLVideoElement | null>(null);
 
 onMounted(() => {
+  if (videoRef.value) {
+    videoRef.value.play().catch(() => {});
+  }
+  if (bgVideoRef.value) {
+    bgVideoRef.value.play().catch(() => {});
+  }
   if (contactElement.value) {
     transitions.contact.setup(contactElement.value);
   }
@@ -20,17 +29,28 @@ onUnmounted(() => {
 <template>
   <div class="contact grid" ref="contactElement">
 
-    <!-- Removed floating gradient decorative boxes based on user request -->
+    <!-- Background running video loop -->
+    <video
+      ref="bgVideoRef"
+      class="contact-section-bg-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      aria-hidden="true"
+      :src="videoParticles"
+    ></video>
 
     <div class="contact-content">
 
-      <!-- Title with Kolkata skyline image clipped behind it -->
+      <!-- Title with Howrah Bridge & River Ganga continuous video motion loop -->
       <div class="contact-hero">
         <div class="contact-kolkata-img" aria-hidden="true"></div>
-        <!-- Bengali script greeting -->
-        <p class="contact-bengali-greeting" aria-label="Let's get in touch in Bengali">আমার সাথে যোগাযোগ করুন</p>
+        <div class="contact-river-water-effect" aria-hidden="true"></div>
+        <!-- English greeting -->
+        <p class="contact-bengali-greeting" aria-label="Contact Me">Contact Me</p>
         <h2 class="contact-title" v-html="t('lets-work-together')"></h2>
-        <p class="contact-subtitle">Kolkata, India 🇮🇳 · Available for global projects</p>
+        <p class="contact-subtitle">Kolkata, West Bengal, India 🇮🇳 · Available for global projects</p>
       </div>
 
       <!-- Card: Lottie person + contact details -->
@@ -93,6 +113,18 @@ onUnmounted(() => {
   padding-top: var(--space-lg);
   position: relative;
   z-index: 2;
+
+  &-section-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    filter: brightness(0.4) saturate(1.2);
+    z-index: 0;
+    pointer-events: none;
+  }
 
   @include mixins.mq("md") {
     padding-top: var(--space-xxl);
@@ -178,10 +210,11 @@ onUnmounted(() => {
     position: absolute;
     inset: 0;
     background-image: url("/images/kolkata_new.jpg");
-    background-size: cover;
+    background-size: 115% 115%;
     background-position: center 60%;
-    filter: brightness(0.38) saturate(1.1);
+    filter: brightness(0.68) saturate(1.3) contrast(1.1);
     z-index: 0;
+    animation: ganga-video-loop 24s ease-in-out infinite alternate;
 
     &::after {
       content: "";
@@ -190,10 +223,22 @@ onUnmounted(() => {
       background: linear-gradient(
         to top,
         rgba(2, 12, 38, 0.95) 0%,
-        rgba(2, 12, 38, 0.5) 60%,
+        rgba(2, 12, 38, 0.4) 65%,
         rgba(2, 12, 38, 0.1) 100%
       );
+      z-index: 1;
     }
+  }
+
+  &-river-water-effect {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 85%, rgba(126, 230, 215, 0.3) 0%, transparent 65%),
+                linear-gradient(180deg, rgba(2, 12, 38, 0.1) 0%, rgba(126, 230, 215, 0.12) 50%, rgba(0, 45, 110, 0.35) 100%);
+    mix-blend-mode: color-dodge;
+    animation: water-waves 4.5s ease-in-out infinite alternate;
   }
 
   &-title {
@@ -403,6 +448,36 @@ onUnmounted(() => {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   33%       { transform: translateY(-14px) rotate(1.8deg); }
   66%       { transform: translateY(-7px) rotate(-1.2deg); }
+}
+
+@keyframes ganga-video-loop {
+  0% {
+    background-position: 50% 60%;
+    transform: scale(1.0);
+  }
+  50% {
+    background-position: 48% 52%;
+    transform: scale(1.06);
+  }
+  100% {
+    background-position: 52% 68%;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes water-waves {
+  0% {
+    opacity: 0.3;
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: translateY(-8px) scaleY(1.06);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(0) scaleY(1);
+  }
 }
 
 @keyframes avatar-glow {
