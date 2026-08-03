@@ -252,7 +252,9 @@ const setupSectionsAnimation = ({
       const SERVICES_DELAY = 0.6;
 
       // Details animation disabled - BoxDetails is hidden on portrait
-      // But animate the portrait alongside description
+      gsap.set(contentDetails, { opacity: 0, display: "none" });
+
+      // Animate the portrait alongside description
       tl.fromTo(portrait, { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "power1.out" }, DESCRIPTION_DELAY);
 
 

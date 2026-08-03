@@ -133,6 +133,12 @@ watchEffect((onInvalidate) => {
     }
   }
 
+  &-details {
+    @media (max-width: 767px) {
+      display: none !important;
+    }
+  }
+
   &-progress-count {
     will-change: transform, opacity;
     position: absolute;
