@@ -3,11 +3,14 @@ import { ref, onMounted, onUnmounted } from "vue";
 import { transitions } from "../../../animations";
 import { t } from "../../../i18n/utils/translate";
 import Social from "../../../components/Social.vue";
+import LangSwitch from "../../../components/LangSwitch.vue";
+import LegalModal from "../../../components/LegalModal.vue";
 import videoParticles from "../../../assets/videos/particles.mp4";
 
 const contactElement = ref<HTMLElement | null>(null);
 const videoRef = ref<HTMLVideoElement | null>(null);
 const bgVideoRef = ref<HTMLVideoElement | null>(null);
+const activeModal = ref<"privacy" | "legal" | null>(null);
 
 onMounted(() => {
   if (videoRef.value) {
@@ -86,11 +89,12 @@ onUnmounted(() => {
             </div>
           </div>
         </div>
-      </div>
+      </div> <!-- Closes contact-card -->
+    </div> <!-- Closes contact-content -->
 
+    <!-- Move below contact-content so it doesn't mix with Let's connect area -->
+    <div class="contact-footer-area">
       <Social variant="background" />
-
-      <!-- Bengali cultural identity strip -->
       <div class="contact-bengali-strip" aria-label="Bengali cultural identity">
         <span class="contact-bengali-tag">🎭 Durga Puja devotee</span>
         <span class="contact-bengali-tag">🎵 Rabindra Sangeet listener</span>
@@ -99,7 +103,32 @@ onUnmounted(() => {
         <span class="contact-bengali-tag">📚 Tagore admirer</span>
         <span class="contact-bengali-tag">🚃 Tram ride nostalgia</span>
       </div>
+
+      <div class="contact-footer-links">
+        <div class="contact-footer-links-legal">
+          <button
+            type="button"
+            class="contact-link-btn"
+            @click="activeModal = 'privacy'"
+            data-sound="click"
+          >
+            🛡️ {{ t("privacy") }}
+          </button>
+          <button
+            type="button"
+            class="contact-link-btn"
+            @click="activeModal = 'legal'"
+            data-sound="click"
+          >
+            ⚖️ {{ t("legal") }}
+          </button>
+        </div>
+        <LangSwitch direction="up" />
+      </div>
     </div>
+
+    <!-- Scrollable Modal for Privacy & Legal Notice -->
+    <LegalModal :type="activeModal" @close="activeModal = null" />
   </div>
 </template>
 
@@ -412,16 +441,28 @@ onUnmounted(() => {
   text-shadow: 0 0 12px rgba(232, 50, 31, 0.4);
 }
 
+.contact-footer-area {
+  grid-column: 1 / 13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 5;
+}
+
 // ── Bengali cultural identity tag strip ──────────────────────────────────────
 .contact-bengali-strip {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.6rem 0.8rem;
   padding: 1.2rem 1.4rem;
   background: rgba(200, 35, 26, 0.08); /* subtle sindoor tint */
   border: 1px solid rgba(200, 35, 26, 0.3);
   border-radius: 14px;
-  margin-top: 0.5rem;
+  max-width: 800px;
 }
 
 .contact-bengali-tag {
@@ -442,6 +483,60 @@ onUnmounted(() => {
   &:hover {
     background: rgba(200, 35, 26, 0.25);
     border-color: rgba(200, 35, 26, 0.6);
+  }
+}
+
+// ── Footer Links in Contact Area ─────────────────────────────────────────────
+.contact-footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: 1rem;
+  width: 100%;
+
+  &-legal {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @include mixins.mq("md") {
+    gap: var(--space-lg);
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.contact-link-btn {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 800;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #061838 0%, #020c20 100%) !important;
+  border: 1.5px solid rgba(126, 230, 215, 0.7) !important;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 13.5px;
+  cursor: pointer;
+  text-decoration: none;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 100 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 12px rgba(126, 230, 215, 0.2);
+
+  &:hover {
+    background: linear-gradient(135deg, #0a2656 0%, #041634 100%) !important;
+    border-color: #7ee6d7 !important;
+    color: #7ee6d7 !important;
+    box-shadow: 0 0 20px rgba(126, 230, 215, 0.5);
+    transform: translateY(-2px);
   }
 }
 
