@@ -177,9 +177,15 @@ const getInTouchClassNames = computed(() => {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
+
+    @media (max-width: 767px) {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      gap: 8px;
+    }
   }
 
-  &-music-toggle {
+  &-sounds-toggle {
     display: flex;
   }
 
@@ -189,10 +195,10 @@ const getInTouchClassNames = computed(() => {
   }
 
   &-get-in-touch {
-    display: none;
-
-    @include mixins.mq("md") {
-      display: flex;
+    width: fit-content;
+    
+    &-isProjectPage {
+      opacity: 1 !important;
     }
   }
 

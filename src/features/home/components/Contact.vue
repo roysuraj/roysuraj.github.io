@@ -173,11 +173,11 @@ onUnmounted(() => {
   &-content {
     position: relative;
     z-index: 2;
-    padding: var(--space-lg);
+    padding: var(--space-md);
     grid-column: 1 / 13;
     display: flex;
     flex-direction: column;
-    gap: var(--space-lg);
+    gap: var(--space-md);
     color: var(--color-text-400);
     background: rgba(2, 12, 38, 0.7);
     border: 1px solid rgba(126,230,215,0.22);
@@ -187,6 +187,11 @@ onUnmounted(() => {
       0 2rem 6rem rgba(0,0,0,0.55),
       inset 0 1px 0 rgba(255,255,255,0.05),
       0 0 0 1px rgba(126,230,215,0.06);
+
+    @include mixins.mq("md") {
+      padding: var(--space-lg);
+      gap: var(--space-lg);
+    }
 
     @include mixins.mq("sm") { grid-column: 1 / 11; }
     @include mixins.mq("md") { grid-column: 1 / 9; }
@@ -198,12 +203,18 @@ onUnmounted(() => {
     position: relative;
     border-radius: 18px;
     overflow: hidden;
-    padding: 2.4rem 2.8rem 2rem;
-    min-height: 160px;
+    padding: 1.5rem;
+    min-height: 140px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    gap: 0.6rem;
+    gap: 0.5rem;
+
+    @include mixins.mq("md") {
+      padding: 2.4rem 2.8rem 2rem;
+      min-height: 160px;
+      gap: 0.6rem;
+    }
   }
 
   &-kolkata-img {
@@ -275,8 +286,8 @@ onUnmounted(() => {
   &-card {
     display: flex;
     align-items: center;
-    gap: 2.4rem;
-    padding: 2.2rem 2.6rem;
+    gap: 1.6rem;
+    padding: 1.5rem 1.2rem;
     border-radius: 20px;
     background: rgba(6, 14, 36, 0.85);
     border: 1.5px solid rgba(126,230,215,0.45);
@@ -290,6 +301,11 @@ onUnmounted(() => {
     @media (max-width: 640px) {
       flex-direction: column;
       text-align: center;
+    }
+
+    @include mixins.mq("md") {
+      padding: 2.2rem 2.6rem;
+      gap: 2.4rem;
     }
   }
 

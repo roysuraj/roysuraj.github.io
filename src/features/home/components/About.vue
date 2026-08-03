@@ -123,10 +123,10 @@ watchEffect((onInvalidate) => {
 
     @media (max-width: 767px) {
       padding-right: 0 !important;
-      position: relative !important;
+      position: absolute !important;
       top: auto !important;
-      left: auto !important;
-      bottom: auto !important;
+      left: 0 !important;
+      bottom: 5% !important;
       transform: none !important;
       height: auto !important;
       width: 100% !important;
