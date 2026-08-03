@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - 2026version
+     
   workflow_dispatch:
 
 permissions:
