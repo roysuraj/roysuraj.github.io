@@ -218,8 +218,9 @@ watch(
 
   &-contact {
     width: 100%;
-    min-height: calc(var(--lvh) * 100);
+    min-height: auto;
     height: auto;
+    overflow: visible;
   }
 }
 
