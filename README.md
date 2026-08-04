@@ -9,5 +9,7 @@ https://roysuraj.github.io/
    npm install
    npm run dev
    ```
-3. Open the local URL shown by Vite, usually `http://localhost:3000`.
+3. Open the local URL shown by Vite, usually `http://localhost:3000`
+
+4. please check resume
 
