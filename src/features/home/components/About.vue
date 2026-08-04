@@ -123,23 +123,24 @@ watchEffect((onInvalidate) => {
       overflow: visible;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       padding-right: 0 !important;
       position: absolute !important;
       top: auto !important;
       left: 0 !important;
-      bottom: 6% !important;
-      transform: none !important;
+      bottom: 5% !important;
       height: auto !important;
       width: 100% !important;
-      padding-left: var(--space-sm) !important;
-      padding-right: var(--space-sm) !important;
+      padding-left: 12px !important;
+      padding-right: 12px !important;
       box-sizing: border-box !important;
+      display: flex !important;
+      justify-content: center !important;
     }
   }
 
   &-details {
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       display: flex !important;
     }
   }

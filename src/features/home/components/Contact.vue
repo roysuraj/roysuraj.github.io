@@ -95,6 +95,8 @@ onUnmounted(() => {
     <!-- Move below contact-content so it doesn't mix with Let's connect area -->
     <div class="contact-footer-area">
       <Social variant="background" />
+      
+      <!-- Bengali Cultural Strip -->
       <div class="contact-bengali-strip" aria-label="Bengali cultural identity">
         <span class="contact-bengali-tag">🎭 Durga Puja devotee</span>
         <span class="contact-bengali-tag">🎵 Rabindra Sangeet listener</span>
@@ -102,24 +104,29 @@ onUnmounted(() => {
         <span class="contact-bengali-tag">🌺 Kolkata-native</span>
         <span class="contact-bengali-tag">📚 Tagore admirer</span>
         <span class="contact-bengali-tag">🚃 Tram ride nostalgia</span>
+      </div>
 
-        <button
-          type="button"
-          class="contact-bengali-tag contact-bengali-tag--btn"
-          @click="activeModal = 'privacy'"
-          data-sound="click"
-        >
-          🛡️ {{ t("privacy") }}
-        </button>
-        <button
-          type="button"
-          class="contact-bengali-tag contact-bengali-tag--btn"
-          @click="activeModal = 'legal'"
-          data-sound="click"
-        >
-          ⚖️ {{ t("legal") }}
-        </button>
-        <LangSwitch direction="up" class="contact-bengali-lang" />
+      <!-- Dedicated Legal & Language Selector Bar -->
+      <div class="contact-legal-bar">
+        <div class="contact-legal-links">
+          <button
+            type="button"
+            class="contact-legal-btn"
+            @click="activeModal = 'privacy'"
+            data-sound="click"
+          >
+            🛡️ {{ t("privacy") }}
+          </button>
+          <button
+            type="button"
+            class="contact-legal-btn"
+            @click="activeModal = 'legal'"
+            data-sound="click"
+          >
+            ⚖️ {{ t("legal") }}
+          </button>
+        </div>
+        <LangSwitch direction="up" class="contact-legal-lang" />
       </div>
     </div>
 
@@ -491,13 +498,99 @@ onUnmounted(() => {
     color: #ffffff;
     font-weight: 800;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 10px rgba(126, 230, 215, 0.15);
-
     &:hover {
       background: linear-gradient(135deg, rgba(14, 38, 76, 0.95) 0%, rgba(6, 20, 48, 0.95) 100%);
       border-color: #7ee6d7;
       color: #7ee6d7;
       box-shadow: 0 0 16px rgba(126, 230, 215, 0.4);
       transform: translateY(-1px);
+    }
+  }
+
+  &-legal-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: rgba(8, 20, 42, 0.65);
+    border: 1px solid rgba(126, 230, 215, 0.2);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+
+    @media (max-width: 640px) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 12px;
+    }
+  }
+
+  &-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &-legal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    background: rgba(126, 230, 215, 0.1);
+    border: 1px solid rgba(126, 230, 215, 0.3);
+    border-radius: 100px;
+    color: #7ee6d7;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(126, 230, 215, 0.25);
+      border-color: #7ee6d7;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 12px !important;
+    padding-top: 24px !important;
+    
+    &-content {
+      padding: 14px !important;
+      border-radius: 20px !important;
+    }
+
+    &-hero {
+      padding: 1rem !important;
+      min-height: 110px !important;
+    }
+
+    &-title {
+      font-size: clamp(1.4rem, 6.5vw, 2.1rem) !important;
+    }
+
+    &-subtitle {
+      font-size: 0.95rem !important;
+    }
+
+    &-card {
+      padding: 1.2rem 1rem !important;
+      gap: 1rem !important;
+    }
+
+    &-details-value {
+      font-size: clamp(0.95rem, 4vw, 1.25rem) !important;
+      word-break: break-word !important;
+    }
+
+    &-person-photo {
+      width: 80px !important;
+      height: 80px !important;
     }
   }
 }

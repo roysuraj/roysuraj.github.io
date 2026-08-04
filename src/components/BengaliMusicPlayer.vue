@@ -13,6 +13,7 @@ import {
   setMusicVolume
 } from '../features/sounds/composables/useMusic';
 import { soundsEnabled } from '../features/sounds/composables/useHowler';
+import { t } from '../i18n/utils/translate';
 
 const isExpanded = ref(false);
 
@@ -50,7 +51,7 @@ const updateVolume = (e: Event) => {
             <span>{{ currentSong.emoji }}</span>
           </div>
           <div class="bmp__meta">
-            <span class="bmp__tag">NOW PLAYING 🎶</span>
+            <span class="bmp__tag">{{ t("music-player-now-playing") }}</span>
             <h4 class="bmp__song-name">{{ currentSong.title }}</h4>
             <p class="bmp__artist-name">{{ currentSong.artist }}</p>
             <span class="bmp__album-tag">{{ currentSong.album }}</span>
@@ -82,7 +83,7 @@ const updateVolume = (e: Event) => {
 
         <!-- Playlist Tracks List -->
         <div class="bmp__playlist">
-          <h5 class="bmp__playlist-title">BENGALI CLASSICS 🎵</h5>
+          <h5 class="bmp__playlist-title">{{ t("music-player-playlist-title") }}</h5>
           <div
             v-for="(song, idx) in bengaliPlaylist"
             :key="song.id"

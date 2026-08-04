@@ -28,12 +28,23 @@ import AppearingText from "../../../components/AppearingText.vue";
   position: relative;
   overflow: hidden;
 
+  @media (max-width: 1024px) {
+    align-items: flex-start !important;
+  }
+
   &-content {
     position: relative;
     z-index: 1;
     align-items: center;
     justify-content: center;
     height: 46%;
+
+    @media (max-width: 1024px) {
+      height: auto !important;
+      padding-top: 48px !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+    }
 
     @include mixins.landscape {
       height: 100%;
@@ -72,9 +83,11 @@ import AppearingText from "../../../components/AppearingText.vue";
       display: flex;
       flex-direction: column;
       gap: var(--space-sm);
+      align-items: center;
 
       @include mixins.mq("md") {
         gap: var(--space-md);
+        align-items: flex-start;
       }
     }
 
@@ -95,7 +108,12 @@ import AppearingText from "../../../components/AppearingText.vue";
       0 0 16px var(--color-background-400),
       0 0 32px var(--color-background-400),
       0 0 48px var(--color-background-400);
-    line-height: 1.15;
+    line-height: 1.12;
+
+    @media (max-width: 1024px) {
+      font-size: clamp(1.3rem, 5.2vw, 1.8rem) !important;
+      text-align: center !important;
+    }
 
     @include mixins.landscape {
       font-size: clamp(1.8rem, 2.6vw, 2.8rem);
@@ -119,14 +137,14 @@ import AppearingText from "../../../components/AppearingText.vue";
     z-index: 10;
     transform: rotate(-5deg) translate(0, 105%);
 
-    @include mixins.mq("sm") {
-      right: -24px;
-      transform: rotate(-5deg) translate(0, 110%);
-    }
-
-    @include mixins.mq("lg") {
-      right: -32px;
-      transform: rotate(-5deg) translate(0, 120%);
+    @media (max-width: 1024px) {
+      position: relative !important;
+      right: auto !important;
+      bottom: auto !important;
+      top: auto !important;
+      transform: rotate(-3deg) translate(0, 0) !important;
+      margin-top: 4px !important;
+      align-self: center !important;
     }
   }
 
