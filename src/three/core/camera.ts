@@ -100,7 +100,8 @@ const resize = () => {
     const hFovRad = 2 * Math.atan(Math.tan(baseFovRad / 2) * 1.6);
     const vFovRad = 2 * Math.atan(Math.tan(hFovRad / 2) / aspect);
     const calculatedFov = (vFovRad * 180) / Math.PI;
-    instance.fov = Math.min(72, Math.max(38, calculatedFov));
+    const maxFov = threeSizes.width < 768 ? 54 : 64;
+    instance.fov = Math.min(maxFov, Math.max(38, calculatedFov));
   } else {
     instance.fov = 38;
   }

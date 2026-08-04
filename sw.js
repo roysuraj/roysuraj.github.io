@@ -1,4 +1,4 @@
-const CACHE_NAME = 'suraj-portfolio-2026-v3';
+const CACHE_NAME = 'suraj-portfolio-2026-v4';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();

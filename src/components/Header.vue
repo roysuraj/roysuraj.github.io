@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import Button from "./Button.vue";
 import Logo from "./Logo.vue";
 import { computed, ref } from "vue";
 import { t } from "../i18n/utils/translate";
 import { useHeaderTheme } from "../composables/useHeaderTheme";
 import { lenis } from "../composables/useScroll";
 import { projectId } from "../composables/useRouteObserver";
-import { social } from "../content/social";
 import ButtonRound from "./ButtonRound.vue";
 import ArrowRight from "./icons/ArrowRight.vue";
 import LangSwitch from "./LangSwitch.vue";
@@ -14,10 +12,20 @@ import { isFeatureEnabled } from "../utils/features";
 import { useRouter } from "../composables/useRouter";
 import { useFirstRoute } from "../composables/useFirstRoute";
 
+import GetInTouchModal from "./GetInTouchModal.vue";
+
 const router = useRouter();
 const { isFirstRoute } = useFirstRoute();
 
 const scrolledPastHeroVisible = ref(false);
+const isGetInTouchOpen = ref(false);
+
+const handleGetInTouchClick = (e: MouseEvent) => {
+  e.preventDefault();
+  isGetInTouchOpen.value = true;
+  window.open("/Suraj_Roy_Senior_Mobile_Software_Engineer_Resume-2.pdf", "_blank", "noopener,noreferrer");
+};
+
 const { isDarkTheme } = useHeaderTheme({
   onUpdate: (element, boundingClientRect, hasScrolledIntoView) => {
     if (!element || !boundingClientRect) {
@@ -44,8 +52,7 @@ const handleBackClick = () => {
 };
 
 const handleLogoClick = () => {
-  if (!lenis.value) return;
-  lenis.value.scrollTo(0);
+  lenis.value?.scrollTo("#hero");
 };
 
 const classNames = computed(() => {
@@ -54,13 +61,6 @@ const classNames = computed(() => {
     "header-dark": isDarkTheme.value,
     "header-scrolled": scrolledPastHeroVisible.value,
     [`project-${projectId.value}`]: projectId.value !== null,
-  };
-});
-
-const getInTouchClassNames = computed(() => {
-  return {
-    "header-get-in-touch": true,
-    "header-get-in-touch-isProjectPage": projectId.value !== null,
   };
 });
 </script>
@@ -96,21 +96,24 @@ const getInTouchClassNames = computed(() => {
       <Logo class="header-logo-image" />
     </div>
     <div class="header-right">
-      <LangSwitch class="header-lang-switch" />
-      <Button
-        renderAs="a"
-        variant="accent"
+      <button
+        type="button"
+        class="header-get-in-touch"
         :aria-label="t('get-in-touch')"
-        :href="social.find((item) => item.name === 'mail')?.url ?? ''"
-        external
-        :class="getInTouchClassNames"
+        @click="handleGetInTouchClick"
         data-cursor="circle-white"
         data-hoversound="hover"
-        >{{ t("get-in-touch") }}</Button
+        data-sound="click"
       >
+        {{ t("get-in-touch") }}
+      </button>
+      <LangSwitch class="header-lang-switch" />
       <SoundsToggle class="header-sounds-toggle" :isDarkTheme="isDarkTheme" v-if="isFeatureEnabled('sounds')" />
     </div>
   </header>
+
+  <!-- Get In Touch Modal with Resume PDF viewer & Email Direct -->
+  <GetInTouchModal :isOpen="isGetInTouchOpen" @close="isGetInTouchOpen = false" />
 </template>
 
 <style scoped lang="scss">
@@ -130,6 +133,15 @@ const getInTouchClassNames = computed(() => {
   pointer-events: none;
 
   --scrolled: 0;
+
+  @media (max-width: 1024px) {
+    align-items: flex-start !important;
+    padding-top: 10px !important;
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
 
   &-scrolled {
     --scrolled: 1;
@@ -159,9 +171,17 @@ const getInTouchClassNames = computed(() => {
     z-index: 100;
   }
 
+  :deep(.header-lang-switch),
   &-lang-switch {
-    @media (max-width: 767px) {
-      display: none !important;
+    display: inline-flex !important;
+
+    @media (max-width: 1024px) {
+      :deep(.lang-switch-btn),
+      button {
+        padding: 4px 9px !important;
+        font-size: 11px !important;
+        border-radius: 100px !important;
+      }
     }
   }
 
@@ -171,12 +191,19 @@ const getInTouchClassNames = computed(() => {
     gap: var(--space-sm);
     z-index: 100;
     pointer-events: auto;
+    margin-left: auto !important;
 
-    @media (max-width: 767px) {
-      gap: 6px;
-      flex-wrap: nowrap;
-      max-width: 60%;
-      justify-content: flex-end;
+    @media (max-width: 1024px) {
+      position: fixed !important;
+      top: 10px !important;
+      right: 12px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-end !important;
+      justify-content: flex-start !important;
+      gap: 6px !important;
+      z-index: 999999 !important;
+      pointer-events: auto !important;
     }
   }
 
@@ -191,18 +218,38 @@ const getInTouchClassNames = computed(() => {
 
   &-get-in-touch {
     display: inline-flex !important;
-    flex-shrink: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 38px !important;
+    padding: 0 18px !important;
+    font-family: 'Urbanist', 'Inter', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #c8231a 0%, #a0150e 100%) !important;
+    border-radius: 100px !important;
+    box-shadow: 0 4px 14px rgba(200, 35, 26, 0.45) !important;
     white-space: nowrap !important;
+    flex-shrink: 0 !important;
     visibility: visible !important;
     opacity: 1 !important;
     pointer-events: auto !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
 
-    @media (max-width: 767px) {
-      height: 30px !important;
-      padding: 0 10px !important;
+    &:hover {
+      background: linear-gradient(135deg, #e5281e 0%, #c8231a 100%) !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 6px 18px rgba(200, 35, 26, 0.6) !important;
+    }
+
+    @media (max-width: 1024px) {
+      height: 32px !important;
+      padding: 0 12px !important;
       font-size: 10.5px !important;
-      line-height: 30px !important;
-      max-width: 130px !important;
+      line-height: 32px !important;
     }
 
     &-isProjectPage {
@@ -213,16 +260,22 @@ const getInTouchClassNames = computed(() => {
   &-logo {
     cursor: pointer;
     display: flex;
+    align-items: center;
     gap: var(--space-xs);
-    transition: color 0.2s ease-in-out;
-    opacity: var(--scrolled);
-    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    opacity: 1 !important;
+    pointer-events: auto !important;
     
-    /* Center it safely without absolute positioning on everything else */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 50;
+    position: fixed !important;
+    left: 16px !important;
+    top: 12px !important;
+    transform: none !important;
+    z-index: 999999 !important;
+
+    @media (max-width: 767px) {
+      left: 12px !important;
+      top: 10px !important;
+    }
 
     &-clickable {
       pointer-events: all;

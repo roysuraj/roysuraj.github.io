@@ -227,6 +227,11 @@ watch(
 .about-spacer {
   max-height: calc(var(--lvh) * 250);
   min-height: calc(var(--lvh) * 250);
+
+  @media (max-width: 1024px) {
+    max-height: calc(var(--lvh) * 80);
+    min-height: calc(var(--lvh) * 80);
+  }
 }
 
 .intro-wrapper {
