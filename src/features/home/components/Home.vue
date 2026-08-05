@@ -269,7 +269,8 @@ watch(
   width: 100%;
   max-height: calc(var(--lvh) * 100);
   min-height: calc(var(--lvh) * 100);
-  z-index: -1;
+  z-index: 1;
+  pointer-events: none;
   display: flex;
   align-items: flex-end;
 

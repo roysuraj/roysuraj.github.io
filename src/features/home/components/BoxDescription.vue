@@ -226,6 +226,8 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
 
   &-content {
     position: relative;
+    z-index: 1000;
+    pointer-events: auto !important;
     border: var(--stroke-sm) solid var(--color-cyan-400);
     border-radius: var(--radius-md);
     background: linear-gradient(to bottom, rgba(0, 53, 133, 0.85) 0%, rgba(0, 20, 60, 0.85) 100%);
