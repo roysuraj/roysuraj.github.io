@@ -37,7 +37,7 @@ const onTrainComplete = () => {
 </script>
 
 <template>
-  <Header />
+  <Header v-if="!preloaderVisible" />
 
   <!-- Train Journey Preloader -->
   <Teleport to=".preloader">

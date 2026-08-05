@@ -45,6 +45,7 @@ const setupActions = () => {
   desktopIdle.loop = LoopPingPong;
   actions.set("desktop-idle", desktopIdle);
   desktopIdle.weight = 1;
+  desktopIdle.play();
 
   //t-idle
   const tIdle = mixer.clipAction(getActionFromMesh("t-idle"));
@@ -59,12 +60,13 @@ const setupActions = () => {
   leftDesktop.clampWhenFinished = true;
   actions.set("left-desktop", leftDesktop);
   leftDesktop.weight = 0;
+  leftDesktop.play();
 
   //sleeping
   const sleeping = mixer.clipAction(getActionFromMesh("sleeping"));
   sleeping.loop = LoopPingPong;
   actions.set("sleeping", sleeping);
-  sleeping.weight = 1;
+  sleeping.weight = 0;
   sleeping.play();
 
   //wake-up
@@ -72,11 +74,15 @@ const setupActions = () => {
   wake.repetitions = 1;
   wake.clampWhenFinished = true;
   actions.set("wake-up", wake);
+  wake.weight = 0;
+  wake.play();
 
   //contact-idle
   const contactIdle = mixer.clipAction(getActionFromMesh("contact-idle"));
   contactIdle.loop = LoopPingPong;
   actions.set("contact-idle", contactIdle);
+  contactIdle.weight = 0;
+  contactIdle.play();
 
   //wave
   const wave = mixer.clipAction(getActionFromMesh("wave"));
@@ -106,6 +112,7 @@ const setupHologramActions = () => {
   leftDesktop.clampWhenFinished = true;
   hologramActions.set("left-desktop", leftDesktop);
   leftDesktop.weight = 0;
+  leftDesktop.play();
 
   //wave
   const wave = hologramMixer.clipAction(getActionFromMesh("wave"));
@@ -149,6 +156,11 @@ const updateIntro = () => {
   setWeight("contact-idle", 0);
   setWeight("wake-up", 0);
   setWeight("wave", wavingStrength.value * (1 - avatar.tIdleIntensity.value));
+
+  if (isAwake) {
+    isAwake = false;
+    sleepingSprite.show();
+  }
 };
 
 const wave = () => {
@@ -179,16 +191,17 @@ const wakeUp = () => {
   stopSnoreRepetition();
   playSound("gasp");
 
-  //crossfade to wake-up
-  sleepingAction.crossFadeTo(wakeUpAction, 0.2);
-  wakeUpAction.play();
+  // crossfade to wake-up
+  setWeight("sleeping", 0);
+  setWeight("wake-up", 1);
+  wakeUpAction.reset().play();
 
   const wakeUpDuration = wakeUpAction.getClip().duration;
 
   setTimeout(() => {
-    //crossfade to contact-idle
-    wakeUpAction.crossFadeTo(contactIdleAction, 0.5);
-    contactIdleAction.play();
+    setWeight("wake-up", 0);
+    setWeight("contact-idle", 1);
+    contactIdleAction.reset().play();
   }, wakeUpDuration * 1000);
 
   face.wakeUp();
@@ -199,10 +212,13 @@ const updateContact = () => {
   setWeight("desktop-idle", 0);
   setWeight("left-desktop", 0);
   setWeight("t-idle", 0);
-  setWeight("sleeping", 1);
-  setWeight("contact-idle", 1);
-  setWeight("wake-up", 1);
   setWeight("wave", 0);
+
+  if (!isAwake) {
+    setWeight("sleeping", 1);
+    setWeight("wake-up", 0);
+    setWeight("contact-idle", 0);
+  }
 };
 
 const update = () => {

@@ -6,6 +6,7 @@ import { lenis } from "../composables/useScroll";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useHeaderTheme } from "../composables/useHeaderTheme";
 import { projectId } from "../composables/useRouteObserver";
+import { preloaderVisible } from "../composables/usePreloader";
 
 const handleLinkClick = (link: string) => {
   if (!lenis.value) return;
@@ -24,19 +25,27 @@ const ariaLabels = {
 const isMounted = ref(false);
 
 const barStyle = ref({ transform: "" });
-const ITEM_WIDTH = 128;
+const getItemWidth = () => (typeof window !== "undefined" && window.innerWidth < 1024 ? 78 : 128);
 
 const { isDarkTheme, hasScrolledIntoView } = useHeaderTheme();
 
 const updateBarPosition = () => {
   const index = sections.indexOf(activeLink.value as ActiveLink);
-  const left = index * ITEM_WIDTH;
+  const left = index * getItemWidth();
   barStyle.value = {
     transform: `translateX(${left}px)`,
   };
 };
 
+const handleResize = () => {
+  if (activeLink.value) {
+    updateBarPosition();
+  }
+};
+
 onMounted(() => {
+  window.addEventListener("resize", handleResize);
+
   sections.forEach((section) => {
     ScrollTrigger.create({
       trigger: `#${section}`,
@@ -56,13 +65,12 @@ onMounted(() => {
   });
 
   ScrollTrigger.refresh();
-
   isMounted.value = true;
 });
 </script>
 
 <template>
-  <div :class="['header-home', { 'header-home-mounted': isMounted, 'header-home-isProjectPage': projectId !== null }]">
+  <div v-if="projectId === null && !preloaderVisible" :class="['header-home', { 'header-home-mounted': isMounted && hasScrolledIntoView }]">
     <div :class="['header-home-links', { 'header-home-links-dark': isDarkTheme }]">
       <div
         :class="[
@@ -95,29 +103,34 @@ onMounted(() => {
 <style scoped lang="scss">
 .header-home {
   position: fixed;
-  top: 0;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: var(--z-index-header-home);
-  height: var(--height-header);
+  z-index: 99999;
+  height: auto;
   align-items: center;
   justify-content: center;
-  display: none;
+  display: flex !important;
   opacity: 0;
+  pointer-events: auto;
   transition:
     opacity 0.3s ease-in-out,
     transform var(--transition-route-duration) var(--transition-route-ease);
 
+  @media (min-width: 1024px) {
+    top: 0;
+    height: var(--height-header);
+  }
+
   &-isProjectPage {
-    transform: translateX(-50%) translateY(-100%);
+    transform: translateX(-50%) translateY(-100%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    display: none !important;
   }
 
   &-mounted {
     opacity: 1;
-  }
-
-  @include mixins.mq("lg") {
-    display: flex;
   }
 
   &-links {
@@ -130,6 +143,11 @@ onMounted(() => {
     transition:
       color 0.1s ease-in-out,
       background-color 0.1s ease-in-out;
+
+    @media (max-width: 1023px) {
+      padding: 2px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    }
 
     &-dark {
       background-color: var(--color-dark-blue-500);
@@ -152,6 +170,12 @@ onMounted(() => {
     z-index: 1;
     opacity: 0;
 
+    @media (max-width: 1023px) {
+      top: 2px;
+      height: calc(100% - 4px);
+      width: 78px;
+    }
+
     &-dark {
       background-color: var(--color-cyan-500);
     }
@@ -173,6 +197,13 @@ onMounted(() => {
     width: 128px;
     white-space: nowrap;
     text-transform: uppercase;
+
+    @media (max-width: 1023px) {
+      width: 78px;
+      font-size: 10px;
+      padding: 5px 0;
+      text-align: center;
+    }
 
     &-active {
       color: var(--color-white-400);
