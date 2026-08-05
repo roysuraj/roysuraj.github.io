@@ -149,7 +149,7 @@ watch(
           :style="{ '--contact-bottom': `${contactBottom}px` }"
         >
           <canvas :class="['three-canvas', { 'three-canvas-contact': !isStickyVisible }]" ref="threeCanvasRef"></canvas>
-          <div :class="{ 'intro-about-hidden': !isStickyVisible }">
+          <div class="intro-about-wrapper" :class="{ 'intro-about-hidden': !isStickyVisible }">
             <About :spacer-ref="aboutSpacerRef" />
           </div>
         </div>
@@ -172,7 +172,9 @@ watch(
   width: calc(var(--svw) * 100);
   height: calc(var(--lvh) * 100);
   max-height: calc(var(--lvh) * 100);
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   overflow: hidden;
 
   &-contact {
@@ -229,8 +231,8 @@ watch(
   min-height: calc(var(--lvh) * 250);
 
   @media (max-width: 1024px) {
-    max-height: calc(var(--lvh) * 80);
-    min-height: calc(var(--lvh) * 80);
+    max-height: calc(var(--lvh) * 180);
+    min-height: calc(var(--lvh) * 180);
   }
 }
 
@@ -270,13 +272,22 @@ watch(
   max-height: calc(var(--lvh) * 100);
   min-height: calc(var(--lvh) * 100);
   overflow: hidden;
-  z-index: -1;
-  display: flex;
-  align-items: flex-end;
+  position: relative;
+  z-index: 1;
 
   &-visible {
     position: sticky;
   }
+}
+
+.intro-about-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
 }
 
 .intro-sticky-content {

@@ -88,11 +88,13 @@ watchEffect((onInvalidate) => {
     @media (max-width: 767px) {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      gap: var(--space-xs);
-      padding: var(--space-sm);
-      height: calc(var(--lvh) * 100);
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      padding: 60px 14px 20px 14px;
+      height: 100%;
       overflow-y: auto;
+      pointer-events: auto;
     }
   }
 
@@ -125,10 +127,10 @@ watchEffect((onInvalidate) => {
 
     @media (max-width: 1024px) {
       padding-right: 0 !important;
-      position: absolute !important;
+      position: relative !important;
       top: auto !important;
       left: 0 !important;
-      bottom: 5% !important;
+      bottom: auto !important;
       height: auto !important;
       width: 100% !important;
       padding-left: 12px !important;
@@ -153,6 +155,13 @@ watchEffect((onInvalidate) => {
     bottom: 0;
     left: var(--space-outer);
     width: calc(100% - var(--space-outer) * 2);
+  }
+
+  &-exp-card {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 20;
+    margin-top: 10px;
   }
 }
 </style>

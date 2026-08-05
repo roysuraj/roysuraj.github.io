@@ -107,19 +107,19 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
 };
 
 const SERVICES_EN = [
-  { name: "Flutter & React Native" },
-  { name: "Firebase & GCP Backend" },
-  { name: "Agile/Scrum Management" },
-  { name: "TypeScript Cloud Functions" },
-  { name: "BigQuery & Google Analytics" },
+  { name: "Flutter, Android (Java/Kotlin) & iOS" },
+  { name: "React Native, Vue.js & Next.js" },
+  { name: "Firebase, GCP & .NET Core Backend" },
+  { name: "Clean Architecture & MVVM / BLoC" },
+  { name: "Bluetooth, GPS & AI (OpenAI/ML Kit)" },
 ] as const satisfies { name: string }[];
 
 const SERVICES_DE = [
-  { name: "Flutter & React Native" },
-  { name: "Firebase & GCP Backend" },
-  { name: "Agile/Scrum Management" },
-  { name: "TypeScript Cloud Functions" },
-  { name: "BigQuery & Google Analytics" },
+  { name: "Flutter, Android (Java/Kotlin) & iOS" },
+  { name: "React Native, Vue.js & Next.js" },
+  { name: "Firebase, GCP & .NET Core Backend" },
+  { name: "Clean Architecture & MVVM / BLoC" },
+  { name: "Bluetooth, GPS & KI (OpenAI/ML Kit)" },
 ] as const satisfies { name: string }[];
 
 const services = computed(() => {
@@ -165,6 +165,10 @@ const services = computed(() => {
   left: 0;
   bottom: 0;
 
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+
   @include mixins.landscape {
     width: auto;
     min-width: 290px;
@@ -202,6 +206,11 @@ const services = computed(() => {
     flex-direction: column;
     gap: var(--space-xs);
     padding: var(--space-sm) var(--space-md);
+
+    @media (max-width: 767px) {
+      padding: 10px 14px;
+      gap: 6px;
+    }
 
     @include mixins.landscape {
       padding: var(--space-xs) var(--space-sm);

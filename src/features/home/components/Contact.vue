@@ -503,59 +503,60 @@ onUnmounted(() => {
       border-color: #7ee6d7;
       color: #7ee6d7;
       box-shadow: 0 0 16px rgba(126, 230, 215, 0.4);
-      transform: translateY(-1px);
     }
   }
+}
 
-  &-legal-bar {
-    display: flex;
-    align-items: center;
+.contact-legal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(8, 20, 42, 0.65);
+  border: 1px solid rgba(126, 230, 215, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+
+  @media (max-width: 640px) {
+    flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    margin-top: 12px;
-    padding: 10px 14px;
-    background: rgba(8, 20, 42, 0.65);
-    border: 1px solid rgba(126, 230, 215, 0.2);
-    border-radius: 16px;
-    backdrop-filter: blur(12px);
-
-    @media (max-width: 640px) {
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 8px 12px;
-    }
+    gap: 10px;
+    padding: 8px 12px;
   }
+}
 
-  &-legal-links {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.contact-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-legal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: rgba(126, 230, 215, 0.1);
+  border: 1px solid rgba(126, 230, 215, 0.3);
+  border-radius: 100px;
+  color: #7ee6d7;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(126, 230, 215, 0.25);
+    border-color: #7ee6d7;
+    color: #ffffff;
+    transform: translateY(-1px);
   }
+}
 
-  &-legal-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 6px 12px;
-    background: rgba(126, 230, 215, 0.1);
-    border: 1px solid rgba(126, 230, 215, 0.3);
-    border-radius: 100px;
-    color: #7ee6d7;
-    font-family: 'Urbanist', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s ease;
-
-    &:hover {
-      background: rgba(126, 230, 215, 0.25);
-      border-color: #7ee6d7;
-      color: #ffffff;
-      transform: translateY(-1px);
-    }
-  }
-
+.contact {
   @media (max-width: 767px) {
     padding: 12px !important;
     padding-top: 24px !important;

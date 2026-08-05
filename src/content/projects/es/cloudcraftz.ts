@@ -1,7 +1,7 @@
 import type { ProjectContent } from "../../types";
 
 export default {
-  title: "Cloudcraftz Solutions",
+  title: "Optique",
   theme: "dark",
   tags: ["javascript", "node", "react"],
   description: "Ingeniero de Desarrollo de Software. 05/2022 - 11/2023.\nLideró proyectos en CloudCraftz como OptiqueSutra School (Flutter & Firebase). Uso de Java (Micronaut), TypeScript para funciones en la nube, Python y modelos de OpenAI.",
