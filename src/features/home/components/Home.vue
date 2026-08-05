@@ -172,9 +172,7 @@ watch(
   width: calc(var(--svw) * 100);
   height: calc(var(--lvh) * 100);
   max-height: calc(var(--lvh) * 100);
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   overflow: hidden;
 
   &-contact {
@@ -272,8 +270,9 @@ watch(
   max-height: calc(var(--lvh) * 100);
   min-height: calc(var(--lvh) * 100);
   overflow: hidden;
-  position: relative;
-  z-index: 1;
+  z-index: -1;
+  display: flex;
+  align-items: flex-end;
 
   &-visible {
     position: sticky;
