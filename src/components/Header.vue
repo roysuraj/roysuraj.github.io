@@ -23,7 +23,6 @@ const isGetInTouchOpen = ref(false);
 const handleGetInTouchClick = (e: MouseEvent) => {
   e.preventDefault();
   isGetInTouchOpen.value = true;
-  window.open("/Suraj_Roy_Senior_Mobile_Software_Engineer_Resume-2.pdf", "_blank", "noopener,noreferrer");
 };
 
 const { isDarkTheme } = useHeaderTheme({

@@ -76,7 +76,7 @@ const stations = [
     sceneName: '🎢 Coaster Thrills'
   },
   {
-    year: '2022–26',
+    year: `2022–${new Date().getFullYear().toString().slice(-2)}`,
     label: 'Job',
     emoji: '💼',
     ratio: 0.83,
@@ -1210,7 +1210,13 @@ onUnmounted(() => {
     padding: 2px 6px;
   }
   .tj__contact {
-    display: none;
+    display: flex;
+    gap: 4px 8px;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .tj__contact-item {
+    font-size: 9.5px;
   }
   .tj__skip {
     top: 8px;
@@ -1269,7 +1275,12 @@ onUnmounted(() => {
     font-size: 11px;
   }
   .tj__contact {
-    display: none;
+    display: flex;
+    gap: 2px 6px;
+    padding: 2px 6px;
+  }
+  .tj__contact-item {
+    font-size: 8.5px;
   }
   .tj__skip {
     top: 4px;

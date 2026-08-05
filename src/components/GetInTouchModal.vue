@@ -112,7 +112,7 @@ onUnmounted(() => {
               </div>
               <div class="git-detail-item">
                 <span class="git-detail-label">📞 Phone:</span>
-                <span class="git-detail-value">+91 89108 36042 / +91 62902 75866</span>
+                <span class="git-detail-value">+91 89108 36042 / +91 91237 27623</span>
               </div>
             </div>
           </div>

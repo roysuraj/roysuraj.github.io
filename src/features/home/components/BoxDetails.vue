@@ -136,6 +136,10 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
   position: relative;
   width: 100%;
 
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+
   @include mixins.landscape {
     display: block;
     position: absolute;

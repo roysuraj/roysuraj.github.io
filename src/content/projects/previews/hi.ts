@@ -1,10 +1,9 @@
 import type { ProjectPreview } from "../../types";
 
 export default [
-  { title: "Inland World Logistics", slug: "inland", thumbnail: "/images/xlenttea.png", description: "अंतर्राष्ट्रीय माल अग्रेषण और रसद प्लेटफॉर्म" },
-  { title: "Ionio AI Solutions", slug: "ionio", thumbnail: "/images/afterbell.png", description: "फुल स्टैक AI और क्लाउड आर्किटेक्चर" },
-  { title: "CloudCraftz Technology", slug: "cloudcraftz", thumbnail: "/images/sonics.png", description: "एंटरप्राइज क्लाउड और डेटा इंजीनियरिंग" },
-  { title: "CraftVeda Platform", slug: "craftveda", thumbnail: "/images/qomix.svg", description: "आधुनिक डिजिटल हस्तशिल्प प्लेटफॉर्म" },
-  { title: "Distarise Cloud", slug: "distarise", thumbnail: "/images/xlenttea.png", description: "स्केलेबल क्लाउड समाधान" },
-  { title: "Education & Research", slug: "education", thumbnail: "/images/afterbell.png", description: "डिजिटल शिक्षा और अनुसंधान ऐप्स" },
+  { title: "X-lent Tea", slug: "cubewar", thumbnail: "/images/xlenttea.png", description: "चाय ई-कॉमर्स ऐप" },
+  { title: "Optique", slug: "cloudcraftz", thumbnail: "/images/optique.svg", description: "स्कूल प्रबंधन और लर्निंग ऐप" },
+  { title: "Afterbell", slug: "quibbo", thumbnail: "/images/afterbell.png", description: "बाल शिक्षा और प्रगति ट्रैकिंग ऐप" },
+  { title: "Sonics Music Station", slug: "sharkie", thumbnail: "/images/sonics.png", description: "संगीत और रेडियो ऐप" },
+  { title: "QOMIX", slug: "pokedex", thumbnail: "/images/qomix.svg", description: "वेब अनुभव" },
 ] as const satisfies ProjectPreview[];

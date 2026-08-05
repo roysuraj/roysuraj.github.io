@@ -207,7 +207,7 @@ const setupSectionsAnimation = ({
       duration: 1,
       scrollTrigger: {
         trigger: about,
-        start: isLandscape ? "top 35%" : "top 25%",
+        start: isLandscape ? "top 35%" : "top 60%",
         end: "bottom bottom",
         scrub: true,
       },
@@ -247,56 +247,18 @@ const setupSectionsAnimation = ({
         tlServices?.play();
       }, SERVICES_DELAY);
     } else {
-      // Mobile / Portrait: animate description, details, and services in sequence
-      const DESCRIPTION_DELAY = 0;
-      const DETAILS_DELAY = 0.35;
-      const SERVICES_DELAY = 0.7;
+      // Mobile / Portrait: Fade in cards as user scrolls into About section
+      tl.fromTo(contentDetails, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 0);
+      tl.fromTo(contentDescription, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 0.2);
+      tl.fromTo(contentServices, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 0.4);
+      tl.fromTo(contentProgressCount, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 0);
 
-      // Animate the portrait alongside description
-      tl.fromTo(portrait, { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "power1.out" }, DESCRIPTION_DELAY);
+      // Enable pointer-events once cards become visible
+      tl.to([contentDetails, contentDescription, contentServices], { pointerEvents: "auto", duration: 0.01 }, 0.1);
 
-      // Description animation
-      tl.fromTo(
-        contentDescription,
-        { opacity: 0, y: "10vh" },
-        { opacity: 1, y: "0vh", duration: 0.15, ease: "power1.out" },
-        DESCRIPTION_DELAY,
-      );
-      tl.to(contentDescription, { opacity: 0, y: "-10vh", duration: 0.15, ease: "power1.out" }, DETAILS_DELAY - 0.05);
-      tl.add(() => {
-        tlDescription?.play();
-      }, DESCRIPTION_DELAY);
-
-      // Details (Experience/Skills/Bio) animation on mobile
-      tl.fromTo(
-        contentDetails,
-        { opacity: 0, y: "10vh" },
-        { opacity: 1, y: "0vh", duration: 0.15, ease: "power1.out" },
-        DETAILS_DELAY,
-      );
-      tl.to(contentDetails, { opacity: 0, y: "-10vh", duration: 0.15, ease: "power1.out" }, SERVICES_DELAY - 0.05);
-      tl.add(() => {
-        tlDetails?.play();
-      }, DETAILS_DELAY);
-
-      // Services animation
-      tl.fromTo(
-        contentServices,
-        { opacity: 0, y: "10vh" },
-        { opacity: 1, y: "0vh", duration: 0.15, ease: "power1.out" },
-        SERVICES_DELAY,
-      );
-      tl.add(() => {
-        tlServices?.play();
-      }, SERVICES_DELAY);
-
-      // ProgressCount animation - fade in on portrait
-      tl.fromTo(
-        contentProgressCount,
-        { opacity: 0, y: "10vh" },
-        { opacity: 1, y: "0vh", duration: 0.15, ease: "power1.out" },
-        DESCRIPTION_DELAY,
-      );
+      tl.add(() => { tlDetails?.play(); }, 0);
+      tl.add(() => { tlDescription?.play(); }, 0.2);
+      tl.add(() => { tlServices?.play(); }, 0.4);
     }
   });
 };
