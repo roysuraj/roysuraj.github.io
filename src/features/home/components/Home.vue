@@ -269,13 +269,13 @@ watch(
   width: 100%;
   max-height: calc(var(--lvh) * 100);
   min-height: calc(var(--lvh) * 100);
-  overflow: hidden;
   z-index: -1;
   display: flex;
   align-items: flex-end;
 
   &-visible {
     position: sticky;
+    overflow: hidden;
   }
 }
 

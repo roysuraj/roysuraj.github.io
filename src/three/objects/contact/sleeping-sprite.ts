@@ -78,6 +78,10 @@ const hide = () => {
   opacityTarget = 0;
 };
 
+const show = () => {
+  opacityTarget = 1;
+};
+
 const tick = () => {
   if (!mesh) return;
 
@@ -105,4 +109,4 @@ const destroy = () => {
   gsap.ticker.remove(tick);
 };
 
-export const sleepingSprite = { init, destroy, hide };
+export const sleepingSprite = { init, destroy, hide, show };
