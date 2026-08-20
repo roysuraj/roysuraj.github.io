@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <defs>
+    <linearGradient id="stGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8A2387"/>
+      <stop offset="50%" stop-color="#E94057"/>
+      <stop offset="100%" stop-color="#F27121"/>
+    </linearGradient>
+    <linearGradient id="stGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#11998e"/>
+      <stop offset="100%" stop-color="#38ef7d"/>
+    </linearGradient>
+    <linearGradient id="stGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4e54c8"/>
+      <stop offset="100%" stop-color="#8f94fb"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="460" rx="20" fill="#0B132B"/>
+
+  <!-- Header -->
+  <g transform="translate(40, 40)">
+    <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#ffffff">📻 Curated Radio Stations & Playlists</text>
+    <text x="0" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#8E9AA8">Discover non-stop curated genre streams and personalized mood channels</text>
+  </g>
+
+  <!-- 3 Station Cards -->
+  <!-- Card 1 -->
+  <g transform="translate(40, 110)">
+    <rect width="220" height="300" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="15" y="15" width="190" height="150" rx="12" fill="url(#stGrad1)"/>
+    <text x="110" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="900" fill="#ffffff" text-anchor="middle">90s HITS</text>
+    <text x="15" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#ffffff">Bollywood Retro FM</text>
+    <text x="15" y="218" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#8E9AA8">Kumar Sanu, Alka Yagnik, Udit N.</text>
+    <rect x="15" y="245" width="190" height="36" rx="10" fill="rgba(233,64,87,0.2)" stroke="#E94057" stroke-width="1"/>
+    <text x="110" y="268" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#FFA07A" text-anchor="middle">▶ TUNE IN LIVE</text>
+  </g>
+
+  <!-- Card 2 -->
+  <g transform="translate(290, 110)">
+    <rect width="220" height="300" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="15" y="15" width="190" height="150" rx="12" fill="url(#stGrad2)"/>
+    <text x="110" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="900" fill="#ffffff" text-anchor="middle">ACOUSTIC</text>
+    <text x="15" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#ffffff">Indie & Unplugged</text>
+    <text x="15" y="218" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#8E9AA8">Prateek Kuhad, Anuv Jain, Jasleen</text>
+    <rect x="15" y="245" width="190" height="36" rx="10" fill="rgba(56,239,125,0.15)" stroke="#38ef7d" stroke-width="1"/>
+    <text x="110" y="268" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#7EE6D7" text-anchor="middle">▶ TUNE IN LIVE</text>
+  </g>
+
+  <!-- Card 3 -->
+  <g transform="translate(540, 110)">
+    <rect width="220" height="300" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="15" y="15" width="190" height="150" rx="12" fill="url(#stGrad3)"/>
+    <text x="110" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="900" fill="#ffffff" text-anchor="middle">LO-FI CHILL</text>
+    <text x="15" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#ffffff">Midnight Beats & Rain</text>
+    <text x="15" y="218" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#8E9AA8">Slowed + Reverb Bollywood Edits</text>
+    <rect x="15" y="245" width="190" height="36" rx="10" fill="rgba(143,148,251,0.2)" stroke="#8f94fb" stroke-width="1"/>
+    <text x="110" y="268" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#C3CCDB" text-anchor="middle">▶ TUNE IN LIVE</text>
+  </g>
+</svg>

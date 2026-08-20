@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="dashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="barGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#238636"/>
+      <stop offset="100%" stop-color="#2ea043"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="20" fill="url(#dashGrad)"/>
+
+  <!-- Top App Bar -->
+  <rect x="0" y="0" width="800" height="50" fill="#010409" stroke="#30363d" stroke-width="1"/>
+  <circle cx="25" cy="25" r="5" fill="#f85149"/>
+  <circle cx="42" cy="25" r="5" fill="#e3b341"/>
+  <circle cx="59" cy="25" r="5" fill="#3fb950"/>
+  <text x="90" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#f0f6fc">QOMIX CLOUD</text>
+  <rect x="195" y="12" width="220" height="26" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="210" y="29" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#8b949e">🔍 Search organizations, pipelines...</text>
+  <rect x="690" y="12" width="90" height="26" rx="6" fill="#1f6feb"/>
+  <text x="735" y="29" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">+ NEW WORKFLOW</text>
+
+  <!-- Sidebar -->
+  <g transform="translate(0, 50)">
+    <rect width="180" height="450" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+    
+    <rect x="12" y="20" width="156" height="32" rx="6" fill="#1f6feb" fill-opacity="0.15" stroke="#1f6feb" stroke-width="1"/>
+    <text x="36" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#58a6ff">📊 Overview &amp; MRR</text>
+
+    <text x="36" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#8b949e">⚡ Automations</text>
+    <text x="36" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#8b949e">🏢 Organizations</text>
+    <text x="36" y="165" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#8b949e">💳 Subscriptions</text>
+    <text x="36" y="205" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#8b949e">🛡️ Security &amp; Audit</text>
+    <text x="36" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#8b949e">⚙️ API Keys &amp; Webhooks</text>
+  </g>
+
+  <!-- Main Content Area -->
+  <g transform="translate(200, 70)">
+    <!-- 3 Stat Cards -->
+    <g transform="translate(0, 0)">
+      <rect width="180" height="85" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="16" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#8b949e">MONTHLY REVENUE</text>
+      <text x="16" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#f0f6fc">$142,850</text>
+      <text x="16" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#3fb950">▲ +18.4% this mo</text>
+    </g>
+
+    <g transform="translate(195, 0)">
+      <rect width="180" height="85" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="16" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#8b949e">ACTIVE ENTERPRISE SEATS</text>
+      <text x="16" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#58a6ff">18,420</text>
+      <text x="16" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#3fb950">▲ 99.98% uptime</text>
+    </g>
+
+    <g transform="translate(390, 0)">
+      <rect width="180" height="85" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="16" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#8b949e">WORKFLOWS EXECUTED</text>
+      <text x="16" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#d29922">1.24M</text>
+      <text x="16" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#58a6ff">Avg: 38ms latency</text>
+    </g>
+
+    <!-- Interactive Revenue Line Chart Card -->
+    <g transform="translate(0, 105)">
+      <rect width="570" height="295" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="20" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#f0f6fc">Revenue Trajectory &amp; Pipeline Throughput</text>
+      
+      <!-- Chart Area -->
+      <g transform="translate(30, 60)">
+        <!-- Grid lines -->
+        <line x1="0" y1="0" x2="510" y2="0" stroke="#21262d" stroke-dasharray="4 4"/>
+        <line x1="0" y1="50" x2="510" y2="50" stroke="#21262d" stroke-dasharray="4 4"/>
+        <line x1="0" y1="100" x2="510" y2="100" stroke="#21262d" stroke-dasharray="4 4"/>
+        <line x1="0" y1="150" x2="510" y2="150" stroke="#21262d" stroke-dasharray="4 4"/>
+        <line x1="0" y1="190" x2="510" y2="190" stroke="#30363d"/>
+
+        <!-- Filled Gradient Path -->
+        <path d="M0 160 Q 90 120, 150 130 T 300 80 T 420 40 T 510 20 L 510 190 L 0 190 Z" fill="url(#chartGrad)"/>
+        <!-- Stroke Line -->
+        <path d="M0 160 Q 90 120, 150 130 T 300 80 T 420 40 T 510 20" fill="none" stroke="#58a6ff" stroke-width="3"/>
+        
+        <!-- Live Data Points -->
+        <circle cx="150" cy="130" r="5" fill="#58a6ff" stroke="#0d1117" stroke-width="2"/>
+        <circle cx="300" cy="80" r="5" fill="#58a6ff" stroke="#0d1117" stroke-width="2"/>
+        <circle cx="420" cy="40" r="5" fill="#58a6ff" stroke="#0d1117" stroke-width="2"/>
+        <circle cx="510" cy="20" r="6" fill="#3fb950" stroke="#0d1117" stroke-width="2"/>
+
+        <!-- Month Labels -->
+        <text x="0" y="210" font-family="sans-serif" font-size="10" fill="#8b949e">JAN</text>
+        <text x="100" y="210" font-family="sans-serif" font-size="10" fill="#8b949e">MAR</text>
+        <text x="200" y="210" font-family="sans-serif" font-size="10" fill="#8b949e">MAY</text>
+        <text x="300" y="210" font-family="sans-serif" font-size="10" fill="#8b949e">JUL</text>
+        <text x="400" y="210" font-family="sans-serif" font-size="10" fill="#8b949e">SEP</text>
+        <text x="490" y="210" font-family="sans-serif" font-size="10" fill="#8b949e">NOV</text>
+      </g>
+    </g>
+  </g>
+</svg>

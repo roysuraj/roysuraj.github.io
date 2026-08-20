@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <defs>
+    <linearGradient id="adGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="100%" stop-color="#172a45"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="460" rx="20" fill="url(#adGrad)"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="54" fill="rgba(0,0,0,0.35)"/>
+  <circle cx="28" cy="27" r="6" fill="#FF5F56"/>
+  <circle cx="48" cy="27" r="6" fill="#FFBD2E"/>
+  <circle cx="68" cy="27" r="6" fill="#27C93F"/>
+  <text x="400" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#8E9AA8" text-anchor="middle">sonics.afterbell.in/login.php · Station Broadcast &amp; Content Management</text>
+
+  <!-- Sidebar -->
+  <g transform="translate(30, 80)">
+    <rect width="180" height="340" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="20" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#7EE6D7">SONICS CMS</text>
+    
+    <rect x="12" y="60" width="156" height="34" rx="8" fill="rgba(0,141,255,0.2)"/>
+    <text x="26" y="82" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#008DFF">🎵 Track Ingestion</text>
+
+    <text x="26" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#C3CCDB">📻 Station Curations</text>
+    <text x="26" y="165" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#C3CCDB">📊 Streaming Telemetry</text>
+    <text x="26" y="205" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#C3CCDB">🎙️ Artist Metadata</text>
+    <text x="26" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#C3CCDB">⚙️ DSP Audio Engine</text>
+  </g>
+
+  <!-- Main Panel -->
+  <g transform="translate(230, 80)">
+    <rect width="530" height="340" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    
+    <!-- Stats Row -->
+    <g transform="translate(20, 20)">
+      <rect width="150" height="70" rx="10" fill="rgba(0,0,0,0.3)"/>
+      <text x="16" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#8E9AA8">ACTIVE LISTENERS</text>
+      <text x="16" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="900" fill="#00E5FF">14,820</text>
+    </g>
+    <g transform="translate(185, 20)">
+      <rect width="150" height="70" rx="10" fill="rgba(0,0,0,0.3)"/>
+      <text x="16" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#8E9AA8">STATION BITRATE</text>
+      <text x="16" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="900" fill="#7EE6D7">320 Kbps</text>
+    </g>
+    <g transform="translate(350, 20)">
+      <rect width="160" height="70" rx="10" fill="rgba(0,0,0,0.3)"/>
+      <text x="16" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#8E9AA8">LOSSLESS STREAMS</text>
+      <text x="16" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="900" fill="#FFD700">FLAC / ALAC</text>
+    </g>
+
+    <!-- Table of uploaded tracks -->
+    <g transform="translate(20, 110)">
+      <text x="0" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#ffffff">Recently Ingested Broadcast Tracks</text>
+      
+      <!-- Row 1: Kesariya -->
+      <rect x="0" y="30" width="490" height="42" rx="8" fill="rgba(255,255,255,0.06)"/>
+      <text x="16" y="56" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#FFA07A">Kesariya (Brahmāstra)</text>
+      <text x="180" y="56" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" fill="#8E9AA8">Arijit Singh, Pritam</text>
+      <text x="330" y="56" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#7EE6D7">04:28 · 320K</text>
+      <text x="440" y="56" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#00E5FF">ACTIVE</text>
+
+      <!-- Row 2: Teri Galliyan -->
+      <rect x="0" y="80" width="490" height="42" rx="8" fill="rgba(255,255,255,0.03)"/>
+      <text x="16" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#00E5FF">Teri Galliyan (Ek Villain)</text>
+      <text x="180" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" fill="#8E9AA8">Ankit Tiwari</text>
+      <text x="330" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#7EE6D7">05:40 · FLAC</text>
+      <text x="440" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#00E5FF">ACTIVE</text>
+
+      <!-- Row 3: Raataan Lambiyan -->
+      <rect x="0" y="130" width="490" height="42" rx="8" fill="rgba(255,255,255,0.03)"/>
+      <text x="16" y="156" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#ffffff">Raataan Lambiyan (Shershaah)</text>
+      <text x="180" y="156" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" fill="#8E9AA8">Jubin Nautiyal, Asees Kaur</text>
+      <text x="330" y="156" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#7EE6D7">03:50 · 320K</text>
+      <text x="440" y="156" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#00E5FF">ACTIVE</text>
+    </g>
+  </g>
+</svg>

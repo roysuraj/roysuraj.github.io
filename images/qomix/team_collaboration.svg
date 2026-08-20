@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <defs>
+    <linearGradient id="secGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="460" rx="20" fill="url(#secGrad)"/>
+
+  <!-- Top Title -->
+  <g transform="translate(40, 35)">
+    <text x="0" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="900" fill="#f0f6fc">🏢 Enterprise Multi-Tenancy &amp; Role-Based Access Control (RBAC)</text>
+    <text x="0" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#8b949e">Granular permission matrices, SAML 2.0 / Okta SSO integration, and immutable compliance audit trails</text>
+  </g>
+
+  <!-- Left: Multi-Tenant Hierarchy -->
+  <g transform="translate(40, 85)">
+    <rect width="340" height="285" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+    <text x="20" y="30" font-family="sans-serif" font-size="13" font-weight="800" fill="#58a6ff">ORGANIZATION &amp; WORKSPACES</text>
+    
+    <!-- Tenant 1 -->
+    <rect x="15" y="45" width="310" height="52" rx="8" fill="#161b22" stroke="#1f6feb" stroke-width="1"/>
+    <circle cx="36" cy="71" r="12" fill="#1f6feb"/>
+    <text x="36" y="75" font-family="sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">AC</text>
+    <text x="58" y="65" font-family="sans-serif" font-size="12" font-weight="700" fill="#f0f6fc">Acme Corporation Inc.</text>
+    <text x="58" y="82" font-family="sans-serif" font-size="10" fill="#3fb950">Enterprise Tier · 240 Seats · US-East</text>
+
+    <!-- Tenant 2 -->
+    <rect x="15" y="105" width="310" height="52" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <circle cx="36" cy="131" r="12" fill="#238636"/>
+    <text x="36" y="135" font-family="sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">NL</text>
+    <text x="58" y="125" font-family="sans-serif" font-size="12" font-weight="700" fill="#f0f6fc">NovaLabs Global</text>
+    <text x="58" y="142" font-family="sans-serif" font-size="10" fill="#8b949e">Growth Tier · 85 Seats · EU-Central</text>
+
+    <!-- Tenant 3 -->
+    <rect x="15" y="165" width="310" height="52" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <circle cx="36" cy="191" r="12" fill="#8957e5"/>
+    <text x="36" y="195" font-family="sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle">SX</text>
+    <text x="58" y="185" font-family="sans-serif" font-size="12" font-weight="700" fill="#f0f6fc">Skyline Dynamics</text>
+    <text x="58" y="202" font-family="sans-serif" font-size="10" fill="#8b949e">Scale Tier · 150 Seats · AP-South</text>
+
+    <!-- Tenant 4 -->
+    <rect x="15" y="225" width="310" height="46" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <text x="170" y="253" font-family="sans-serif" font-size="11" font-weight="700" fill="#58a6ff" text-anchor="middle">+ PROVISION NEW TENANT</text>
+  </g>
+
+  <!-- Right: Audit Logs & Security -->
+  <g transform="translate(410, 85)">
+    <rect width="350" height="285" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+    <text x="20" y="30" font-family="sans-serif" font-size="13" font-weight="800" fill="#3fb950">LIVE SECURITY &amp; AUDIT LOGS</text>
+
+    <!-- Log 1 -->
+    <g transform="translate(15, 50)">
+      <rect width="320" height="42" rx="6" fill="#161b22"/>
+      <circle cx="15" cy="21" r="4" fill="#3fb950"/>
+      <text x="28" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#f0f6fc">SSO Auth via Okta SAML</text>
+      <text x="28" y="32" font-family="monospace" font-size="9" fill="#8b949e">user: admin@acme.com · 2s ago</text>
+    </g>
+
+    <!-- Log 2 -->
+    <g transform="translate(15, 100)">
+      <rect width="320" height="42" rx="6" fill="#161b22"/>
+      <circle cx="15" cy="21" r="4" fill="#58a6ff"/>
+      <text x="28" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#f0f6fc">API Key Rotated (Production)</text>
+      <text x="28" y="32" font-family="monospace" font-size="9" fill="#8b949e">key_id: qmx_live_829f · 14m ago</text>
+    </g>
+
+    <!-- Log 3 -->
+    <g transform="translate(15, 150)">
+      <rect width="320" height="42" rx="6" fill="#161b22"/>
+      <circle cx="15" cy="21" r="4" fill="#d29922"/>
+      <text x="28" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#f0f6fc">Webhook Endpoint Modified</text>
+      <text x="28" y="32" font-family="monospace" font-size="9" fill="#8b949e">endpoint: /hooks/billing · 1h ago</text>
+    </g>
+
+    <!-- Log 4 -->
+    <g transform="translate(15, 200)">
+      <rect width="320" height="42" rx="6" fill="#161b22"/>
+      <circle cx="15" cy="21" r="4" fill="#3fb950"/>
+      <text x="28" y="18" font-family="sans-serif" font-size="11" font-weight="700" fill="#f0f6fc">Compliance Snapshot Generated</text>
+      <text x="28" y="32" font-family="monospace" font-size="9" fill="#8b949e">SOC 2 Type II · GDPR Verified</text>
+    </g>
+  </g>
+
+  <!-- Bottom Bar -->
+  <g transform="translate(40, 385)">
+    <rect width="720" height="45" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <text x="24" y="27" font-family="sans-serif" font-size="12" font-weight="800" fill="#ffffff">🔒 Enterprise Security Standards:</text>
+    <text x="230" y="27" font-family="sans-serif" font-size="11" font-weight="600" fill="#58a6ff">AES-256 Encryption at Rest · TLS 1.3 in Flight · SCIM Provisioning · Multi-Region Failover</text>
+  </g>
+</svg>

@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <style>
+      @keyframes steamFloat1 {
+        0% { transform: translateY(0) scaleX(1); opacity: 0; }
+        20% { opacity: 0.8; }
+        80% { opacity: 0.6; }
+        100% { transform: translateY(-70px) scaleX(1.4); opacity: 0; }
+      }
+      @keyframes steamFloat2 {
+        0% { transform: translateY(0) scaleX(1); opacity: 0; }
+        30% { opacity: 0.9; }
+        80% { opacity: 0.5; }
+        100% { transform: translateY(-90px) scaleX(1.3); opacity: 0; }
+      }
+      @keyframes steamFloat3 {
+        0% { transform: translateY(0) scaleX(1); opacity: 0; }
+        25% { opacity: 0.7; }
+        75% { opacity: 0.4; }
+        100% { transform: translateY(-80px) scaleX(1.5); opacity: 0; }
+      }
+      @keyframes teaAromaWave {
+        0%, 100% { transform: rotate(-3deg); }
+        50% { transform: rotate(3deg); }
+      }
+      @keyframes leafSway {
+        0%, 100% { transform: rotate(0deg) translateY(0); }
+        50% { transform: rotate(8deg) translateY(-4px); }
+      }
+      @keyframes glowPulse {
+        0%, 100% { filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.4)); }
+        50% { filter: drop-shadow(0 0 20px rgba(0, 255, 135, 0.7)); }
+      }
+      .steam-path-1 {
+        animation: steamFloat1 3.5s ease-out infinite;
+        transform-origin: 300px 170px;
+      }
+      .steam-path-2 {
+        animation: steamFloat2 4s ease-out infinite 1.2s;
+        transform-origin: 270px 170px;
+      }
+      .steam-path-3 {
+        animation: steamFloat3 3.8s ease-out infinite 0.6s;
+        transform-origin: 330px 170px;
+      }
+      .tea-leaves-group {
+        animation: leafSway 4s ease-in-out infinite alternate;
+        transform-origin: 300px 220px;
+      }
+      .cup-glow {
+        animation: glowPulse 4s ease-in-out infinite alternate;
+      }
+    </style>
+
+    <linearGradient id="teaLiquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E58E26"/>
+      <stop offset="50%" stop-color="#B7521E"/>
+      <stop offset="100%" stop-color="#782806"/>
+    </linearGradient>
+
+    <linearGradient id="cupGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f1f2f6"/>
+      <stop offset="100%" stop-color="#ced6e0"/>
+    </linearGradient>
+
+    <linearGradient id="saucerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#a4b0be"/>
+    </linearGradient>
+
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7bed9f"/>
+      <stop offset="100%" stop-color="#2ed573"/>
+    </linearGradient>
+    
+    <radialGradient id="teaGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2ed573" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#08142a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Dark Atmospheric Slate Background -->
+  <rect width="600" height="400" rx="20" fill="#08142a"/>
+  <circle cx="300" cy="220" r="180" fill="url(#teaGlow)"/>
+
+  <!-- Top Title Banner -->
+  <g transform="translate(40, 30)">
+    <rect x="0" y="0" width="520" height="36" rx="8" fill="rgba(126, 230, 215, 0.08)" stroke="rgba(126, 230, 215, 0.3)" stroke-width="1"/>
+    <text x="260" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#7ee6d7" text-anchor="middle" letter-spacing="0.5">🌱 ARTISANAL DARJEELING &amp; ASSAM FRESH BREW</text>
+  </g>
+
+  <!-- Saucer -->
+  <g class="cup-glow" transform="translate(0, 20)">
+    <ellipse cx="300" cy="310" rx="160" ry="24" fill="url(#saucerGrad)"/>
+    <ellipse cx="300" cy="308" rx="140" ry="18" fill="#dfe4ea"/>
+    <ellipse cx="300" cy="306" rx="90" ry="10" fill="#ced6e0"/>
+
+    <!-- Cup Handle -->
+    <path d="M 370 210 C 440 210, 440 280, 360 280" fill="none" stroke="url(#cupGrad)" stroke-width="20" stroke-linecap="round"/>
+    <path d="M 370 210 C 425 210, 425 280, 360 280" fill="none" stroke="#08142a" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Cup Body -->
+    <path d="M 210 180 C 210 295, 390 295, 390 180 Z" fill="url(#cupGrad)"/>
+    
+    <!-- Cup Rim Outer -->
+    <ellipse cx="300" cy="180" rx="90" ry="18" fill="#ced6e0"/>
+    <!-- Cup Rim Inner / Tea Surface -->
+    <ellipse cx="300" cy="182" rx="82" ry="14" fill="url(#teaLiquidGrad)"/>
+    
+    <!-- Tea Liquid Shimmer Rings -->
+    <ellipse cx="300" cy="182" rx="60" ry="9" fill="none" stroke="#ffa502" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="300" cy="182" rx="35" ry="5" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+  </g>
+
+  <!-- Floating Green Tea Leaves on Cup -->
+  <g class="tea-leaves-group">
+    <!-- Leaf 1 -->
+    <path d="M 285 180 Q 295 170, 305 178 Q 295 186, 285 180 Z" fill="url(#leafGrad)"/>
+    <!-- Leaf 2 -->
+    <path d="M 305 184 Q 318 176, 322 186 Q 312 192, 305 184 Z" fill="url(#leafGrad)"/>
+    <!-- Central Leaf Vein -->
+    <path d="M 286 180 L 304 178" stroke="#10ac84" stroke-width="0.8"/>
+  </g>
+
+  <!-- Animated Steam Trails -->
+  <!-- Steam Trail 1 (Center) -->
+  <path class="steam-path-1" d="M 300 170 C 290 140, 320 110, 300 80 C 285 55, 310 30, 295 10" fill="none" stroke="rgba(255, 255, 255, 0.75)" stroke-width="6" stroke-linecap="round" filter="blur(2px)"/>
+
+  <!-- Steam Trail 2 (Left) -->
+  <path class="steam-path-2" d="M 265 172 C 250 145, 280 120, 260 90 C 245 65, 275 40, 255 15" fill="none" stroke="rgba(255, 255, 255, 0.6)" stroke-width="5" stroke-linecap="round" filter="blur(2px)"/>
+
+  <!-- Steam Trail 3 (Right) -->
+  <path class="steam-path-3" d="M 335 172 C 350 145, 320 120, 340 90 C 355 65, 325 40, 345 15" fill="none" stroke="rgba(255, 255, 255, 0.65)" stroke-width="5.5" stroke-linecap="round" filter="blur(2px)"/>
+
+  <!-- Botanical Tea Leaf Sprig Emblem -->
+  <g transform="translate(100, 290)">
+    <path d="M 0 40 Q 20 10, 45 0 Q 35 25, 0 40 Z" fill="url(#leafGrad)"/>
+    <path d="M 0 40 Q -10 20, -5 0 Q 5 20, 0 40 Z" fill="url(#leafGrad)"/>
+    <path d="M 0 40 Q 15 55, 30 65 Q 15 65, 0 40 Z" fill="url(#leafGrad)"/>
+    <path d="M 0 40 L 45 0" stroke="#1dd1a1" stroke-width="1.5"/>
+  </g>
+
+  <!-- Bottom Interactive Status Bar -->
+  <g transform="translate(40, 355)">
+    <text x="260" y="15" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#a4b0be" text-anchor="middle">100% Single-Estate Harvested · Pure Mountain Whole Leaves</text>
+  </g>
+</svg>

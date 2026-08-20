@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bgGradQ" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1814"/>
+      <stop offset="100%" stop-color="#2B261F"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FECF0A"/>
+      <stop offset="100%" stop-color="#E9BB00"/>
+    </linearGradient>
+    <linearGradient id="book1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f2027"/>
+      <stop offset="50%" stop-color="#203a43"/>
+      <stop offset="100%" stop-color="#2c5364"/>
+    </linearGradient>
+    <linearGradient id="book2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a1c71"/>
+      <stop offset="50%" stop-color="#d76d77"/>
+      <stop offset="100%" stop-color="#ffaf7b"/>
+    </linearGradient>
+    <linearGradient id="book3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e130c"/>
+      <stop offset="100%" stop-color="#9a8478"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="20" fill="url(#bgGradQ)"/>
+
+  <!-- Comic Halftone Accent Grid -->
+  <pattern id="qomixHalftone" width="16" height="16" patternUnits="userSpaceOnUse">
+    <circle cx="8" cy="8" r="1.5" fill="#FECF0A" opacity="0.12"/>
+  </pattern>
+  <rect width="800" height="500" rx="20" fill="url(#qomixHalftone)"/>
+
+  <!-- Header -->
+  <g transform="translate(40, 35)">
+    <rect x="0" y="0" width="140" height="26" rx="6" fill="url(#goldGrad)"/>
+    <text x="70" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="900" fill="#1A1A1A" text-anchor="middle" letter-spacing="1.5">QOMIX CLASSICS</text>
+    <text x="0" y="55" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="800" fill="#F8F6F2">The World’s First Library of Universal Classics, Comicised</text>
+    <text x="0" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#EAE8E3">Turning timeless masterpieces of global literature into accessible graphic narratives across languages and cultures.</text>
+  </g>
+
+  <!-- 3 Classic Masterpiece Graphic Novels Cards -->
+  <!-- Card 1: Hemingway -->
+  <g transform="translate(40, 130)">
+    <rect width="220" height="320" rx="14" fill="#24201A" stroke="#FECF0A" stroke-opacity="0.3" stroke-width="1.5"/>
+    <rect x="12" y="12" width="196" height="170" rx="10" fill="url(#book1)"/>
+    <!-- Ocean Wave Graphic -->
+    <path d="M20 140 Q 70 90, 110 130 T 200 110 L 200 180 L 20 180 Z" fill="#00E5FF" fill-opacity="0.25"/>
+    <text x="110" y="90" font-family="'Playfair Display', serif" font-size="18" font-weight="900" fill="#ffffff" text-anchor="middle">THE OLD MAN</text>
+    <text x="110" y="112" font-family="'Playfair Display', serif" font-size="14" font-weight="700" fill="#FECF0A" text-anchor="middle">&amp; THE SEA</text>
+    
+    <text x="14" y="215" font-family="sans-serif" font-size="11" font-weight="800" fill="#FECF0A" letter-spacing="1">ERNEST HEMINGWAY</text>
+    <text x="14" y="238" font-family="sans-serif" font-size="13" font-weight="700" fill="#F8F6F2">Graphic Adaptation</text>
+    <text x="14" y="260" font-family="sans-serif" font-size="11" fill="#A8A49C">64 Illustrated Comic Panels · 12 Languages</text>
+    
+    <rect x="14" y="278" width="192" height="30" rx="8" fill="#FECF0A" fill-opacity="0.15" stroke="#FECF0A" stroke-width="1"/>
+    <text x="110" y="297" font-family="sans-serif" font-size="11" font-weight="800" fill="#FECF0A" text-anchor="middle">📖 READ COMIC</text>
+  </g>
+
+  <!-- Card 2: Franz Kafka -->
+  <g transform="translate(290, 130)">
+    <rect width="220" height="320" rx="14" fill="#24201A" stroke="#FECF0A" stroke-opacity="0.3" stroke-width="1.5"/>
+    <rect x="12" y="12" width="196" height="170" rx="10" fill="url(#book2)"/>
+    <!-- Metamorphosis Emblem -->
+    <circle cx="110" cy="95" r="45" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2"/>
+    <text x="110" y="90" font-family="'Playfair Display', serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle">THE</text>
+    <text x="110" y="112" font-family="'Playfair Display', serif" font-size="16" font-weight="900" fill="#FECF0A" text-anchor="middle">METAMORPHOSIS</text>
+    
+    <text x="14" y="215" font-family="sans-serif" font-size="11" font-weight="800" fill="#FECF0A" letter-spacing="1">FRANZ KAFKA</text>
+    <text x="14" y="238" font-family="sans-serif" font-size="13" font-weight="700" fill="#F8F6F2">Existential Graphic Story</text>
+    <text x="14" y="260" font-family="sans-serif" font-size="11" fill="#A8A49C">Psychological Visual Journey · Audio Synced</text>
+    
+    <rect x="14" y="278" width="192" height="30" rx="8" fill="#FECF0A" fill-opacity="0.15" stroke="#FECF0A" stroke-width="1"/>
+    <text x="110" y="297" font-family="sans-serif" font-size="11" font-weight="800" fill="#FECF0A" text-anchor="middle">📖 READ COMIC</text>
+  </g>
+
+  <!-- Card 3: Virginia Woolf -->
+  <g transform="translate(540, 130)">
+    <rect width="220" height="320" rx="14" fill="#24201A" stroke="#FECF0A" stroke-opacity="0.3" stroke-width="1.5"/>
+    <rect x="12" y="12" width="196" height="170" rx="10" fill="url(#book3)"/>
+    <circle cx="110" cy="95" r="45" fill="none" stroke="#FECF0A" stroke-opacity="0.4" stroke-width="2"/>
+    <text x="110" y="92" font-family="'Playfair Display', serif" font-size="17" font-weight="900" fill="#ffffff" text-anchor="middle">MRS DALLOWAY</text>
+    <text x="110" y="114" font-family="'Playfair Display', serif" font-size="13" font-weight="700" fill="#FECF0A" text-anchor="middle">STREAM OF CONSCIOUSNESS</text>
+    
+    <text x="14" y="215" font-family="sans-serif" font-size="11" font-weight="800" fill="#FECF0A" letter-spacing="1">VIRGINIA WOOLF</text>
+    <text x="14" y="238" font-family="sans-serif" font-size="13" font-weight="700" fill="#F8F6F2">Modernist Visual Narrative</text>
+    <text x="14" y="260" font-family="sans-serif" font-size="11" fill="#A8A49C">Panel Flow · Interactive Annotations</text>
+    
+    <rect x="14" y="278" width="192" height="30" rx="8" fill="#FECF0A" fill-opacity="0.15" stroke="#FECF0A" stroke-width="1"/>
+    <text x="110" y="297" font-family="sans-serif" font-size="11" font-weight="800" fill="#FECF0A" text-anchor="middle">📖 READ COMIC</text>
+  </g>
+</svg>

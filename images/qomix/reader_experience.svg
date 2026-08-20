@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <defs>
+    <linearGradient id="readBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181612"/>
+      <stop offset="100%" stop-color="#26221A"/>
+    </linearGradient>
+    <linearGradient id="comicPanel1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e50"/>
+      <stop offset="100%" stop-color="#3498db"/>
+    </linearGradient>
+    <linearGradient id="comicPanel2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e67e22"/>
+      <stop offset="100%" stop-color="#f39c12"/>
+    </linearGradient>
+    <linearGradient id="comicPanel3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8e44ad"/>
+      <stop offset="100%" stop-color="#9b59b6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="480" rx="20" fill="url(#readBg)"/>
+
+  <!-- Top App Navigation -->
+  <rect x="0" y="0" width="800" height="50" fill="#12100C" stroke="#2B261F" stroke-width="1"/>
+  <text x="30" y="31" font-family="'Playfair Display', serif" font-size="16" font-weight="900" fill="#FECF0A">QOMIX READER</text>
+  <text x="180" y="30" font-family="sans-serif" font-size="12" font-weight="600" fill="#A8A49C">The Old Man and the Sea · Chapter 1: The Great Gulf Stream</text>
+  <rect x="670" y="12" width="100" height="26" rx="6" fill="#FECF0A"/>
+  <text x="720" y="29" font-family="sans-serif" font-size="11" font-weight="900" fill="#1A1A1A" text-anchor="middle">🎧 AUDIO ON</text>
+
+  <!-- Comic Panel Grid Flow -->
+  <g transform="translate(30, 70)">
+    <!-- Panel 1 -->
+    <rect x="0" y="0" width="360" height="175" rx="10" fill="url(#comicPanel1)" stroke="#FECF0A" stroke-width="2"/>
+    <text x="20" y="30" font-family="'Playfair Display', serif" font-size="13" font-style="italic" font-weight="800" fill="#ffffff">“ He was an old man who fished alone in a skiff in the Gulf Stream... ”</text>
+    <circle cx="180" cy="110" r="40" fill="#ffffff" fill-opacity="0.15"/>
+    <path d="M 120 130 Q 180 100, 240 130" stroke="#FECF0A" stroke-width="3" fill="none"/>
+    
+    <!-- Panel 2 -->
+    <rect x="380" y="0" width="360" height="175" rx="10" fill="url(#comicPanel2)" stroke="#FECF0A" stroke-width="2"/>
+    <!-- Speech Bubble -->
+    <path d="M400 30 Q 400 20, 410 20 L 680 20 Q 690 20, 690 30 L 690 70 Q 690 80, 680 80 L 440 80 L 420 100 L 425 80 L 410 80 Q 400 80, 400 70 Z" fill="#ffffff"/>
+    <text x="415" y="44" font-family="sans-serif" font-size="12" font-weight="800" fill="#1A1A1A">“ But man is not made for defeat. ”</text>
+    <text x="415" y="64" font-family="sans-serif" font-size="11" font-weight="600" fill="#333333">“ A man can be destroyed but not defeated. ”</text>
+
+    <!-- Panel 3 (Wide Full Width Dramatic Panel) -->
+    <rect x="0" y="195" width="740" height="180" rx="10" fill="url(#comicPanel3)" stroke="#FECF0A" stroke-width="2"/>
+    <text x="24" y="235" font-family="'Playfair Display', serif" font-size="18" font-weight="900" fill="#ffffff">THE MARLIN RISES</text>
+    <text x="24" y="260" font-family="sans-serif" font-size="12" font-weight="500" fill="#EAE8E3">Two feet above the dark water, the great purple blade of its sword appeared glowing in the Caribbean sunrise.</text>
+    
+    <rect x="24" y="320" width="220" height="32" rx="8" fill="#1A1A1A" fill-opacity="0.75" stroke="#FECF0A" stroke-width="1"/>
+    <text x="134" y="341" font-family="sans-serif" font-size="11" font-weight="800" fill="#FECF0A" text-anchor="middle">💡 Literary Analysis &amp; Context</text>
+
+    <rect x="260" y="320" width="180" height="32" rx="8" fill="#1A1A1A" fill-opacity="0.75" stroke="#ffffff" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="350" y="341" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">🌐 Switch Language (12)</text>
+  </g>
+
+  <!-- Bottom Reader Controls -->
+  <g transform="translate(30, 440)">
+    <text x="0" y="16" font-family="sans-serif" font-size="11" font-weight="700" fill="#A8A49C">Panel 4 of 64</text>
+    <rect x="90" y="8" width="580" height="8" rx="4" fill="#2B261F"/>
+    <rect x="90" y="8" width="140" height="8" rx="4" fill="#FECF0A"/>
+    <text x="740" y="16" font-family="sans-serif" font-size="11" font-weight="700" fill="#FECF0A" text-anchor="end">NEXT PANEL ▶</text>
+  </g>
+</svg>

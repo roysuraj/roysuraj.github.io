@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a1a36"/>
+      <stop offset="50%" stop-color="#0e2a47"/>
+      <stop offset="100%" stop-color="#164e63"/>
+    </linearGradient>
+    <linearGradient id="mountain1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0f2744"/>
+    </linearGradient>
+    <linearGradient id="hill1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="hill2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="500" rx="20" fill="url(#skyGrad)"/>
+
+  <!-- Golden Mountain Sunrise & Rays -->
+  <circle cx="400" cy="180" r="90" fill="url(#sunGrad)" opacity="0.35" filter="blur(20px)"/>
+  <circle cx="400" cy="180" r="45" fill="url(#sunGrad)" opacity="0.9"/>
+
+  <!-- Distant High Altitude Himalayas / Nilgiri Mountain Peaks -->
+  <polygon points="0,260 160,150 320,260" fill="url(#mountain1)" opacity="0.7"/>
+  <polygon points="240,260 400,120 560,260" fill="url(#mountain1)" opacity="0.9"/>
+  <polygon points="480,260 640,160 800,260" fill="url(#mountain1)" opacity="0.7"/>
+
+  <!-- Misty Mountain Fog Layer -->
+  <ellipse cx="400" cy="250" rx="420" ry="30" fill="#ffffff" opacity="0.12" filter="blur(10px)"/>
+
+  <!-- Rolling Tea Garden Terrace Slopes -->
+  <!-- Layer 1 -->
+  <path d="M 0 320 Q 200 240, 450 290 T 800 270 L 800 500 L 0 500 Z" fill="url(#hill1)"/>
+  <!-- Terrace Lines -->
+  <path d="M 50 315 Q 220 260, 440 300 T 780 280" stroke="#047857" stroke-width="2.5" fill="none" stroke-dasharray="8 6"/>
+  <path d="M 20 345 Q 240 285, 460 325 T 790 305" stroke="#047857" stroke-width="2.5" fill="none" stroke-dasharray="8 6"/>
+
+  <!-- Layer 2 (Foreground Lush Estate Hill) -->
+  <path d="M 0 380 Q 260 320, 520 370 T 800 340 L 800 500 L 0 500 Z" fill="url(#hill2)"/>
+  <path d="M 10 395 Q 260 340, 520 385 T 790 360" stroke="#065f46" stroke-width="3" fill="none" stroke-dasharray="10 8"/>
+  <path d="M 0 435 Q 280 375, 540 420 T 800 395" stroke="#065f46" stroke-width="3.5" fill="none" stroke-dasharray="10 8"/>
+
+  <!-- Top Title Banner -->
+  <g transform="translate(40, 30)">
+    <rect x="0" y="0" width="720" height="42" rx="10" fill="rgba(6, 15, 31, 0.85)" stroke="rgba(16, 185, 129, 0.5)" stroke-width="1.5"/>
+    <circle cx="25" cy="21" r="6" fill="#10b981"/>
+    <text x="42" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="900" fill="#ffffff">🌱 The Animated Tea Story: From Estate Garden to Your Cup</text>
+    <text x="700" y="26" font-family="sans-serif" font-size="11" font-weight="700" fill="#10b981" text-anchor="end">Darjeeling · Assam · Nilgiri</text>
+  </g>
+
+  <!-- 5 Story Step Cards Floating Over Landscape -->
+  <!-- Step 1: Hand-Plucking -->
+  <g transform="translate(30, 90)">
+    <rect width="136" height="150" rx="10" fill="rgba(8, 20, 42, 0.9)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="8" y="8" width="28" height="20" rx="4" fill="url(#badgeGrad)"/>
+    <text x="22" y="22" font-family="sans-serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">01</text>
+    <text x="8" y="48" font-family="sans-serif" font-size="11" font-weight="800" fill="#7ee6d7">Hand-Plucking</text>
+    <text x="8" y="65" font-family="sans-serif" font-size="9" fill="#cbd5e1">‘Two Leaves &amp; A Bud’ harvested at dawn on high misty slopes.</text>
+    <text x="8" y="136" font-family="sans-serif" font-size="9" font-weight="700" fill="#34d399">🍃 Top Tender Flush</text>
+  </g>
+
+  <!-- Step 2: Withering -->
+  <g transform="translate(180, 90)">
+    <rect width="136" height="150" rx="10" fill="rgba(8, 20, 42, 0.9)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="8" y="8" width="28" height="20" rx="4" fill="url(#badgeGrad)"/>
+    <text x="22" y="22" font-family="sans-serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">02</text>
+    <text x="8" y="48" font-family="sans-serif" font-size="11" font-weight="800" fill="#7ee6d7">Withering</text>
+    <text x="8" y="65" font-family="sans-serif" font-size="9" fill="#cbd5e1">14–18 hours gentle mountain airflow reduces moisture by 65%.</text>
+    <text x="8" y="136" font-family="sans-serif" font-size="9" font-weight="700" fill="#34d399">💨 Natural Airflow</text>
+  </g>
+
+  <!-- Step 3: Rolling & CTC -->
+  <g transform="translate(330, 90)">
+    <rect width="136" height="150" rx="10" fill="rgba(8, 20, 42, 0.9)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="8" y="8" width="28" height="20" rx="4" fill="url(#badgeGrad)"/>
+    <text x="22" y="22" font-family="sans-serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">03</text>
+    <text x="8" y="48" font-family="sans-serif" font-size="11" font-weight="800" fill="#7ee6d7">Brass Rolling</text>
+    <text x="8" y="65" font-family="sans-serif" font-size="9" fill="#cbd5e1">Twisting withered leaves to release natural essential oils &amp; enzymes.</text>
+    <text x="8" y="136" font-family="sans-serif" font-size="9" font-weight="700" fill="#34d399">⚙️ Cell Activation</text>
+  </g>
+
+  <!-- Step 4: Oxidation -->
+  <g transform="translate(480, 90)">
+    <rect width="136" height="150" rx="10" fill="rgba(8, 20, 42, 0.9)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="8" y="8" width="28" height="20" rx="4" fill="url(#badgeGrad)"/>
+    <text x="22" y="22" font-family="sans-serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">04</text>
+    <text x="8" y="48" font-family="sans-serif" font-size="11" font-weight="800" fill="#7ee6d7">Oxidation</text>
+    <text x="8" y="65" font-family="sans-serif" font-size="9" fill="#cbd5e1">Controlled fermentation develops amber tones &amp; muscatel notes.</text>
+    <text x="8" y="136" font-family="sans-serif" font-size="9" font-weight="700" fill="#34d399">✨ Muscatel Nuances</text>
+  </g>
+
+  <!-- Step 5: Firing & Cup -->
+  <g transform="translate(630, 90)">
+    <rect width="140" height="150" rx="10" fill="rgba(8, 20, 42, 0.9)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="8" y="8" width="28" height="20" rx="4" fill="url(#badgeGrad)"/>
+    <text x="22" y="22" font-family="sans-serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">05</text>
+    <text x="8" y="48" font-family="sans-serif" font-size="11" font-weight="800" fill="#7ee6d7">Firing &amp; Cup</text>
+    <text x="8" y="65" font-family="sans-serif" font-size="9" fill="#cbd5e1">Hot-air firing locks peak freshness and aroma straight into your cup.</text>
+    <text x="8" y="136" font-family="sans-serif" font-size="9" font-weight="700" fill="#34d399">☕ Fresh to Cup</text>
+  </g>
+</svg>

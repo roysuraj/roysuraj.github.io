@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <defs>
+    <linearGradient id="qaiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141414"/>
+      <stop offset="100%" stop-color="#24211A"/>
+    </linearGradient>
+    <linearGradient id="goldQ" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FECF0A"/>
+      <stop offset="100%" stop-color="#E9BB00"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="460" rx="20" fill="url(#qaiBg)"/>
+
+  <!-- Title -->
+  <g transform="translate(40, 35)">
+    <text x="0" y="22" font-family="'Playfair Display', Georgia, serif" font-size="22" font-weight="900" fill="#F8F6F2">AI-Powered Comicisation &amp; Literary Adaptation Pipeline</text>
+    <text x="0" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#EAE8E3">Combining generative visual AI with rigorous human editorial oversight to preserve the spirit and depth of the originals.</text>
+  </g>
+
+  <!-- 4 Step Pipeline -->
+  <!-- Step 1 -->
+  <g transform="translate(40, 95)">
+    <rect width="165" height="260" rx="12" fill="#1C1A16" stroke="#333" stroke-width="1.5"/>
+    <rect x="12" y="12" width="40" height="24" rx="6" fill="url(#goldQ)"/>
+    <text x="32" y="28" font-family="sans-serif" font-size="11" font-weight="900" fill="#1A1A1A" text-anchor="middle">01</text>
+    <text x="12" y="65" font-family="sans-serif" font-size="13" font-weight="800" fill="#FECF0A">Literary Ingestion</text>
+    <text x="12" y="85" font-family="sans-serif" font-size="11" fill="#C5C2BA">Original unadapted text parsing, semantic token extraction, character arcs, and thematic preservation analysis.</text>
+    <rect x="12" y="210" width="141" height="34" rx="6" fill="#29241B"/>
+    <text x="82" y="231" font-family="sans-serif" font-size="10" font-weight="700" fill="#FECF0A" text-anchor="middle">📖 Universal Text</text>
+  </g>
+
+  <!-- Step 2 -->
+  <g transform="translate(225, 95)">
+    <rect width="165" height="260" rx="12" fill="#1C1A16" stroke="#333" stroke-width="1.5"/>
+    <rect x="12" y="12" width="40" height="24" rx="6" fill="url(#goldQ)"/>
+    <text x="32" y="28" font-family="sans-serif" font-size="11" font-weight="900" fill="#1A1A1A" text-anchor="middle">02</text>
+    <text x="12" y="65" font-family="sans-serif" font-size="13" font-weight="800" fill="#FECF0A">Panel Storyboarding</text>
+    <text x="12" y="85" font-family="sans-serif" font-size="11" fill="#C5C2BA">AI-driven scene composition, camera angle suggestions, dynamic pacing, and dramatic balloon layouting.</text>
+    <rect x="12" y="210" width="141" height="34" rx="6" fill="#29241B"/>
+    <text x="82" y="231" font-family="sans-serif" font-size="10" font-weight="700" fill="#FECF0A" text-anchor="middle">🎨 Visual Composition</text>
+  </g>
+
+  <!-- Step 3 -->
+  <g transform="translate(410, 95)">
+    <rect width="165" height="260" rx="12" fill="#1C1A16" stroke="#333" stroke-width="1.5"/>
+    <rect x="12" y="12" width="40" height="24" rx="6" fill="url(#goldQ)"/>
+    <text x="32" y="28" font-family="sans-serif" font-size="11" font-weight="900" fill="#1A1A1A" text-anchor="middle">03</text>
+    <text x="12" y="65" font-family="sans-serif" font-size="13" font-weight="800" fill="#FECF0A">Editorial Integrity</text>
+    <text x="12" y="85" font-family="sans-serif" font-size="11" fill="#C5C2BA">Master author scholarship review, ensuring psychological depth and philosophical nuances remain untouched.</text>
+    <rect x="12" y="210" width="141" height="34" rx="6" fill="#29241B"/>
+    <text x="82" y="231" font-family="sans-serif" font-size="10" font-weight="700" fill="#FECF0A" text-anchor="middle">🛡️ Literary Integrity</text>
+  </g>
+
+  <!-- Step 4 -->
+  <g transform="translate(595, 95)">
+    <rect width="165" height="260" rx="12" fill="#1C1A16" stroke="#333" stroke-width="1.5"/>
+    <rect x="12" y="12" width="40" height="24" rx="6" fill="url(#goldQ)"/>
+    <text x="32" y="28" font-family="sans-serif" font-size="11" font-weight="900" fill="#1A1A1A" text-anchor="middle">04</text>
+    <text x="12" y="65" font-family="sans-serif" font-size="13" font-weight="800" fill="#FECF0A">Global Distribution</text>
+    <text x="12" y="85" font-family="sans-serif" font-size="11" fill="#C5C2BA">Real-time multi-lingual typography, interactive audio synchronization, and cross-platform web/mobile reader deployment.</text>
+    <rect x="12" y="210" width="141" height="34" rx="6" fill="#29241B"/>
+    <text x="82" y="231" font-family="sans-serif" font-size="10" font-weight="700" fill="#FECF0A" text-anchor="middle">🌐 Global Readers</text>
+  </g>
+
+  <!-- Footer Banner -->
+  <g transform="translate(40, 380)">
+    <rect width="720" height="48" rx="10" fill="#24201A" stroke="#FECF0A" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="24" y="29" font-family="sans-serif" font-size="12" font-weight="800" fill="#FECF0A">🌟 Shaping a Literary Renaissance for the Visual Age</text>
+    <text x="700" y="29" font-family="sans-serif" font-size="11" font-weight="600" fill="#EAE8E3" text-anchor="end">Classrooms · Homes · Cultural Institutions</text>
+  </g>
+</svg>

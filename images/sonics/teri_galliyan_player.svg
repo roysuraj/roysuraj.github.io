@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141E30"/>
+      <stop offset="100%" stop-color="#243B55"/>
+    </linearGradient>
+    <linearGradient id="artGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00c6ff"/>
+      <stop offset="100%" stop-color="#0072ff"/>
+    </linearGradient>
+    <linearGradient id="sliderGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00c6ff"/>
+      <stop offset="100%" stop-color="#0072ff"/>
+    </linearGradient>
+    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Card Background -->
+  <rect width="800" height="500" rx="24" fill="url(#bgGrad2)"/>
+  
+  <!-- Ambient Glow -->
+  <circle cx="240" cy="250" r="180" fill="#00c6ff" opacity="0.12" filter="blur(40px)"/>
+
+  <!-- Left: Album Art Card -->
+  <g transform="translate(60, 60)" filter="url(#shadow2)">
+    <rect width="260" height="260" rx="20" fill="url(#artGrad2)"/>
+    <!-- Ek Villain Acoustic Art Theme -->
+    <path d="M70 200L130 90L190 200Z" fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="3"/>
+    <circle cx="130" cy="145" r="45" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="2"/>
+    <circle cx="130" cy="145" r="18" fill="#ffffff" fill-opacity="0.9"/>
+    <text x="130" y="215" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">EK VILLAIN</text>
+    <!-- High Bitrate FLAC Badge -->
+    <rect x="15" y="15" width="70" height="26" rx="6" fill="rgba(0,0,0,0.6)" backdrop-filter="blur(8px)"/>
+    <text x="50" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#00E5FF" text-anchor="middle">HI-RES</text>
+  </g>
+
+  <!-- Right: Track Info & Controls -->
+  <g transform="translate(360, 75)">
+    <!-- Now Playing Tag -->
+    <rect x="0" y="0" width="120" height="26" rx="13" fill="rgba(0,198,255,0.2)" stroke="rgba(0,198,255,0.5)" stroke-width="1"/>
+    <circle cx="14" cy="13" r="4" fill="#00E5FF"/>
+    <text x="64" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#00E5FF" text-anchor="middle" letter-spacing="1">NOW PLAYING</text>
+
+    <!-- Track Title -->
+    <text x="0" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.5">Teri Galliyan</text>
+    
+    <!-- Artists -->
+    <text x="0" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" fill="#C3CCDB">Ankit Tiwari · Manoj Muntashir</text>
+    <text x="0" y="122" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#8E9AA8">Album: Ek Villain (Acoustic Unplugged)</text>
+
+    <!-- Synced Lyrics Line Preview -->
+    <g transform="translate(0, 145)">
+      <rect width="380" height="42" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <text x="16" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-style="italic" font-weight="600" fill="#7EE6D7">“ Teri galliyan, galliyan teri galliyan... mujhko bhaavein ”</text>
+    </g>
+
+    <!-- Progress Slider -->
+    <g transform="translate(0, 215)">
+      <rect x="0" y="4" width="380" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
+      <rect x="0" y="4" width="245" height="6" rx="3" fill="url(#sliderGrad2)"/>
+      <circle cx="245" cy="7" r="7" fill="#ffffff" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.5))"/>
+      <text x="0" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#C3CCDB">03:18</text>
+      <text x="380" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#8E9AA8" text-anchor="end">05:40</text>
+    </g>
+
+    <!-- Player Action Buttons -->
+    <g transform="translate(0, 275)">
+      <!-- Shuffle -->
+      <circle cx="20" cy="20" r="18" fill="rgba(255,255,255,0.06)"/>
+      <path d="M14 15L18 15L22 25L26 25M23 21L26 25L23 29M14 25L18 25L19.5 21.5M26 15L22 15L20.5 18.5M23 11L26 15L23 19" stroke="#8E9AA8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      
+      <!-- Previous -->
+      <circle cx="85" cy="20" r="22" fill="rgba(255,255,255,0.08)"/>
+      <path d="M78 14V26M92 14L82 20L92 26V14Z" fill="#C3CCDB"/>
+
+      <!-- Play / Pause (Active) -->
+      <circle cx="160" cy="20" r="28" fill="url(#artGrad2)" filter="drop-shadow(0 4px 12px rgba(0,198,255,0.5))"/>
+      <rect x="151" y="11" width="6" height="18" rx="2" fill="#ffffff"/>
+      <rect x="163" y="11" width="6" height="18" rx="2" fill="#ffffff"/>
+
+      <!-- Next -->
+      <circle cx="235" cy="20" r="22" fill="rgba(255,255,255,0.08)"/>
+      <path d="M242 14V26M228 14L238 20L228 26V14Z" fill="#C3CCDB"/>
+
+      <!-- Favorite Heart -->
+      <circle cx="300" cy="20" r="18" fill="rgba(0,198,255,0.15)"/>
+      <path d="M300 25L298.5 23.5C293.5 19 290 16 290 12.5C290 9.5 292.5 7 295.5 7C297.2 7 298.8 8 300 9.5C301.2 8 302.8 7 304.5 7C307.5 7 310 9.5 310 12.5C310 16 306.5 19 301.5 23.5L300 25Z" fill="#00E5FF"/>
+      
+      <!-- Equalizer Badge -->
+      <rect x="335" y="7" width="45" height="26" rx="8" fill="rgba(255,255,255,0.08)"/>
+      <text x="357" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#C3CCDB" text-anchor="middle">EQ</text>
+    </g>
+  </g>
+
+  <!-- Bottom Track Queue Bar -->
+  <g transform="translate(60, 420)">
+    <rect width="680" height="50" rx="14" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="24" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#ffffff">📻 Station Source:</text>
+    <text x="145" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#00E5FF">Bollywood Unplugged & Acoustic Hits</text>
+    <text x="656" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#7EE6D7" text-anchor="end">32-Bit Float DSP Engine</text>
+  </g>
+</svg>
