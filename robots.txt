@@ -4,3 +4,5 @@ Disallow: /legal
 Disallow: /de/legal
 Disallow: /privacy
 Disallow: /de/privacy
+
+Sitemap: https://roysuraj.github.io/sitemap.xml
