@@ -4,8 +4,9 @@
     "title": "Suraj Kumar Roy Portfolio Visitor Telemetry Database",
     "description": "Permanent readable and writable visitor record store tracking live and future visitors starting from Aug 20, 2026, 12:06 PM IST",
     "trackingStarted": "2026-08-20T12:06:00+05:30",
-    "totalCount": 1,
-    "uniqueCount": 1
+    "totalCount": 0,
+    "uniqueCount": 0,
+    "todayCount": 0
   },
   "visitors": []
 }
