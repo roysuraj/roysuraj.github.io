@@ -1,9 +1,0 @@
-import type { ProjectPreview } from "../../types";
-
-export default [
-  { title: "X-lent Tea", slug: "cubewar", thumbnail: "/images/xlenttea.png", description: "Tee E-Commerce App" },
-  { title: "Optique", slug: "cloudcraftz", thumbnail: "/images/optique.svg", description: "Schulverwaltung & Lern-App" },
-  { title: "Afterbell", slug: "quibbo", thumbnail: "/images/afterbell.png", description: "Kinder-Lern- und Fortschritts-Tracker" },
-  { title: "Sonics Music Station", slug: "sharkie", thumbnail: "/images/sonics.png", description: "Musik- und Radio-App" },
-  { title: "QOMIX", slug: "pokedex", thumbnail: "/images/qomix.svg", description: "Web-Erlebnis" },
-] as const satisfies ProjectPreview[];
